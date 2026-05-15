@@ -1,0 +1,17 @@
+node_modules
+dist
+.next
+.turbo
+*.log
+.env
+.env.local
+.env.*.local
+.DS_Store
+coverage
+*.tsbuildinfo
+
+# Compiled output in source folders
+packages/shared/src/**/*.js
+packages/shared/src/**/*.d.ts
+packages/shared/src/**/*.js.map
+packages/shared/src/**/*.d.ts.map
