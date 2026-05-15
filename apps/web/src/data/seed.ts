@@ -257,6 +257,6 @@ export const SITE_SETTINGS: SiteSettings = {
   seo: {
     title: 'Aspire Group — Premium Real Estate Developers, Pune',
     description: "Aspire Group — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
-    ogImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=85&auto=format',
+    ogImage: '/logo.png',
   },
 }

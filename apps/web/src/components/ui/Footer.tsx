@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { SiteSettings } from '@/types'
+import Logo from '@/components/ui/Logo'
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   facebook: <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>,
@@ -13,7 +14,9 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
     <footer style={{ background: '#040404', borderTop: '1px solid var(--bdr)', padding: '5rem 4rem 2rem' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr', gap: '3.5rem', marginBottom: '3.5rem', paddingBottom: '3.5rem', borderBottom: '1px solid var(--bdr)' }}>
         <div>
-          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 300, color: 'var(--warm)', letterSpacing: '.15em', marginBottom: '1rem' }}>ASPIRE GROUP</div>
+          <div style={{ marginBottom: '1rem' }}>
+            <Logo href="/" height={52} className="footer-logo" />
+          </div>
           <p style={{ fontSize: '.82rem', color: 'var(--txt2)', lineHeight: 1.9, marginBottom: '1.5rem', maxWidth: '260px' }}>
             {settings?.footerTagline || 'Building landmark residential and commercial spaces across Pune since 2014.'}
           </p>

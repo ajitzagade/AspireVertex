@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
+import Logo from '@/components/ui/Logo'
 
 interface NavLink { label: string; href: string; cta?: boolean }
 
@@ -13,8 +13,8 @@ const DEFAULT_LINKS: NavLink[] = [
   { label: 'Testimonials', href: '/#testimonials' },
 ]
 
-export default function Navbar({ links, ctaText = 'Enquire Now', ctaHref = '/#contact', logoText = 'ASPIRE GROUP' }: {
-  links?: NavLink[]; ctaText?: string; ctaHref?: string; logoText?: string
+export default function Navbar({ links, ctaText = 'Enquire Now', ctaHref = '/#contact' }: {
+  links?: NavLink[]; ctaText?: string; ctaHref?: string
 }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobOpen, setMobOpen] = useState(false)
@@ -28,9 +28,13 @@ export default function Navbar({ links, ctaText = 'Enquire Now', ctaHref = '/#co
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
-  const handleClick = (href: string) => {
+  const closeMobile = () => {
     setMobOpen(false)
     document.body.style.overflow = ''
+  }
+
+  const handleClick = (href: string) => {
+    closeMobile()
     if (href.includes('#')) {
       const [path, hash] = href.split('#')
       if (path === '' || path === pathname) {
@@ -47,49 +51,49 @@ export default function Navbar({ links, ctaText = 'Enquire Now', ctaHref = '/#co
   return (
     <>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.35rem', fontWeight: 300, color: 'var(--warm)', letterSpacing: '.15em', textTransform: 'uppercase' }}>
-            {logoText}
-          </span>
-        </Link>
+        <Logo href="/" height={40} className="nav-logo" />
         <ul style={{ display: 'flex', alignItems: 'center', gap: '2.2rem', listStyle: 'none' }} className="nav-desktop">
           {navLinks.map(l => (
             <li key={l.label}>
-              <button onClick={() => handleClick(l.href)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Jost', sans-serif", fontSize: '.72rem', letterSpacing: '.13em', textTransform: 'uppercase', color: 'rgba(232,226,216,.7)', transition: 'color .3s' }}
+              <button type="button" onClick={() => handleClick(l.href)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: "'Jost', sans-serif", fontSize: '.72rem', letterSpacing: '.13em', textTransform: 'uppercase', color: 'rgba(232,226,216,.7)', transition: 'color .3s' }}
                 className={l.cta ? 'nav-cta' : 'nav-link'}>
                 {l.label}
               </button>
             </li>
           ))}
           <li>
-            <button onClick={() => handleClick(ctaHref)} className="nav-cta" style={{ padding: '.55rem 1.5rem', border: '1px solid var(--gold)', color: 'var(--gold)', cursor: 'pointer', fontFamily: "'Jost', sans-serif", fontSize: '.72rem', letterSpacing: '.13em', textTransform: 'uppercase', background: 'none', transition: 'all .3s' }}>
+            <button type="button" onClick={() => handleClick(ctaHref)} className="nav-cta" style={{ padding: '.55rem 1.5rem', border: '1px solid var(--gold)', color: 'var(--gold)', cursor: 'pointer', fontFamily: "'Jost', sans-serif", fontSize: '.72rem', letterSpacing: '.13em', textTransform: 'uppercase', background: 'none', transition: 'all .3s' }}>
               {ctaText}
             </button>
           </li>
         </ul>
-        <button onClick={() => { setMobOpen(true); document.body.style.overflow = 'hidden' }}
-          style={{ display: 'none', flexDirection: 'column', gap: '5px', cursor: 'pointer', padding: '4px', background: 'none', border: 'none' }} className="hamburger">
+        <button type="button" onClick={() => { setMobOpen(true); document.body.style.overflow = 'hidden' }}
+          style={{ display: 'none', flexDirection: 'column', gap: '5px', cursor: 'pointer', padding: '4px', background: 'none', border: 'none' }} className="hamburger" aria-label="Open menu">
           <span style={{ display: 'block', width: '24px', height: '1px', background: 'var(--warm)' }} />
           <span style={{ display: 'block', width: '24px', height: '1px', background: 'var(--warm)' }} />
           <span style={{ display: 'block', width: '24px', height: '1px', background: 'var(--warm)' }} />
         </button>
       </nav>
 
-      {/* Mobile overlay */}
       {mobOpen && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(8,8,8,.99)', zIndex: 999, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '2.5rem' }}>
-          <button onClick={() => { setMobOpen(false); document.body.style.overflow = '' }}
-            style={{ position: 'absolute', top: '1.5rem', right: '2rem', fontSize: '1.8rem', color: 'var(--txt2)', cursor: 'pointer', background: 'none', border: 'none', transition: 'color .3s' }}>✕</button>
-          {navLinks.map(l => (
-            <button key={l.label} onClick={() => handleClick(l.href)}
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--txt2)', background: 'none', border: 'none', cursor: 'pointer', transition: 'color .3s' }}>
-              {l.label}
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(8,8,8,.99)', zIndex: 999, display: 'flex', flexDirection: 'column' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.5rem', flexShrink: 0 }}>
+            <Logo href="/" height={40} onClick={closeMobile} />
+            <button type="button" onClick={closeMobile}
+              style={{ fontSize: '1.8rem', color: 'var(--txt2)', cursor: 'pointer', background: 'none', border: 'none' }} aria-label="Close menu">✕</button>
+          </div>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '2.5rem', paddingBottom: '4rem' }}>
+            {navLinks.map(l => (
+              <button key={l.label} type="button" onClick={() => handleClick(l.href)}
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--txt2)', background: 'none', border: 'none', cursor: 'pointer', transition: 'color .3s' }}>
+                {l.label}
+              </button>
+            ))}
+            <button type="button" onClick={() => handleClick(ctaHref)}
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--gold)', background: 'none', border: 'none', cursor: 'pointer' }}>
+              {ctaText}
             </button>
-          ))}
-          <button onClick={() => handleClick(ctaHref)}
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--gold)', background: 'none', border: 'none', cursor: 'pointer' }}>
-            {ctaText}
-          </button>
+          </div>
         </div>
       )}
 
@@ -102,6 +106,7 @@ export default function Navbar({ links, ctaText = 'Enquire Now', ctaHref = '/#co
         }
         .nav-link:hover { color: var(--warm) !important; }
         .nav-cta:hover { background: var(--gold) !important; color: var(--bg) !important; }
+        .nav-logo { flex-shrink: 0; }
       `}</style>
     </>
   )
