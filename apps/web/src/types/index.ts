@@ -81,6 +81,7 @@ export interface Photo {
     timeline?: { label: string; date: string; done: boolean }[]
     nearbyCategories?: NearbyCategory[]
     faqs?: { question: string; answer: string }[]
+    brochureUrl?: string
     mapEmbedUrl?: string
     isFeatured?: boolean
     order?: number

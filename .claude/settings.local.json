@@ -8,7 +8,12 @@
       "Bash(npm install:*)",
       "Bash(sudo npm:*)",
       "Bash(npx vercel:*)",
-      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup && npm run build 2>&1 | tail -30)"
+      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup && npm run build 2>&1 | tail -30)",
+      "Bash(curl -s http://localhost:5173/admin/projects 2>&1 | grep -E \"error|Error|Error:|digest|at \" | head -20)",
+      "Bash(npx next:*)",
+      "Bash(node -e \"\nconst mongoose = require\\('mongoose'\\);\nmongoose.connect\\('mongodb+srv://ajitzagade3_db_user:5TvbRgiDkJOEOaDN@cluster0.raxgltd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { serverSelectionTimeoutMS: 8000 }\\)\n  .then\\(\\(\\) => console.log\\('CONNECTED OK'\\)\\)\n  .catch\\(e => console.log\\('ERROR:', e.message\\)\\);\n\" 2>&1)",
+      "Bash(sleep 3 && curl -s http://localhost:5173/api/test-db)",
+      "Bash(sleep 2 && curl -s http://localhost:5173/api/test-db)"
     ]
   }
 }

@@ -29,7 +29,8 @@ const ProjectSchema = new Schema(
     parking: String,
     specs: [{ key: String, value: String }],
     floorPlans: [{
-      type: String,
+      type: { type: String },
+      variant: String,
       price: String,
       carpetArea: String,
       builtUpArea: String,
@@ -64,6 +65,7 @@ const ProjectSchema = new Schema(
       items: [{ name: String, distance: String }],
     }],
     faqs: [{ question: String, answer: String }],
+    brochureUrl: String,
     mapEmbedUrl: String,
     isFeatured: { type: Boolean, default: false },
     order: { type: Number, default: 0 },
