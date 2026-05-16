@@ -53,7 +53,7 @@ export default function ProjectModal({ projectKey, onClose }: { projectKey: stri
           </div>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a href="/#contact" className="btn-gold" onClick={onClose}>Enquire Now →</a>
-            <a href="https://wa.me/919890273861" target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us</a>
+            <a href="https://wa.me/919090274545" target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us</a>
           </div>
         </div>
       </div>

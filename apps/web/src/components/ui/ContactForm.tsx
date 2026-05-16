@@ -80,7 +80,7 @@ export default function ContactForm({ projectName }: { projectName?: string; sub
         {status === 'idle' && "Send Enquiry — We'll Call You Within 2 Hours"}
         {status === 'sending' && 'Sending…'}
         {status === 'done' && "✓ Sent — We'll Call You Within 2 Hours"}
-        {status === 'error' && 'Error — Please Call +91 98902 73861'}
+        {status === 'error' && 'Error — Please Call +91 90902 74545'}
       </button>
       <p style={{ fontSize: '.68rem', color: 'var(--txt3)', marginTop: '.7rem', textAlign: 'center' }}>Your data is never shared or sold. 100% private.</p>
     </form>

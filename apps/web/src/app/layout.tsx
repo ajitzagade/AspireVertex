@@ -4,13 +4,13 @@ import WhatsAppFloat from '@/components/ui/WhatsAppFloat'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:5173'),
-  title: 'Aspire Group — Premium Real Estate Developers, Pune',
-  description: "Aspire Group — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
-  keywords: 'real estate Pune, flats Katraj, 2 BHK Ambegaon, Aspire Group, premium apartments Pune',
+  title: 'Aspire InfraTech — Premium Real Estate Developers, Pune',
+  description: "Aspire InfraTech — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
+  keywords: 'real estate Pune, flats Katraj, 2 BHK Ambegaon, Aspire InfraTech, premium apartments Pune',
   openGraph: {
-    title: 'Aspire Group — Premium Real Estate Developers, Pune',
+    title: 'Aspire InfraTech — Premium Real Estate Developers, Pune',
     description: "Pune's most trusted builders delivering landmark residences.",
-    images: [{ url: '/logo.png', width: 204, height: 212, alt: 'Aspire Group' }],
+    images: [{ url: '/logo.png', width: 204, height: 212, alt: 'Aspire InfraTech' }],
     type: 'website',
   },
 }

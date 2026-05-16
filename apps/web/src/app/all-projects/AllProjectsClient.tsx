@@ -138,7 +138,7 @@ function FeaturedCard({ project: p }: { project: Project }) {
             Explore {p.name} →
           </span>
           <a
-            href={`https://wa.me/919890273861?text=I%20am%20interested%20in%20${encodeURIComponent(p.name)}`}
+            href={`https://wa.me/919090274545?text=I%20am%20interested%20in%20${encodeURIComponent(p.name)}`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -307,7 +307,7 @@ function CompletedCard({ project: p }: { project: Project }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '.8rem', color: 'var(--txt2)' }}>{p.tagline}</span>
           <a
-            href={`https://wa.me/919890273861?text=Interested%20in%20${encodeURIComponent(p.name)}%20resale`}
+            href={`https://wa.me/919090274545?text=Interested%20in%20${encodeURIComponent(p.name)}%20resale`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -400,7 +400,7 @@ function CommercialCard({ project: p }: { project: Project }) {
         </div>
         <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap' }}>
           <a
-            href={`https://wa.me/919890273861?text=I%20want%20to%20register%20for%20${encodeURIComponent(p.name)}%20pre-launch`}
+            href={`https://wa.me/919090274545?text=I%20want%20to%20register%20for%20${encodeURIComponent(p.name)}%20pre-launch`}
             target="_blank"
             rel="noreferrer"
             style={{
@@ -442,7 +442,7 @@ function RERABar({ projects }: { projects: Project[] }) {
           MahaRERA Registered &amp; Compliant
         </h3>
         <p style={{ fontSize: '.82rem', color: 'var(--txt2)', maxWidth: '500px', lineHeight: 1.85 }}>
-          All Aspire Group ongoing projects are registered under MahaRERA. You can verify registration details, approvals and construction updates on the official MahaRERA portal at maharerait.mahaonline.gov.in. We believe in complete transparency — always.
+          All Aspire InfraTech ongoing projects are registered under MahaRERA. You can verify registration details, approvals and construction updates on the official MahaRERA portal at maharerait.mahaonline.gov.in. We believe in complete transparency — always.
         </p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '.65rem', alignItems: 'flex-end' }}>
@@ -498,7 +498,7 @@ export default function AllProjectsClient({ projects }: { projects: Project[] })
         <div style={{ position: 'absolute', inset: 0 }}>
           <Image
             src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85&auto=format"
-            alt="Aspire Group Portfolio"
+            alt="Aspire InfraTech Portfolio"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center' }}
             priority
@@ -654,7 +654,7 @@ export default function AllProjectsClient({ projects }: { projects: Project[] })
             Talk to an Advisor →
           </Link>
           <a
-            href="https://wa.me/919890273861?text=I%20saw%20all%20Aspire%20projects%20and%20need%20help%20choosing%20the%20right%20one%20for%20my%20family"
+            href="https://wa.me/919090274545?text=I%20saw%20all%20Aspire%20projects%20and%20need%20help%20choosing%20the%20right%20one%20for%20my%20family"
             target="_blank"
             rel="noreferrer"
             style={{
@@ -667,14 +667,14 @@ export default function AllProjectsClient({ projects }: { projects: Project[] })
             WhatsApp for Guidance
           </a>
           <a
-            href="tel:+919890273861"
+            href="tel:+919090274545"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '.65rem',
               padding: '.8rem 1.75rem', border: '1px solid rgba(201,169,110,.42)',
               color: 'var(--warm)', fontSize: '.72rem', letterSpacing: '.14em', textTransform: 'uppercase',
             }}
           >
-            Call +91 98902 73861
+            Call +91 90902 74545
           </a>
         </div>
       </div>

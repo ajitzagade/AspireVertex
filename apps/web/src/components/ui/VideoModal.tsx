@@ -20,7 +20,7 @@ export default function VideoModal({ youtubeId, title, onClose }: { youtubeId: s
           allow="autoplay;fullscreen" allowFullScreen title={title} />
         <div style={{ padding: '.75rem 1rem', background: 'var(--ch)', border: '1px solid var(--bdr)', borderTop: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <span style={{ fontSize: '.78rem', color: 'var(--txt2)', letterSpacing: '.05em' }}>{title}</span>
-          <a href="https://wa.me/919890273861" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.72rem', color: '#25d366', letterSpacing: '.08em', textTransform: 'uppercase' }}>
+          <a href="https://wa.me/919090274545" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '.5rem', fontSize: '.72rem', color: '#25d366', letterSpacing: '.08em', textTransform: 'uppercase' }}>
             Enquire via WhatsApp
           </a>
         </div>

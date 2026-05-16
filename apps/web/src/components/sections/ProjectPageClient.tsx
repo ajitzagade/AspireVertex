@@ -194,7 +194,7 @@ function FloorPlanSVG({ bhkType, variant = '' }: { bhkType: string; variant?: st
 }
 
 // ── EMI Calculator ──
-function EMICalculator({ onClose }: { onClose: () => void }) {
+function EMICalculator({ onClose, inline = false }: { onClose: () => void; inline?: boolean }) {
   const [amount, setAmount] = useState(7500000)
   const [rate, setRate] = useState(8.5)
   const [tenure, setTenure] = useState(20)
@@ -208,6 +208,80 @@ function EMICalculator({ onClose }: { onClose: () => void }) {
   const fmt = (v: number) => v >= 100000
     ? `₹${(v / 100000).toFixed(2)}L`
     : `₹${v.toLocaleString('en-IN')}`
+
+  if (inline) {
+    return (
+      <div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+          {/* Loan Amount */}
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '.35rem' }}>
+              <span style={{ fontSize: '.58rem', letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--txt2)' }}>Loan Amt</span>
+              <span style={{ fontSize: '.72rem', color: 'var(--gold)', fontWeight: 500 }}>{fmt(amount)}</span>
+            </div>
+            <input type="range" min={1000000} max={30000000} step={100000} value={amount}
+              onChange={e => setAmount(Number(e.target.value))}
+              style={{ width: '100%', accentColor: '#c9a96e', cursor: 'pointer' }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '.15rem', fontSize: '.55rem', color: 'var(--txt3)' }}>
+              <span>₹10L</span><span>₹3Cr</span>
+            </div>
+          </div>
+          {/* Interest Rate */}
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '.35rem' }}>
+              <span style={{ fontSize: '.58rem', letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--txt2)' }}>Rate</span>
+              <span style={{ fontSize: '.72rem', color: 'var(--gold)', fontWeight: 500 }}>{rate.toFixed(1)}%</span>
+            </div>
+            <input type="range" min={6} max={14} step={0.1} value={rate}
+              onChange={e => setRate(Number(e.target.value))}
+              style={{ width: '100%', accentColor: '#c9a96e', cursor: 'pointer' }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '.15rem', fontSize: '.55rem', color: 'var(--txt3)' }}>
+              <span>6%</span><span>14%</span>
+            </div>
+          </div>
+          {/* Tenure */}
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '.35rem' }}>
+              <span style={{ fontSize: '.58rem', letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--txt2)' }}>Tenure</span>
+              <span style={{ fontSize: '.72rem', color: 'var(--gold)', fontWeight: 500 }}>{tenure} Yrs</span>
+            </div>
+            <input type="range" min={1} max={30} step={1} value={tenure}
+              onChange={e => setTenure(Number(e.target.value))}
+              style={{ width: '100%', accentColor: '#c9a96e', cursor: 'pointer' }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '.15rem', fontSize: '.55rem', color: 'var(--txt3)' }}>
+              <span>1 Yr</span><span>30 Yrs</span>
+            </div>
+          </div>
+        </div>
+        {/* Result bar */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '.75rem', padding: '.75rem 1rem', background: '#111', border: '1px solid rgba(201,169,110,0.2)' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '.5rem' }}>
+            <span style={{ fontSize: '.58rem', letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--txt2)' }}>Monthly EMI</span>
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', color: 'var(--gold)', fontWeight: 300, lineHeight: 1 }}>₹{emi.toLocaleString('en-IN')}</span>
+          </div>
+          <div style={{ display: 'flex', gap: '1.25rem' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '.55rem', color: 'var(--txt3)', marginBottom: '.1rem' }}>Principal</div>
+              <div style={{ fontSize: '.75rem', color: 'var(--warm)' }}>{fmt(amount)}</div>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '.55rem', color: 'var(--txt3)', marginBottom: '.1rem' }}>Interest</div>
+              <div style={{ fontSize: '.75rem', color: 'var(--warm)' }}>{fmt(totalInterest)}</div>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '.55rem', color: 'var(--txt3)', marginBottom: '.1rem' }}>Total</div>
+              <div style={{ fontSize: '.75rem', color: 'var(--warm)' }}>{fmt(totalPayable)}</div>
+            </div>
+          </div>
+          <a href="https://wa.me/919090274545?text=I%20need%20home%20loan%20assistance%20for%20an%20Aspire%20InfraTech%20project"
+            target="_blank" rel="noreferrer"
+            style={{ padding: '.45rem 1rem', background: 'var(--gold)', color: 'var(--bg)', fontSize: '.6rem', letterSpacing: '.12em', textTransform: 'uppercase', fontWeight: 600, whiteSpace: 'nowrap' }}>
+            Get Loan →
+          </a>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div style={{ position: 'absolute', bottom: '4.5rem', right: 0, width: '320px', background: '#111111', border: '1px solid rgba(201,169,110,0.35)', padding: '1.5rem', zIndex: 1002, boxShadow: '0 20px 60px rgba(0,0,0,0.8)' }}>
@@ -278,7 +352,7 @@ function EMICalculator({ onClose }: { onClose: () => void }) {
         </div>
       </div>
 
-      <a href="https://wa.me/919890273861?text=I%20would%20like%20home%20loan%20assistance%20for%20an%20Aspire%20Group%20project"
+      <a href="https://wa.me/919090274545?text=I%20would%20like%20home%20loan%20assistance%20for%20an%20Aspire%20InfraTech%20project"
         target="_blank" rel="noreferrer"
         style={{ display: 'block', textAlign: 'center', marginTop: '.85rem', padding: '.6rem', background: 'var(--gold)', color: 'var(--bg)', fontSize: '.62rem', letterSpacing: '.14em', textTransform: 'uppercase', fontWeight: 500 }}>
         Get Loan Assistance →
@@ -293,7 +367,6 @@ export default function ProjectPageClient({ project }: { project: Project }) {
   const [variantIdx, setVariantIdx] = useState(0)
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [videoId, setVideoId] = useState<string | null>(null)
-  const [showEmi, setShowEmi] = useState(false)
 
   const plans = project.floorPlans || []
 
@@ -430,8 +503,11 @@ export default function ProjectPageClient({ project }: { project: Project }) {
       {/* ── FLOOR PLANS ── */}
       {plans.length > 0 && (
         <section className="pp-plans" style={{ padding: '6rem 4rem', background: 'var(--ch)', borderTop: '1px solid var(--bdr)' }}>
-          <div className="sec-eye"><span>Floor Plans</span></div>
-          <h2 className="sec-h">Choose Your <em>Configuration</em></h2>
+          <div className="sec-eye"><span>Floor Plans &amp; Pricing</span></div>
+          <h2 className="sec-h">Find the Home That Fits <em>Your Family</em></h2>
+          <p style={{ fontSize: '.9rem', color: 'var(--txt2)', maxWidth: '600px', marginBottom: '1rem', lineHeight: 1.8 }}>
+            Browse layouts, carpet areas and all-inclusive pricing — then calculate your monthly EMI instantly.
+          </p>
 
           {/* BHK Type Tabs */}
           <div className="pp-type-tabs" style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap', margin: '2rem 0 1.5rem' }}>
@@ -496,12 +572,19 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                   ))}
                 </div>
 
+                {/* Inline EMI for this plan */}
+                <div style={{ margin: '1.25rem 0', padding: '1rem 1.25rem', background: 'rgba(201,169,110,.04)', border: '1px solid rgba(201,169,110,.2)' }}>
+                  <div style={{ fontSize: '.6rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '.75rem' }}>Quick EMI Estimate</div>
+                  <EMICalculator onClose={() => {}} inline />
+                </div>
+
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem' }}>
-                  <a href={`https://wa.me/919890273861?text=${encodeURIComponent(activePlan.waMsg || `${currentType} at ${project.name}`)}`}
-                    target="_blank" rel="noreferrer" className="btn-gold" style={{ display: 'inline-flex' }}>
-                    Enquire for {currentType} →
+                  <a href={`https://wa.me/919090274545?text=${encodeURIComponent(activePlan.waMsg || `${currentType} at ${project.name}`)}`}
+                    target="_blank" rel="noreferrer" className="btn-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: '.6rem' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Enquire on WhatsApp
                   </a>
-                  <Link href="#contact" className="btn-outline" style={{ display: 'inline-flex' }}>Schedule Visit</Link>
+                  <Link href="#contact" className="btn-outline" style={{ display: 'inline-flex' }}>📅 Schedule Site Visit</Link>
                 </div>
               </div>
             </div>
@@ -516,21 +599,30 @@ export default function ProjectPageClient({ project }: { project: Project }) {
         <p style={{ fontSize: '.88rem', color: 'var(--txt2)', maxWidth: '600px', marginBottom: '2.5rem', lineHeight: 1.8 }}>
           {project.name} is pre-approved for home loans by 10+ leading banks and housing finance companies — making your home purchase faster and hassle-free.
         </p>
-        <div className="pp-banks-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '.75rem' }}>
-          {BANKS.map((b) => (
-            <div key={b.name} style={{ padding: '.85rem .6rem', border: '1px solid var(--bdr)', background: 'var(--sl)', textAlign: 'center', transition: 'border-color .25s' }}
-              onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(201,169,110,0.5)')}
-              onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(201,169,110,0.14)')}>
-              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: b.bg, color: b.color, fontSize: '.62rem', fontWeight: '600', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto .6rem', letterSpacing: '0' }}>
-                {b.short}
+
+        {/* Scrolling marquee */}
+        <div style={{ overflow: 'hidden', borderTop: '1px solid var(--bdr)', borderBottom: '1px solid var(--bdr)', padding: '.85rem 0', position: 'relative' }}>
+          <div style={{ display: 'flex', gap: '1.25rem', animation: 'marqueeAnim 28s linear infinite', width: 'max-content' }}>
+            {[...BANKS, ...BANKS].map((b, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '.65rem', padding: '.55rem 1.1rem', border: '1px solid rgba(201,169,110,0.18)', background: 'var(--sl)', flexShrink: 0 }}>
+                <div style={{ width: '34px', height: '34px', borderRadius: '50%', background: b.bg, color: b.color, fontSize: '.58rem', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', letterSpacing: 0 }}>
+                  {b.short}
+                </div>
+                <span style={{ fontSize: '.72rem', color: 'var(--txt2)', whiteSpace: 'nowrap' }}>{b.name}</span>
               </div>
-              <div style={{ fontSize: '.65rem', color: 'var(--txt2)', lineHeight: 1.3 }}>{b.name}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        <p style={{ marginTop: '1.5rem', fontSize: '.75rem', color: 'var(--txt3)' }}>
+
+        <p style={{ marginTop: '1.25rem', fontSize: '.75rem', color: 'var(--txt3)', marginBottom: '2rem' }}>
           * Home loan eligibility subject to individual bank criteria. Contact us for assisted loan processing at no extra charge.
         </p>
+
+        {/* Inline EMI Calculator */}
+        <div style={{ padding: '1.5rem', background: 'rgba(201,169,110,.04)', border: '1px solid rgba(201,169,110,.2)' }}>
+          <div style={{ fontSize: '.6rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>Calculate Your Home Loan EMI</div>
+          <EMICalculator onClose={() => {}} inline />
+        </div>
       </section>
 
       {/* ── AMENITIES ── */}
@@ -587,7 +679,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                   </div>
                 </div>
               ))}
-              <a href="https://wa.me/919890273861?text=I%20want%20to%20schedule%20a%20virtual%20site%20visit%20for%20this%20project"
+              <a href="https://wa.me/919090274545?text=I%20want%20to%20schedule%20a%20virtual%20site%20visit%20for%20this%20project"
                 target="_blank" rel="noreferrer"
                 style={{ display: 'block', padding: '.85rem 1.2rem', border: '1px solid var(--bdr2)', color: 'var(--gold)', fontSize: '.65rem', letterSpacing: '.12em', textTransform: 'uppercase', textAlign: 'center', transition: 'all .3s' }}>
                 📱 Live Video Site Visit
@@ -713,7 +805,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
             <ContactForm projectName={project.name} />
           </div>
           <div>
-            {[['📞', 'Call Us', '+91 98902 73861'], ['💬', 'WhatsApp', '+91 98902 73861'], ['📍', 'Address', 'Baner Road, Near Balewadi, Pune — 411 045']].map(([ic, lbl, val]) => (
+            {[['📞', 'Call Us', '+91 90902 74545'], ['💬', 'WhatsApp', '+91 90902 74545'], ['📍', 'Address', 'Katraj–Dhankawadi, Pune — 411 046']].map(([ic, lbl, val]) => (
               <div key={lbl} style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid var(--bdr)' }}>
                 <div style={{ width: '42px', height: '42px', border: '1px solid var(--bdr)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem', flexShrink: 0 }}>{ic}</div>
                 <div>
@@ -722,7 +814,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                 </div>
               </div>
             ))}
-            <a href={`https://wa.me/919890273861?text=${encodeURIComponent(`I'm interested in ${project.name}. Please share details.`)}`}
+            <a href={`https://wa.me/919090274545?text=${encodeURIComponent(`I'm interested in ${project.name}. Please share details.`)}`}
               target="_blank" rel="noreferrer" className="btn-wa" style={{ display: 'inline-flex', marginTop: '.5rem' }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
               WhatsApp Now
@@ -733,21 +825,6 @@ export default function ProjectPageClient({ project }: { project: Project }) {
 
       <Footer />
 
-      {/* ── EMI CALCULATOR FLOAT ── */}
-      <div style={{ position: 'fixed', bottom: '6rem', right: '2rem', zIndex: 1001 }}>
-        {showEmi && <EMICalculator onClose={() => setShowEmi(false)} />}
-        <button
-          onClick={() => setShowEmi(v => !v)}
-          title="Calculate EMI"
-          style={{ width: '56px', height: '56px', background: showEmi ? 'var(--gold)' : '#1a1a1a', border: '1px solid var(--gold)', borderRadius: '50%', color: showEmi ? '#080808' : 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 8px 28px rgba(201,169,110,0.3)', transition: 'all .3s', fontSize: '1.1rem' }}>
-          {showEmi ? '×' : '₹'}
-        </button>
-        {!showEmi && (
-          <span style={{ position: 'absolute', bottom: '60px', right: '50%', transform: 'translateX(50%)', whiteSpace: 'nowrap', background: '#1a1a1a', border: '1px solid var(--bdr)', color: 'var(--gold)', fontSize: '.6rem', letterSpacing: '.1em', padding: '.25rem .6rem', pointerEvents: 'none' }}>
-            EMI Calc
-          </span>
-        )}
-      </div>
     </>
   )
 }

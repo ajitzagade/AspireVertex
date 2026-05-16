@@ -107,7 +107,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.8 }}
             style={{ fontSize: '.9rem', color: 'var(--txt2)', maxWidth: '440px', lineHeight: 1.9, marginBottom: '2.5rem' }}>
-            Aspire Group crafts landmark residences across Katraj, Ambegaon &amp; Kondhwa — built on trust, designed for generations.
+            Aspire InfraTech crafts landmark residences across Katraj, Ambegaon &amp; Kondhwa — built on trust, designed for generations.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
             style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -156,7 +156,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         <Reveal>
           <div style={{ position: 'relative' }}>
             <Image src={settings.aboutImage || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85&auto=format'}
-              alt="Aspire Group Development" width={600} height={520} style={{ width: '100%', height: '520px', objectFit: 'cover' }} />
+              alt="Aspire InfraTech Development" width={600} height={520} style={{ width: '100%', height: '520px', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', bottom: '2.5rem', right: '-1.5rem', width: '130px', height: '130px', border: '1px solid var(--bdr2)', background: 'rgba(8,8,8,.92)', backdropFilter: 'blur(12px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: '.3rem', zIndex: 2 }}>
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>₹375</div>
               <div style={{ fontSize: '.54rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--txt2)', padding: '0 .5rem' }}>Crore Turnover</div>
@@ -166,11 +166,11 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="sec-eye"><span>About Aspire Group</span></div>
+          <div className="sec-eye"><span>About Aspire InfraTech</span></div>
           <h2 className="sec-h">Building Pune's<br /><em>Future Skyline</em></h2>
           <div className="gold-line" />
           <p style={{ fontSize: '.9rem', color: 'var(--txt2)', lineHeight: 1.9, marginBottom: '2rem' }}>
-            Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire Group is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014.
+            Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire InfraTech is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2.5rem' }}>
             {[['⬛', 'Architectural Excellence', 'Premium materials, modern design and meticulous planning at every scale.'],
@@ -398,7 +398,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
           <p style={{ fontSize: '.88rem', color: 'var(--txt2)', maxWidth: '440px', margin: '0 auto 2.75rem', position: 'relative', lineHeight: 1.9 }}>Speak with our expert advisors — no pressure, just genuine guidance for your family.</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap', position: 'relative' }}>
             <button className="btn-gold" onClick={() => scrollTo('contact')}>Schedule a Site Visit →</button>
-            <a href="https://wa.me/919890273861" target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us Now</a>
+            <a href="https://wa.me/919090274545" target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us Now</a>
             <Link href="/projects/siddhi-aspire" className="btn-outline">View Siddhi Aspire ↗</Link>
           </div>
         </Reveal>

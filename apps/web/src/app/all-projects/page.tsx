@@ -15,8 +15,8 @@ async function getProjects(): Promise<Project[]> {
 }
 
 export const metadata = {
-  title: 'All Projects — Aspire Group | Pune Real Estate',
-  description: 'Explore all Aspire Group residential and commercial developments across Pune — ongoing, completed and upcoming.',
+  title: 'All Projects — Aspire InfraTech | Pune Real Estate',
+  description: 'Explore all Aspire InfraTech residential and commercial developments across Pune — ongoing, completed and upcoming.',
 }
 
 export default async function AllProjectsPage() {

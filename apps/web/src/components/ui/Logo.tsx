@@ -23,7 +23,7 @@ export default function Logo({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={LOGO_SRC}
-      alt="Aspire Group"
+      alt="Aspire InfraTech"
       width={width}
       height={height}
       className={`site-logo ${className}`.trim()}
@@ -38,7 +38,7 @@ export default function Logo({
         href={href}
         className="site-logo-link"
         onClick={onClick}
-        aria-label="Aspire Group — Home"
+        aria-label="Aspire InfraTech — Home"
       >
         {img}
       </Link>
