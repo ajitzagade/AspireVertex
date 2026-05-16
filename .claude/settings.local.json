@@ -3,7 +3,12 @@
     "allow": [
       "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web && npx tsc --noEmit 2>&1 | head -60)",
       "Bash(npx tsc:*)",
-      "Bash(grep -n \"ALL_PROJECTS\\\\|getProject\" /Users/priyanka/Desktop/Development/AspireGroup/apps/web/src/app/projects/[slug]/page.tsx)"
+      "Bash(grep -n \"ALL_PROJECTS\\\\|getProject\" /Users/priyanka/Desktop/Development/AspireGroup/apps/web/src/app/projects/[slug]/page.tsx)",
+      "Bash(ls /Users/priyanka/Desktop/Development/AspireGroup/apps/web/.env* 2>/dev/null || echo \"No .env files\")",
+      "Bash(npm install:*)",
+      "Bash(sudo npm:*)",
+      "Bash(npx vercel:*)",
+      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup && npm run build 2>&1 | tail -30)"
     ]
   }
 }
