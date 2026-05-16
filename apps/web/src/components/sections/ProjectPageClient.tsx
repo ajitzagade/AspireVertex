@@ -367,6 +367,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
   const [variantIdx, setVariantIdx] = useState(0)
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [videoId, setVideoId] = useState<string | null>(null)
+  const [showEmi, setShowEmi] = useState(false)
 
   const plans = project.floorPlans || []
 
@@ -825,6 +826,21 @@ export default function ProjectPageClient({ project }: { project: Project }) {
 
       <Footer />
 
+      {/* ── EMI CALCULATOR FLOAT ── */}
+      <div style={{ position: 'fixed', bottom: '6rem', right: '2rem', zIndex: 1001 }}>
+        {showEmi && <EMICalculator onClose={() => setShowEmi(false)} />}
+        <button
+          onClick={() => setShowEmi(v => !v)}
+          title="Calculate EMI"
+          style={{ width: '56px', height: '56px', background: showEmi ? 'var(--gold)' : '#1a1a1a', border: '1px solid var(--gold)', borderRadius: '50%', color: showEmi ? '#080808' : 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 8px 28px rgba(201,169,110,0.3)', transition: 'all .3s', fontSize: '1.1rem' }}>
+          {showEmi ? '×' : '₹'}
+        </button>
+        {!showEmi && (
+          <span style={{ position: 'absolute', bottom: '62px', right: 0, whiteSpace: 'nowrap', background: '#1a1a1a', border: '1px solid rgba(201,169,110,0.35)', color: 'var(--gold)', fontSize: '.6rem', letterSpacing: '.1em', padding: '.3rem .7rem', pointerEvents: 'none' }}>
+            EMI Calc
+          </span>
+        )}
+      </div>
     </>
   )
 }
