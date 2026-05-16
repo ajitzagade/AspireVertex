@@ -1,7 +1,7 @@
 import { connectDB } from '@/lib/mongodb'
 import { ProjectModel, TestimonialModel, SettingsModel } from '@/lib/models'
 import type { Project, Testimonial, SiteSettings } from '@/types'
-import { SITE_SETTINGS, SIDDHI_PROJECT, OPTIMA_PROJECT, TESTIMONIALS } from '@/data/seed'
+import { SITE_SETTINGS, ALL_PROJECTS, TESTIMONIALS } from '@/data/seed'
 import HomeClient from '@/components/sections/HomeClient'
 
 async function getData() {
@@ -24,7 +24,7 @@ async function getData() {
   } catch {
     // Fallback to seed data if DB not connected
     return {
-      projects: [SIDDHI_PROJECT, OPTIMA_PROJECT] as Project[],
+      projects: ALL_PROJECTS as Project[],
       testimonials: TESTIMONIALS as Testimonial[],
       settings: SITE_SETTINGS,
     }

@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Optima – Aspire | Premium 2 & 3 BHK in Ambegaon, Pune | Aspire Group</title>
+<meta name="description" content="Optima Aspire by Aspire Group — Premium 2 & 3 BHK residences in Ambegaon Budruk, Pune. RERA registered. Infinity pool, clubhouse, landscaped gardens. Starting ₹72 Lakhs."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#070609;color:#ece8e0;font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+:root{
+  --gold:#c9a96e;--gold-lt:#e8d5b0;--gold-dk:#8b6a35;
+  --bg:#070609;--charcoal:#100e12;--slate:#181620;--muted:#201e28;
+  --warm:#f0ece4;--txt2:#9590a0;--txt3:#5a5568;
+  --border:rgba(201,169,110,.12);--border2:rgba(201,169,110,.38);
+  --ease:cubic-bezier(.25,.46,.45,.94);--ease2:cubic-bezier(.16,1,.3,1)
+}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#070609}::-webkit-scrollbar-thumb{background:#8b6a35}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font-family:'Jost',sans-serif;cursor:pointer}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s;background:linear-gradient(to bottom,rgba(7,6,9,.9),transparent)}
+#nav.scrolled{background:rgba(7,6,9,.97);backdrop-filter:blur(20px);padding:1rem 4rem;border-bottom:1px solid var(--border)}
+.nav-logo img{height:50px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(240,236,228,.65);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{padding:.55rem 1.5rem;border:1px solid var(--gold);color:var(--gold)!important}
+.nav-cta:hover{background:var(--gold);color:var(--bg)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.hamburger span{width:24px;height:1px;background:var(--warm);display:block}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(7,6,9,.99);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--txt2);transition:color .3s}
+.mob-menu a:hover{color:var(--gold)}
+.mob-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--txt2);font-size:1.8rem;cursor:pointer}
+
+/* HERO — SPLIT LAYOUT (different from Siddhi's full-bleed) */
+.hero{height:100vh;min-height:700px;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-left{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:0 4rem 6rem;z-index:2;background:linear-gradient(to right,var(--bg) 60%,transparent)}
+.hero-right{position:relative}
+.hero-right img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05)}
+.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 40%);z-index:1}
+.hero-right::after{content:'';position:absolute;top:0;left:0;right:0;height:100%;background:linear-gradient(to top,var(--bg) 0%,transparent 35%);z-index:1}
+.h-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem}
+.h-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
+.h-eyebrow span{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.h-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;color:var(--warm);line-height:1.05;margin-bottom:1.1rem}
+.h-title em{font-style:italic;color:var(--gold)}
+.h-sub{font-size:.88rem;color:var(--txt2);max-width:420px;line-height:1.9;margin-bottom:2rem}
+.h-pills{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:2rem}
+.h-pill{padding:.3rem .9rem;border:1px solid var(--border2);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.h-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-price-card{position:absolute;right:3rem;bottom:4rem;z-index:3;border:1px solid var(--border2);background:rgba(7,6,9,.88);backdrop-filter:blur(16px);padding:1.5rem 1.75rem}
+.hpc-type{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.hpc-price{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--warm);line-height:1}
+.hpc-range{font-size:.7rem;color:var(--txt2);margin-bottom:.85rem}
+.rera-bar{background:rgba(16,14,18,.98);border-bottom:1px solid var(--border);padding:.7rem 4rem;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;overflow-x:auto}
+.rera-item{font-size:.7rem;color:var(--txt2);white-space:nowrap}
+.rera-item strong{color:var(--gold)}
+
+/* SECTIONS */
+.sec{padding:7rem 4rem}
+.sec-alt{background:var(--charcoal);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sec-label{display:flex;align-items:center;gap:1rem;margin-bottom:.9rem}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+.sec-label span{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:300;color:var(--warm);line-height:1.1}
+.sec-title em{font-style:italic;color:var(--gold)}
+.gold-line{width:48px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:1.25rem 0}
+
+/* BTNS */
+.btn-gold{display:inline-flex;align-items:center;gap:.65rem;padding:.9rem 2.2rem;background:var(--gold);color:var(--bg);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:none;transition:all .3s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(201,169,110,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:.65rem;padding:.85rem 2rem;border:1px solid var(--border2);color:var(--warm);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;transition:all .3s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-wa{display:inline-flex;align-items:center;gap:.65rem;padding:.85rem 1.75rem;border:1px solid rgba(37,211,102,.35);background:rgba(37,211,102,.08);color:#25d366;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s}
+.btn-wa:hover{background:rgba(37,211,102,.15)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal.up{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-32px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal-l.up{opacity:1;transform:none}
+.reveal-r{opacity:0;transform:translateX(32px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.reveal-r.up{opacity:1;transform:none}
+
+/* OVERVIEW */
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.ov-specs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+.ov-spec{padding:1.1rem 1.25rem;border:1px solid var(--border);background:var(--slate)}
+.ov-spec-lbl{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.ov-spec-val{font-size:.95rem;color:var(--warm)}
+
+/* MARQUEE (reusable) */
+.marquee-bar{background:var(--gold);padding:.65rem 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;animation:mq 25s linear infinite}
+.marquee-item{display:inline-flex;align-items:center;gap:1.25rem;padding:0 1.75rem;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bg);font-weight:500}
+.marquee-dot{width:3px;height:3px;background:rgba(0,0,0,.3);border-radius:50%}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* FLOOR PLANS */
+.plans-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:2.5rem}
+.plan-tab{padding:.75rem 1.75rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;color:var(--txt2);transition:all .3s;cursor:pointer;font-family:'Jost',sans-serif}
+.plan-tab.active,.plan-tab:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.plan-pane{display:none}.plan-pane.active{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start}
+.plan-visual{background:var(--slate);border:1px solid var(--border);aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.plan-svg{width:90%;max-width:340px}
+.plan-price{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:.2rem}
+.plan-price-lbl{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2);margin-bottom:1.4rem}
+.plan-specs{display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.75rem}
+.plan-spec-row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:.8rem}
+.plan-spec-row span:first-child{color:var(--txt2)}
+.plan-spec-row span:last-child{color:var(--warm)}
+
+/* AMENITIES */
+.amen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1.1rem}
+.amen-card{padding:1.6rem 1.2rem;border:1px solid var(--border);background:var(--slate);text-align:center;transition:all .35s;position:relative;overflow:hidden}
+.amen-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s}
+.amen-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.amen-card:hover::before{transform:scaleX(1)}
+.amen-icon{font-size:1.7rem;margin-bottom:.65rem}
+.amen-name{font-size:.76rem;letter-spacing:.04em;color:var(--warm)}
+
+/* 2-col comparison (for Plus vs Standard) */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.compare-card{padding:2rem;border:1px solid var(--border);background:var(--slate)}
+.compare-card.featured{border-color:var(--gold);position:relative}
+.compare-card.featured::before{content:'PLUS';position:absolute;top:-1px;right:2rem;padding:.25rem .75rem;background:var(--gold);color:var(--bg);font-size:.55rem;letter-spacing:.2em;font-weight:600}
+.cc-head{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--warm);margin-bottom:.3rem}
+.cc-sub{font-size:.72rem;color:var(--txt2);margin-bottom:1.25rem}
+.cc-price{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:.25rem}
+.cc-type{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt2);margin-bottom:1.5rem}
+.cc-items{display:flex;flex-direction:column;gap:.5rem}
+.cc-item{font-size:.8rem;color:var(--txt2);display:flex;align-items:center;gap:.5rem}
+.cc-item::before{content:'→';color:var(--gold);font-size:.7rem}
+
+/* GALLERY */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 220px;gap:3px}
+.gal-cell{position:relative;overflow:hidden;cursor:pointer}
+.gal-cell.wide{grid-column:1/3}
+.gal-cell img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gal-cell:hover img{transform:scale(1.06)}
+.gal-over{position:absolute;inset:0;background:rgba(7,6,9,0);transition:background .4s;display:flex;align-items:center;justify-content:center}
+.gal-cell:hover .gal-over{background:rgba(7,6,9,.5)}
+.gal-zoom{opacity:0;width:44px;height:44px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:opacity .4s;font-size:1.2rem}
+.gal-cell:hover .gal-zoom{opacity:1}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.price-card{padding:2.25rem 1.75rem;border:1px solid var(--border);background:var(--slate);transition:all .35s;cursor:pointer;position:relative;overflow:hidden}
+.price-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .4s}
+.price-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.price-card:hover::before{transform:scaleX(1)}
+.price-card.featured{border-color:var(--gold)}
+.price-card.featured::after{content:'POPULAR';position:absolute;top:1.2rem;right:1.2rem;font-size:.52rem;letter-spacing:.2em;padding:.25rem .65rem;background:var(--gold);color:var(--bg);font-weight:600}
+.pc-type{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.pc-size{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--warm);line-height:1}
+.pc-unit{font-size:.68rem;color:var(--txt2);margin-bottom:.7rem}
+.pc-price{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gold);margin:.7rem 0 .2rem}
+.pc-range{font-size:.7rem;color:var(--txt2)}
+.pc-feats{margin-top:1rem;display:flex;flex-direction:column;gap:.4rem}
+.pc-feat{font-size:.75rem;color:var(--txt2);display:flex;align-items:center;gap:.5rem}
+.pc-feat::before{content:'✓';color:var(--gold);font-size:.68rem}
+
+/* PROGRESS */
+.prog-item{margin-bottom:1.4rem}
+.prog-label{display:flex;justify-content:space-between;margin-bottom:.45rem;font-size:.77rem;color:var(--txt2)}
+.prog-label span:last-child{color:var(--gold)}
+.prog-bar{height:2px;background:var(--muted,#201e28);overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(to right,var(--gold-dk),var(--gold));width:0;transition:width 1.6s cubic-bezier(.16,1,.3,1)}
+
+/* NEARBY */
+.nearby-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
+.nearby-cat{padding:1.5rem;border:1px solid var(--border);background:var(--slate);margin-bottom:1.25rem}
+.nc-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.9rem}
+.nc-icon{font-size:1.15rem;color:var(--gold)}
+.nc-title{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--warm)}
+.nc-items{display:flex;flex-direction:column;gap:.45rem}
+.nc-item{display:flex;justify-content:space-between;font-size:.78rem;padding:.3rem 0;border-bottom:1px solid var(--border)}
+.nc-item:last-child{border-bottom:none}
+.nc-name{color:var(--txt2)}
+.nc-dist{color:var(--gold);font-size:.72rem}
+
+/* FAQ */
+.accord-item{border-bottom:1px solid var(--border)}
+.accord-q{width:100%;padding:1.35rem 0;display:flex;align-items:center;justify-content:space-between;background:none;border:none;color:var(--warm);font-family:'Jost',sans-serif;font-size:.88rem;text-align:left;cursor:pointer;transition:color .3s}
+.accord-q:hover{color:var(--gold)}
+.acc-arr{width:28px;height:28px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--txt2);transition:all .4s;flex-shrink:0}
+.accord-item.open .acc-arr{transform:rotate(45deg);border-color:var(--gold);color:var(--gold)}
+.accord-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.accord-a p{padding-bottom:1.4rem;font-size:.86rem;color:var(--txt2);line-height:1.9}
+
+/* CONTACT */
+.form-group{margin-bottom:1.35rem}
+.form-group label{display:block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);padding:.75rem 0;color:#ece8e0;font-family:'Jost',sans-serif;font-size:.9rem;outline:none;transition:border-color .3s;-webkit-appearance:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--txt3);font-size:.85rem}
+.form-group select option{background:#181620;color:#ece8e0}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.form-group textarea{resize:none;height:100px}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:rgba(4,3,7,.97);z-index:3000;display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:85vh;object-fit:contain}
+.lb-close{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--txt2);font-size:2rem;cursor:pointer}
+.lb-close:hover{color:var(--gold)}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid var(--border2);width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--txt2);cursor:pointer;transition:all .3s;font-size:1.2rem}
+.lb-prev{left:2rem}.lb-next{right:2rem}
+.lb-prev:hover,.lb-next:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+footer{background:#040308;border-top:1px solid var(--border);padding:3.5rem 4rem 2rem}
+.foot-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:1.5rem}
+.foot-links{display:flex;gap:2rem;flex-wrap:wrap}
+.foot-links a{font-size:.78rem;color:var(--txt2);transition:color .3s}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-size:.7rem;color:var(--txt3)}
+.rera-badge{padding:.2rem .7rem;border:1px solid var(--border);font-size:.58rem;letter-spacing:.1em;color:var(--gold)}
+.wa{position:fixed;bottom:2rem;right:2rem;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:997;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:all .3s;color:#fff}
+.wa:hover{transform:scale(1.1)}
+
+@media(max-width:1024px){
+  #nav,#nav.scrolled{padding:1rem 2rem}
+  .sec{padding:5rem 2.5rem}
+  .hero{grid-template-columns:1fr}
+  .hero-right{position:absolute;inset:0;opacity:.4}
+  .hero-left{height:100vh;min-height:700px;padding:0 2.5rem 5rem}
+  .hero-price-card{right:2rem;bottom:3rem}
+  .ov-grid{grid-template-columns:1fr;gap:3rem}
+  .plan-pane.active{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr 1fr}
+  .nearby-grid{grid-template-columns:1fr}
+  .compare-grid{grid-template-columns:1fr}
+  .rera-bar{padding:.7rem 2rem}
+}
+@media(max-width:768px){
+  #nav,#nav.scrolled{padding:.9rem 1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-left{padding:0 1.5rem 5rem}
+  .hero-price-card{display:none}
+  .sec{padding:4.5rem 1.5rem}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gal-cell.wide{grid-column:auto}
+  .form-row{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr}
+  footer{padding:3rem 1.5rem 1.5rem}
+}
+
+/* ── VIDEO WALKTHROUGH ── */
+.vw-sec{padding:8rem 4rem;background:var(--charcoal);border-top:1px solid var(--border)}
+.vw-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:4rem}
+.vw-main{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;cursor:pointer;border:1px solid var(--border)}
+.vw-main img{width:100%;height:100%;object-fit:cover;transition:transform .6s;opacity:.72}
+.vw-main:hover img{transform:scale(1.03);opacity:.6}
+.vw-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;border:2px solid rgba(201,169,110,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);background:rgba(8,8,8,.55);transition:all .35s}
+.vw-main:hover .vw-play{background:rgba(201,169,110,.2);border-color:var(--gold);transform:translate(-50%,-50%) scale(1.1)}
+.vw-play svg{margin-left:5px}
+.vw-main-lbl{position:absolute;bottom:1.25rem;left:1.25rem;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);background:rgba(8,8,8,.75);padding:.3rem .8rem;backdrop-filter:blur(6px)}
+.vw-duration{position:absolute;bottom:1.25rem;right:1.25rem;font-size:.65rem;color:rgba(232,226,216,.6);background:rgba(8,8,8,.65);padding:.2rem .65rem;letter-spacing:.05em}
+.vw-thumb-list{display:flex;flex-direction:column;gap:1rem}
+.vw-thumb{display:flex;gap:1.25rem;align-items:center;padding:1rem;border:1px solid var(--border);cursor:pointer;transition:all .35s;background:var(--slate)}
+.vw-thumb:hover{border-color:var(--border2);background:var(--muted,#222)}
+.vw-thumb-img{width:110px;height:68px;object-fit:cover;flex-shrink:0;position:relative;overflow:hidden}
+.vw-thumb-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.vw-thumb:hover .vw-thumb-img img{transform:scale(1.06)}
+.vw-thumb-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,8,8,.4)}
+.vw-thumb-info{flex:1}
+.vw-thumb-title{font-size:.85rem;color:var(--warm);margin-bottom:.2rem;line-height:1.4}
+.vw-thumb-sub{font-size:.7rem;color:var(--txt2)}
+.vw-thumb-dur{font-size:.65rem;color:var(--gold);margin-top:.3rem;letter-spacing:.06em}
+/* video modal */
+.vm-ov{position:fixed;inset:0;background:rgba(4,4,4,.97);z-index:3000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(14px)}
+.vm-ov.open{display:flex}
+.vm-box{width:90vw;max-width:960px;position:relative}
+.vm-box iframe,.vm-box video{width:100%;aspect-ratio:16/9;display:block;border:none;background:#000}
+.vm-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(232,226,216,.7);font-size:1.5rem;cursor:pointer;transition:color .3s;font-family:'Jost',sans-serif;letter-spacing:.05em;display:flex;align-items:center;gap:.5rem}
+.vm-close:hover{color:var(--gold)}
+.vm-title-bar{padding:.75rem 1rem;background:var(--charcoal);border:1px solid var(--border);border-top:none;display:flex;align-items:center;justify-content:space-between}
+.vm-ttl{font-size:.78rem;color:var(--txt2);letter-spacing:.05em}
+.vm-wa{display:flex;align-items:center;gap:.5rem;font-size:.72rem;color:#25d366;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:1024px){.vw-grid{grid-template-columns:1fr;gap:2.5rem}}
+@media(max-width:768px){.vw-sec{padding:5rem 1.5rem}.vw-thumb{gap:.85rem}.vw-thumb-img{width:85px;height:54px}}
+
+.preview-gallery{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:300px 220px;gap:3px}
+.pg-large{grid-column:span 2;position:relative;overflow:hidden;cursor:pointer}
+.pg-small{position:relative;overflow:hidden;cursor:pointer}
+.pg-large img,.pg-small img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+.pg-large:hover img,.pg-small:hover img{transform:scale(1.06)}
+.pg-over{position:absolute;inset:0;background:rgba(7,6,9,0);transition:background .4s;display:flex;align-items:flex-end;justify-content:space-between;padding:1.25rem}
+.pg-large:hover .pg-over,.pg-small:hover .pg-over{background:rgba(7,6,9,.55)}
+.pg-label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,236,228,0);transition:color .4s}
+.pg-zoom{width:40px;height:40px;border:1px solid rgba(201,169,110,0);display:flex;align-items:center;justify-content:center;color:rgba(201,169,110,0);transition:all .4s;font-size:1.1rem}
+.pg-large:hover .pg-label,.pg-small:hover .pg-label{color:var(--warm)}
+.pg-large:hover .pg-zoom,.pg-small:hover .pg-zoom{border-color:var(--gold);color:var(--gold)}
+.pg-more-over{position:absolute;inset:0;background:rgba(7,6,9,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;cursor:pointer;transition:background .3s}
+.pg-more:hover .pg-more-over{background:rgba(7,6,9,.92)}
+.pg-more-n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold);line-height:1}
+.pg-more-l{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt2)}
+.pg-more-btn{margin-top:.5rem;padding:.3rem .85rem;border:1px solid var(--bdr2);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);transition:all .3s}
+.pg-more:hover .pg-more-btn{background:var(--gold);color:var(--bg)}
+.gal-filter-row{display:flex;gap:0;margin-top:1.5rem;border-bottom:1px solid var(--border);overflow-x:auto}
+.gf-tab{padding:.6rem 1.4rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt2);border-bottom:2px solid transparent;transition:all .3s;white-space:nowrap;cursor:pointer;font-family:'Jost',sans-serif}
+.gf-tab.active,.gf-tab:hover{color:var(--gold);border-bottom-color:var(--gold)}
+@media(max-width:768px){
+  .preview-gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}
+  .pg-large{grid-column:span 2}
+}
+</style>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-XXXXXXXXXX');
+  </script>
+  <!-- Meta Pixel — replace 000000000000000 -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','000000000000000');fbq('track','PageView');
+  </script>
+</head>
+<body>
+
+<!-- Lightbox -->
+<div class="lb" id="lb">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img id="lbImg" src="" alt=""/>
+  <button class="lb-next" onclick="lbNav(1)">›</button>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/919890273861?text=Hi%2C%20I%27m%20interested%20in%20Optima%20Aspire%20at%20Ambegaon.%20Please%20share%20more%20details." class="wa" target="_blank" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="document.getElementById('mobMenu').classList.remove('open')">✕</button>
+  <a href="#overview" onclick="document.getElementById('mobMenu').classList.remove('open')">Overview</a>
+  <a href="#plans" onclick="document.getElementById('mobMenu').classList.remove('open')">Floor Plans</a>
+  <a href="#amenities" onclick="document.getElementById('mobMenu').classList.remove('open')">Amenities</a>
+  <a href="#pricing" onclick="document.getElementById('mobMenu').classList.remove('open')">Pricing</a>
+  <a href="#contact" onclick="document.getElementById('mobMenu').classList.remove('open')">Enquire</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo"><a href="index.html" target="_blank"><img src="data:image/png;base64,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" alt="Aspire Group"/></a></div>
+  <ul class="nav-links">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#plans">Floor Plans</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#nearby">Location</a></li>
+    <li><a href="#walkthrough">Walkthrough</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('open')"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="h-eyebrow"><span>Aspire Group · Ambegaon Budruk, Pune</span></div>
+    <h1 class="h-title"><em>Optima</em> Aspire</h1>
+    <p class="h-sub">Thoughtfully crafted 2 & 3 BHK residences in Ambegaon — where premium quality meets exceptional value, close to Katraj and Pune city.</p>
+    <div class="h-pills">
+      <span class="h-pill">MahaRERA: P52100047822</span>
+      <span class="h-pill">Possession Q2 2026</span>
+      <span class="h-pill">2 & 3 BHK Available</span>
+    </div>
+    <div class="h-actions">
+      <a href="#contact" class="btn-gold">Book Site Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#overview" class="btn-outline">Explore Project</a>
+      <a href="https://wa.me/919890273861?text=Hi%2C%20I%27m%20interested%20in%20Optima%20Aspire%2C%20Ambegaon" target="_blank" class="btn-wa">WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=85&auto=format" alt="Optima Aspire"/>
+  </div>
+  <div class="hero-price-card">
+    <div class="hpc-type">Optima Aspire</div>
+    <div class="hpc-price">₹72L</div>
+    <div class="hpc-range">Starting Price · 2 BHK</div>
+    <div style="width:100%;height:1px;background:var(--border);margin:.75rem 0"></div>
+    <div class="hpc-type">Optima Aspire Plus</div>
+    <div class="hpc-price" style="font-size:1.6rem">₹95L</div>
+    <div class="hpc-range">Starting Price · 2.5 BHK</div>
+  </div>
+</section>
+
+<!-- RERA BAR -->
+<div class="rera-bar">
+  <div class="rera-item"><strong>RERA No:</strong> P52100047822</div>
+  <div class="rera-item"><strong>MahaRERA Valid Until:</strong> June 2026</div>
+  <div class="rera-item"><strong>Promoter:</strong> Aspire Group</div>
+  <div class="rera-item"><strong>Location:</strong> Ambegaon Budruk, Pune — 411 041</div>
+  <div class="rera-item" style="color:var(--gold)">✓ All Statutory Approvals in Place</div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">Optima Aspire – Ambegaon<span class="marquee-dot"></span></span>
+    <span class="marquee-item">2 &amp; 3 BHK Residences<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Starting ₹72 Lakhs<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Infinity Pool · Clubhouse · Gardens<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Optima Plus from ₹95 Lakhs<span class="marquee-dot"></span></span>
+    <span class="marquee-item">MahaRERA Registered<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Possession Q2 2026<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Aspire Group · Pune<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Optima Aspire – Ambegaon<span class="marquee-dot"></span></span>
+    <span class="marquee-item">2 &amp; 3 BHK Residences<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Starting ₹72 Lakhs<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Infinity Pool · Clubhouse · Gardens<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Optima Plus from ₹95 Lakhs<span class="marquee-dot"></span></span>
+    <span class="marquee-item">MahaRERA Registered<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Possession Q2 2026<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Aspire Group · Pune<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="sec" id="overview">
+  <div class="ov-grid">
+    <div class="reveal-l">
+      <div class="sec-label"><span>Project Overview</span></div>
+      <h2 class="sec-title">Aspirational Living in<br><em>Ambegaon</em></h2>
+      <div class="gold-line"></div>
+      <p style="font-size:.9rem;color:var(--txt2);line-height:1.9;margin-bottom:1.25rem">Optima – Aspire is a premium residential development positioned at Survey No. 28/1/6 in the tranquil yet well-connected neighbourhood of Ambegaon Budruk. The project offers 2 &amp; 3 BHK homes with contemporary architecture, superior construction quality, and an enviable lifestyle package — all at prices that deliver extraordinary value.</p>
+      <p style="font-size:.9rem;color:var(--txt2);line-height:1.9;margin-bottom:2rem">The adjacent <strong style="color:var(--warm)">Optima – Aspire Plus</strong> phase offers larger 2.5 &amp; 3 BHK premium configurations at Survey No. 28/9, sharing the same clubhouse, pool and amenity infrastructure — delivering more space and spec for discerning buyers.</p>
+      <div class="ov-specs">
+        <div class="ov-spec"><div class="ov-spec-lbl">Unit Types</div><div class="ov-spec-val">2 &amp; 3 BHK</div></div>
+        <div class="ov-spec"><div class="ov-spec-lbl">Total Area</div><div class="ov-spec-val">1,50,000 Sq. Ft.</div></div>
+        <div class="ov-spec"><div class="ov-spec-lbl">Towers</div><div class="ov-spec-val">3 Wings · G+14</div></div>
+        <div class="ov-spec"><div class="ov-spec-lbl">Possession</div><div class="ov-spec-val">Q2 2026</div></div>
+        <div class="ov-spec"><div class="ov-spec-lbl">Open Space</div><div class="ov-spec-val">35% Landscaped</div></div>
+        <div class="ov-spec"><div class="ov-spec-lbl">Clubhouse</div><div class="ov-spec-val">9,500 Sq. Ft.</div></div>
+      </div>
+      <a href="#contact" class="btn-gold">Schedule Site Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="reveal-r">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=85&auto=format" alt="Optima Aspire" style="width:100%;height:420px;object-fit:cover"/>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:2px">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=400&q=80&auto=format" alt="Interior" style="width:100%;height:150px;object-fit:cover"/>
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=400&q=80&auto=format" alt="Amenity" style="width:100%;height:150px;object-fit:cover"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPTIMA vs OPTIMA PLUS COMPARISON -->
+<section class="sec sec-alt">
+  <div class="reveal">
+    <div class="sec-label"><span>Two Great Options</span></div>
+    <h2 class="sec-title">Optima vs <em>Optima Plus</em></h2>
+    <div class="gold-line"></div>
+    <p style="font-size:.88rem;color:var(--txt2);max-width:520px">Choose the configuration that perfectly matches your lifestyle and budget.</p>
+  </div>
+  <div class="compare-grid reveal">
+    <div class="compare-card">
+      <div class="cc-head">Optima – Aspire</div>
+      <div class="cc-sub">Survey No. 28/1/6, Ambegaon Budruk</div>
+      <div class="cc-price">₹72 – 90L</div>
+      <div class="cc-type">2 &amp; 3 BHK · All-Inclusive*</div>
+      <div class="cc-items">
+        <div class="cc-item">2 BHK: 680 – 740 sq.ft. carpet</div>
+        <div class="cc-item">3 BHK: 950 – 1,080 sq.ft. carpet</div>
+        <div class="cc-item">Premium vitrified tile flooring</div>
+        <div class="cc-item">Modular kitchen provisions</div>
+        <div class="cc-item">2 attached bathrooms (3 BHK)</div>
+        <div class="cc-item">RERA: P52100047822</div>
+        <div class="cc-item">Possession: Q2 2026</div>
+      </div>
+    </div>
+    <div class="compare-card featured">
+      <div class="cc-head">Optima – Aspire Plus</div>
+      <div class="cc-sub">Survey No. 28/9, Ambegaon Budruk</div>
+      <div class="cc-price">₹95L – 1.3Cr</div>
+      <div class="cc-type">2.5 &amp; 3 BHK · All-Inclusive*</div>
+      <div class="cc-items">
+        <div class="cc-item">2.5 BHK: 850 – 950 sq.ft. carpet</div>
+        <div class="cc-item">3 BHK: 1,100 – 1,320 sq.ft. carpet</div>
+        <div class="cc-item">Italian marble flooring options</div>
+        <div class="cc-item">Designer modular kitchen</div>
+        <div class="cc-item">Jacuzzi provision in master bath</div>
+        <div class="cc-item">RERA: P52100047822</div>
+        <div class="cc-item">Possession: Q3 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section class="sec" id="plans">
+  <div class="reveal" style="margin-bottom:2.5rem">
+    <div class="sec-label"><span>Floor Plans</span></div>
+    <h2 class="sec-title">Designed for<br><em>How You Live</em></h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="plans-tabs">
+    <button class="plan-tab active" onclick="switchPlan('2bhk',this)">2 BHK</button>
+    <button class="plan-tab" onclick="switchPlan('3bhk',this)">3 BHK</button>
+    <button class="plan-tab" onclick="switchPlan('2_5bhk',this)">2.5 BHK Plus</button>
+    <button class="plan-tab" onclick="switchPlan('3bhk_plus',this)">3 BHK Plus</button>
+  </div>
+  <!-- 2 BHK -->
+  <div class="plan-pane active" id="plan-2bhk">
+    <div>
+      <div class="plan-visual">
+        <svg class="plan-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="320" height="320" fill="#181620"/>
+          <rect x="10" y="10" width="300" height="300" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-dasharray="4,3" opacity=".3"/>
+          <rect x="20" y="20" width="145" height="130" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="92" y="83" fill="#c9a96e" text-anchor="middle" font-size="11" font-family="Jost">Master Bedroom</text>
+          <text x="92" y="98" fill="#8b6a35" text-anchor="middle" font-size="9" font-family="Jost">12.5 × 11 ft</text>
+          <rect x="170" y="20" width="130" height="130" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="235" y="83" fill="#c9a96e" text-anchor="middle" font-size="11" font-family="Jost">Living + Dining</text>
+          <text x="235" y="98" fill="#8b6a35" text-anchor="middle" font-size="9" font-family="Jost">13 × 14 ft</text>
+          <rect x="20" y="155" width="130" height="125" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="85" y="215" fill="#c9a96e" text-anchor="middle" font-size="11" font-family="Jost">Bedroom 2</text>
+          <text x="85" y="229" fill="#8b6a35" text-anchor="middle" font-size="9" font-family="Jost">10.5 × 10 ft</text>
+          <rect x="155" y="155" width="145" height="70" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="227" y="192" fill="#c9a96e" text-anchor="middle" font-size="11" font-family="Jost">Kitchen</text>
+          <text x="227" y="207" fill="#8b6a35" text-anchor="middle" font-size="9" font-family="Jost">11 × 8.5 ft</text>
+          <rect x="155" y="230" width="70" height="50" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="190" y="257" fill="#c9a96e" text-anchor="middle" font-size="9" font-family="Jost">Bath 1</text>
+          <rect x="230" y="230" width="70" height="50" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="265" y="257" fill="#c9a96e" text-anchor="middle" font-size="9" font-family="Jost">Bath 2</text>
+          <text x="295" y="18" fill="#c9a96e" font-size="10" font-family="Jost" text-anchor="middle">N↑</text>
+          <text x="62" y="15" fill="#9590a0" font-size="9" font-family="Jost">OPTIMA — 2 BHK</text>
+        </svg>
+      </div>
+    </div>
+    <div class="plan-details">
+      <div class="plan-price">₹72–82L</div>
+      <div class="plan-price-lbl">All Inclusive · GST Extra</div>
+      <div class="plan-specs">
+        <div class="plan-spec-row"><span>Carpet Area</span><span>680 – 740 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Built-Up Area</span><span>880 – 950 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Super Built-Up</span><span>1,020 – 1,100 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Floor</span><span>2nd to 14th</span></div>
+        <div class="plan-spec-row"><span>Bathrooms</span><span>2 Attached</span></div>
+        <div class="plan-spec-row"><span>Balcony</span><span>2 (Living + Bedroom)</span></div>
+        <div class="plan-spec-row"><span>Units Available</span><span>22 of 96</span></div>
+      </div>
+      <a href="#contact" class="btn-gold" style="width:100%;justify-content:center;margin-bottom:1rem">Enquire About 2 BHK</a>
+      <a href="https://wa.me/919890273861?text=I%20am%20interested%20in%202%20BHK%20at%20Optima%20Aspire%2C%20Ambegaon" target="_blank" class="btn-wa" style="width:100%;justify-content:center">WhatsApp for Details</a>
+    </div>
+  </div>
+  <!-- 3 BHK -->
+  <div class="plan-pane" id="plan-3bhk">
+    <div>
+      <div class="plan-visual">
+        <svg class="plan-svg" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+          <rect width="340" height="340" fill="#181620"/>
+          <rect x="10" y="10" width="320" height="320" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-dasharray="4,3" opacity=".3"/>
+          <rect x="20" y="20" width="150" height="130" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="95" y="83" fill="#c9a96e" text-anchor="middle" font-size="10" font-family="Jost">Master Bedroom</text>
+          <text x="95" y="97" fill="#8b6a35" text-anchor="middle" font-size="8.5" font-family="Jost">13 × 12 ft</text>
+          <rect x="175" y="20" width="145" height="130" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="247" y="83" fill="#c9a96e" text-anchor="middle" font-size="10" font-family="Jost">Living + Dining</text>
+          <text x="247" y="97" fill="#8b6a35" text-anchor="middle" font-size="8.5" font-family="Jost">14 × 16 ft</text>
+          <rect x="20" y="155" width="135" height="115" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="87" y="210" fill="#c9a96e" text-anchor="middle" font-size="10" font-family="Jost">Bedroom 2</text>
+          <text x="87" y="224" fill="#8b6a35" text-anchor="middle" font-size="8.5" font-family="Jost">11 × 10 ft</text>
+          <rect x="20" y="275" width="135" height="50" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="87" y="302" fill="#c9a96e" text-anchor="middle" font-size="10" font-family="Jost">Bedroom 3</text>
+          <rect x="160" y="155" width="160" height="80" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="240" y="196" fill="#c9a96e" text-anchor="middle" font-size="10" font-family="Jost">Kitchen + Utility</text>
+          <rect x="160" y="240" width="75" height="85" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="197" y="284" fill="#c9a96e" text-anchor="middle" font-size="9" font-family="Jost">Bath 1</text>
+          <rect x="245" y="240" width="75" height="85" fill="#0f0d17" stroke="#c9a96e" stroke-width="1"/>
+          <text x="282" y="284" fill="#c9a96e" text-anchor="middle" font-size="9" font-family="Jost">Bath 2</text>
+          <text x="315" y="18" fill="#c9a96e" font-size="10" font-family="Jost" text-anchor="middle">N↑</text>
+          <text x="62" y="15" fill="#9590a0" font-size="9" font-family="Jost">OPTIMA — 3 BHK</text>
+        </svg>
+      </div>
+    </div>
+    <div class="plan-details">
+      <div class="plan-price">₹82–90L</div>
+      <div class="plan-price-lbl">All Inclusive · GST Extra</div>
+      <div class="plan-specs">
+        <div class="plan-spec-row"><span>Carpet Area</span><span>950 – 1,080 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Built-Up Area</span><span>1,220 – 1,380 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Super Built-Up</span><span>1,420 – 1,600 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Bathrooms</span><span>3 Attached</span></div>
+        <div class="plan-spec-row"><span>Balcony</span><span>2 Balconies</span></div>
+        <div class="plan-spec-row"><span>Units Available</span><span>16 of 80</span></div>
+      </div>
+      <a href="#contact" class="btn-gold" style="width:100%;justify-content:center;margin-bottom:1rem">Enquire About 3 BHK</a>
+      <a href="https://wa.me/919890273861?text=I%20am%20interested%20in%203%20BHK%20at%20Optima%20Aspire%2C%20Ambegaon" target="_blank" class="btn-wa" style="width:100%;justify-content:center">WhatsApp for Details</a>
+    </div>
+  </div>
+  <!-- 2.5 BHK Plus -->
+  <div class="plan-pane" id="plan-2_5bhk">
+    <div>
+      <div class="plan-visual" style="background:linear-gradient(135deg,#1a1224,#181620)">
+        <div style="text-align:center;padding:2rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.5rem;text-transform:uppercase">Optima Aspire Plus</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(201,169,110,.15);line-height:1;margin-bottom:1rem">2.5 BHK</div>
+          <div style="font-size:.75rem;color:var(--txt2);line-height:1.9">850 – 950 sq.ft. Carpet<br>3 Bedrooms + Study Nook<br>Italian Marble Flooring<br>Designer Modular Kitchen<br>Jacuzzi Provision in Master Bath</div>
+          <div style="width:40px;height:1px;background:var(--gold);margin:1.25rem auto"></div>
+          <div style="font-size:.72rem;color:var(--txt3)">Detailed plan available on<br>brochure or site visit request</div>
+        </div>
+      </div>
+    </div>
+    <div class="plan-details">
+      <div class="plan-price">₹95L–1.1Cr</div>
+      <div class="plan-price-lbl">Optima Plus · GST Extra</div>
+      <div class="plan-specs">
+        <div class="plan-spec-row"><span>Carpet Area</span><span>850 – 950 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Built-Up Area</span><span>1,090 – 1,215 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Flooring</span><span>Italian Marble Options</span></div>
+        <div class="plan-spec-row"><span>Kitchen</span><span>Designer Modular</span></div>
+        <div class="plan-spec-row"><span>Master Bath</span><span>Jacuzzi Provision</span></div>
+        <div class="plan-spec-row"><span>Units Available</span><span>Limited — 14 of 60</span></div>
+      </div>
+      <a href="#contact" class="btn-gold" style="width:100%;justify-content:center;margin-bottom:1rem">Enquire — Optima Plus 2.5 BHK</a>
+      <a href="https://wa.me/919890273861?text=I%20am%20interested%20in%202.5%20BHK%20at%20Optima%20Aspire%20Plus%2C%20Ambegaon" target="_blank" class="btn-wa" style="width:100%;justify-content:center">WhatsApp for Plus Details</a>
+    </div>
+  </div>
+  <!-- 3 BHK Plus -->
+  <div class="plan-pane" id="plan-3bhk_plus">
+    <div>
+      <div class="plan-visual" style="background:linear-gradient(135deg,#1a1224,#181620)">
+        <div style="text-align:center;padding:2rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.5rem;text-transform:uppercase">Optima Aspire Plus</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(201,169,110,.15);line-height:1;margin-bottom:1rem">3 BHK</div>
+          <div style="font-size:.75rem;color:var(--txt2);line-height:1.9">1,100 – 1,320 sq.ft. Carpet<br>3 Bedrooms + Study Room<br>Italian Marble Flooring<br>3 Attached Baths<br>2 Balconies + Master Sit-out</div>
+          <div style="width:40px;height:1px;background:var(--gold);margin:1.25rem auto"></div>
+          <div style="font-size:.72rem;color:var(--txt3)">Detailed plan on brochure<br>or site visit request</div>
+        </div>
+      </div>
+    </div>
+    <div class="plan-details">
+      <div class="plan-price">₹1.1–1.3Cr</div>
+      <div class="plan-price-lbl">Optima Plus · GST Extra</div>
+      <div class="plan-specs">
+        <div class="plan-spec-row"><span>Carpet Area</span><span>1,100 – 1,320 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Built-Up Area</span><span>1,400 – 1,680 sq.ft.</span></div>
+        <div class="plan-spec-row"><span>Flooring</span><span>Italian Marble</span></div>
+        <div class="plan-spec-row"><span>Special</span><span>Study Room + Master Sit-out</span></div>
+        <div class="plan-spec-row"><span>Units Available</span><span>Very Limited — 8 of 40</span></div>
+      </div>
+      <a href="#contact" class="btn-gold" style="width:100%;justify-content:center;margin-bottom:1rem">Enquire — Optima Plus 3 BHK</a>
+      <a href="https://wa.me/919890273861?text=I%20am%20interested%20in%203%20BHK%20Plus%20at%20Optima%20Aspire%20Plus%2C%20Ambegaon" target="_blank" class="btn-wa" style="width:100%;justify-content:center">WhatsApp for Plus Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="sec sec-alt" id="amenities">
+  <div class="reveal" style="margin-bottom:3rem">
+    <div class="sec-label"><span>Amenities &amp; Features</span></div>
+    <h2 class="sec-title">A Life of <em>Comfort</em><br>and Convenience</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="amen-grid reveal">
+    <div class="amen-card"><div class="amen-icon">🏊</div><div class="amen-name">Infinity Pool</div></div>
+    <div class="amen-card"><div class="amen-icon">🏋️</div><div class="amen-name">Gymnasium</div></div>
+    <div class="amen-card"><div class="amen-icon">🌿</div><div class="amen-name">Podium Gardens</div></div>
+    <div class="amen-card"><div class="amen-icon">🎉</div><div class="amen-name">Multipurpose Hall</div></div>
+    <div class="amen-card"><div class="amen-icon">👶</div><div class="amen-name">Children's Play</div></div>
+    <div class="amen-card"><div class="amen-icon">🔒</div><div class="amen-name">Intercom + CCTV</div></div>
+    <div class="amen-card"><div class="amen-icon">🚗</div><div class="amen-name">Stilt + Open Parking</div></div>
+    <div class="amen-card"><div class="amen-icon">⚡</div><div class="amen-name">Power Backup</div></div>
+    <div class="amen-card"><div class="amen-icon">🧘</div><div class="amen-name">Yoga Lawn</div></div>
+    <div class="amen-card"><div class="amen-icon">🌱</div><div class="amen-name">Rainwater Harvest</div></div>
+    <div class="amen-card"><div class="amen-icon">🏃</div><div class="amen-name">Walking Track</div></div>
+    <div class="amen-card"><div class="amen-icon">📚</div><div class="amen-name">Reading Corner</div></div>
+    <div class="amen-card"><div class="amen-icon">♟️</div><div class="amen-name">Indoor Games</div></div>
+    <div class="amen-card"><div class="amen-icon">🔋</div><div class="amen-name">EV Charging</div></div>
+    <div class="amen-card"><div class="amen-icon">🌊</div><div class="amen-name">Water Purification</div></div>
+    <div class="amen-card"><div class="amen-icon">🛡️</div><div class="amen-name">24×7 Security</div></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1.25rem">
+    <div>
+      <div class="sec-label"><span>Project Gallery</span></div>
+      <h2 class="sec-title">See Optima Aspire<br><em>in Detail</em></h2>
+      <div class="gold-line"></div>
+    </div>
+    <a href="optima-gallery.html" target="_blank" class="btn-outline" style="display:inline-flex;align-items:center;gap:.65rem;white-space:nowrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      View All 24 Photos
+    </a>
+  </div>
+  <div class="preview-gallery">
+    <div class="pg-large" onclick="openLb(0)">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format" alt="Building Exterior"/>
+      <div class="pg-over"><div class="pg-label">Exterior</div><div class="pg-zoom">⊕</div></div>
+    </div>
+    <div class="pg-large" onclick="openLb(4)">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=900&q=85&auto=format" alt="Living Room"/>
+      <div class="pg-over"><div class="pg-label">Living Room</div><div class="pg-zoom">⊕</div></div>
+    </div>
+    <div class="pg-small" onclick="openLb(12)">
+      <img src="https://images.unsplash.com/photo-1535813547-99c456a41d4a?w=600&q=80&auto=format" alt="Pool"/>
+      <div class="pg-over"><div class="pg-label">Infinity Pool</div><div class="pg-zoom">⊕</div></div>
+    </div>
+    <div class="pg-small" onclick="openLb(5)">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&auto=format" alt="Kitchen"/>
+      <div class="pg-over"><div class="pg-label">Kitchen</div><div class="pg-zoom">⊕</div></div>
+    </div>
+    <div class="pg-small" onclick="openLb(6)">
+      <img src="https://images.unsplash.com/photo-1631048835658-c8d8e31e73e0?w=600&q=80&auto=format" alt="Bedroom"/>
+      <div class="pg-over"><div class="pg-label">Master Bedroom</div><div class="pg-zoom">⊕</div></div>
+    </div>
+    <div class="pg-small pg-more" onclick="window.open('optima-gallery.html','_blank')">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80&auto=format" alt="Gymnasium"/>
+      <div class="pg-more-over">
+        <div class="pg-more-n">+18</div>
+        <div class="pg-more-l">More Photos</div>
+        <div class="pg-more-btn">View All Gallery ↗</div>
+      </div>
+    </div>
+  </div>
+  <div class="gal-filter-row">
+    <button class="gf-tab active" onclick="window.open('optima-gallery.html#exterior','_blank')">Exterior</button>
+    <button class="gf-tab" onclick="window.open('optima-gallery.html#interior','_blank')">Interiors</button>
+    <button class="gf-tab" onclick="window.open('optima-gallery.html#amenity','_blank')">Amenities</button>
+    <button class="gf-tab" onclick="window.open('optima-gallery.html#construction','_blank')">Construction</button>
+    <button class="gf-tab" onclick="window.open('optima-gallery.html#location','_blank')">Location</button>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec" id="pricing">
+  <div class="reveal" style="margin-bottom:3rem">
+    <div class="sec-label"><span>Pricing & Configuration</span></div>
+    <h2 class="sec-title">Transparent<br><em>Pricing</em></h2>
+    <div class="gold-line"></div>
+    <p style="font-size:.88rem;color:var(--txt2);max-width:480px;line-height:1.9">All prices are indicative and inclusive of base cost, one parking and club membership. Contact our team for current offers, floor-wise pricing and home loan assistance.</p>
+  </div>
+
+  <!-- 2 BHK ROW: floor plan left, pricing card right -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px" class="reveal">
+    <!-- floor plan panel -->
+    <div style="background:var(--slate);border:1px solid var(--border);padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;min-height:420px">
+      <div>
+        <div style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Floor Plan</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--warm);margin-bottom:1.5rem">2 BHK — Type B</div>
+        <!-- SVG Floor Plan -->
+        <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;display:block;margin:0 auto">
+          <rect width="300" height="260" fill="#111"/>
+          <!-- outer boundary -->
+          <rect x="8" y="8" width="284" height="244" fill="none" stroke="#c9a96e" stroke-width="1.5"/>
+          <!-- Master Bedroom -->
+          <rect x="8" y="8" width="130" height="115" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+          <text x="73" y="60" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Master Bedroom</text>
+          <text x="73" y="76" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">12.5 × 11 ft</text>
+          <!-- Living + Dining -->
+          <rect x="142" y="8" width="150" height="115" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+          <text x="217" y="60" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Living + Dining</text>
+          <text x="217" y="76" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">13 × 14 ft</text>
+          <!-- Bedroom 2 -->
+          <rect x="8" y="127" width="118" height="125" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+          <text x="67" y="186" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Bedroom 2</text>
+          <text x="67" y="202" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">10.5 × 10 ft</text>
+          <!-- Kitchen -->
+          <rect x="130" y="127" width="162" height="70" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+          <text x="211" y="162" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Kitchen</text>
+          <text x="211" y="176" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">11 × 8 ft</text>
+          <!-- Bath 1 -->
+          <rect x="130" y="201" width="75" height="51" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+          <text x="167" y="228" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="9">Bath 1</text>
+          <!-- Bath 2 -->
+          <rect x="217" y="201" width="75" height="51" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+          <text x="254" y="228" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="9">Bath 2</text>
+          <!-- Compass -->
+          <text x="286" y="20" fill="#c9a96e" font-family="Jost,sans-serif" font-size="9" text-anchor="middle">N↑</text>
+          <!-- Balcony indicators -->
+          <rect x="8" y="123" width="130" height="4" fill="rgba(201,169,110,.2)" stroke="#c9a96e" stroke-width=".5" stroke-dasharray="3,2"/>
+          <text x="45" y="122" fill="#8b6a35" font-family="Jost,sans-serif" font-size="7">Balcony →</text>
+        </svg>
+      </div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="#contact" class="btn-gold" style="font-size:.7rem;padding:.75rem 1.5rem">Enquire 2 BHK</a>
+        <a href="https://wa.me/919890273861?text=2+BHK+Optima+Aspire+Ambegaon+details" target="_blank" class="btn-wa" style="font-size:.7rem;padding:.75rem 1.5rem">WhatsApp</a>
+      </div>
+    </div>
+    <!-- 2 BHK pricing card -->
+    <div style="background:var(--slate);border:1px solid var(--border);padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;min-height:420px">
+      <div>
+        <div style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Optima Aspire</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--warm);margin-bottom:.25rem">2 BHK</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);line-height:1;margin:.75rem 0 .2rem">₹72–82L</div>
+        <div style="font-size:.7rem;color:var(--txt2);margin-bottom:1.75rem;letter-spacing:.05em">All Inclusive · GST Extra</div>
+        <div style="display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem">
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Carpet Area</span><span style="color:var(--warm)">680 – 740 sq.ft.</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Bathrooms</span><span style="color:var(--warm)">2 Attached</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Balconies</span><span style="color:var(--warm)">2 (Living + Bedroom)</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Parking</span><span style="color:var(--warm)">1 Covered</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Flooring</span><span style="color:var(--warm)">Premium Vitrified</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;font-size:.8rem"><span style="color:var(--txt2)">Units Available</span><span style="color:var(--gold)">22 of 96 Remaining</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 BHK ROW: pricing card left, floor plan right -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:3px" class="reveal">
+    <!-- 3 BHK pricing card -->
+    <div style="background:var(--charcoal);border:1px solid var(--gold);padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;min-height:420px;position:relative">
+      <div style="position:absolute;top:-1px;right:1.75rem;padding:.22rem .7rem;background:var(--gold);color:var(--bg);font-size:.52rem;letter-spacing:.2em;font-weight:600;text-transform:uppercase">POPULAR</div>
+      <div>
+        <div style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Optima Aspire</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--warm);margin-bottom:.25rem">3 BHK</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);line-height:1;margin:.75rem 0 .2rem">₹82–90L</div>
+        <div style="font-size:.7rem;color:var(--txt2);margin-bottom:1.75rem;letter-spacing:.05em">All Inclusive · GST Extra</div>
+        <div style="display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem">
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Carpet Area</span><span style="color:var(--warm)">950 – 1,080 sq.ft.</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Bathrooms</span><span style="color:var(--warm)">3 Attached + Utility</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Balconies</span><span style="color:var(--warm)">2 Balconies</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Parking</span><span style="color:var(--warm)">2 Covered</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.8rem"><span style="color:var(--txt2)">Flooring</span><span style="color:var(--warm)">Premium Vitrified</span></div>
+          <div style="display:flex;justify-content:space-between;padding:.6rem 0;font-size:.8rem"><span style="color:var(--txt2)">Units Available</span><span style="color:var(--gold)">16 of 80 Remaining</span></div>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+          <a href="#contact" class="btn-gold" style="font-size:.7rem;padding:.75rem 1.5rem">Enquire 3 BHK</a>
+          <a href="https://wa.me/919890273861?text=3+BHK+Optima+Aspire+Ambegaon+details" target="_blank" class="btn-wa" style="font-size:.7rem;padding:.75rem 1.5rem">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <!-- 3 BHK floor plan -->
+    <div style="background:var(--slate);border:1px solid var(--border);padding:2.5rem">
+      <div style="font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Floor Plan</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--warm);margin-bottom:1.5rem">3 BHK — Type C</div>
+      <svg viewBox="0 0 300 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;display:block;margin:0 auto">
+        <rect width="300" height="290" fill="#111"/>
+        <rect x="8" y="8" width="284" height="274" fill="none" stroke="#c9a96e" stroke-width="1.5"/>
+        <!-- Master Bedroom -->
+        <rect x="8" y="8" width="140" height="120" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+        <text x="78" y="64" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Master Bedroom</text>
+        <text x="78" y="79" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">13 × 12 ft</text>
+        <!-- Living + Dining -->
+        <rect x="152" y="8" width="140" height="120" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+        <text x="222" y="64" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Living + Dining</text>
+        <text x="222" y="79" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">14 × 15 ft</text>
+        <!-- Bedroom 2 -->
+        <rect x="8" y="132" width="130" height="110" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+        <text x="73" y="184" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Bedroom 2</text>
+        <text x="73" y="199" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">11 × 10 ft</text>
+        <!-- Bedroom 3 -->
+        <rect x="8" y="246" width="130" height="36" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+        <text x="73" y="267" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="9.5">Bedroom 3 · 10×10 ft</text>
+        <!-- Kitchen -->
+        <rect x="142" y="132" width="150" height="75" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+        <text x="217" y="168" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="10">Kitchen + Store</text>
+        <text x="217" y="183" fill="#8b6a35" text-anchor="middle" font-family="Jost,sans-serif" font-size="8.5">12 × 9 ft</text>
+        <!-- Baths -->
+        <rect x="142" y="211" width="72" height="71" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+        <text x="178" y="249" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="9">Bath 1</text>
+        <rect x="220" y="211" width="72" height="71" fill="#161616" stroke="#c9a96e" stroke-width="1"/>
+        <text x="256" y="249" fill="#c9a96e" text-anchor="middle" font-family="Jost,sans-serif" font-size="9">Bath 2</text>
+        <text x="286" y="20" fill="#c9a96e" font-family="Jost,sans-serif" font-size="9" text-anchor="middle">N↑</text>
+        <text x="60" y="16" fill="#555" font-family="Jost,sans-serif" font-size="8">OPTIMA — 3 BHK</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Plus variants strip -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px" class="reveal">
+    <div style="background:linear-gradient(135deg,rgba(201,169,110,.06),rgba(139,106,53,.04));border:1px solid var(--border);padding:2rem;display:flex;align-items:center;gap:2rem">
+      <div>
+        <div style="font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem">Optima Plus</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--warm)">2.5 BHK</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);margin:.3rem 0">₹95L–1.1Cr</div>
+        <div style="font-size:.75rem;color:var(--txt2);line-height:1.8;margin-bottom:1rem">850–950 sq.ft. carpet · Italian Marble · Designer Kitchen · Jacuzzi Provision</div>
+        <a href="#contact" class="btn-outline" style="font-size:.68rem;padding:.65rem 1.35rem">Enquire Plus 2.5 BHK</a>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(201,169,110,.08),rgba(139,106,53,.05));border:1px solid var(--border2);padding:2rem;display:flex;align-items:center;gap:2rem;position:relative">
+      <div style="position:absolute;top:-1px;right:1.5rem;padding:.22rem .7rem;background:var(--gold);color:var(--bg);font-size:.52rem;letter-spacing:.2em;font-weight:600;text-transform:uppercase">PREMIUM</div>
+      <div>
+        <div style="font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem">Optima Plus</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--warm)">3 BHK</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);margin:.3rem 0">₹1.1–1.3Cr</div>
+        <div style="font-size:.75rem;color:var(--txt2);line-height:1.8;margin-bottom:1rem">1,100–1,320 sq.ft. carpet · Italian Marble · Study Room · Master Sit-Out</div>
+        <a href="#contact" class="btn-outline" style="font-size:.68rem;padding:.65rem 1.35rem">Enquire Plus 3 BHK</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSTRUCTION PROGRESS -->
+<section class="sec" id="progress">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem">
+    <div class="reveal-l">
+      <div class="sec-label"><span>Construction Progress</span></div>
+      <h2 class="sec-title">Well Ahead of<br><em>Schedule</em></h2>
+      <div class="gold-line"></div>
+      <p style="font-size:.88rem;color:var(--txt2);margin-bottom:2.5rem">As of May 2025. Optima Aspire is ahead of schedule with all 3 wings reaching the 12th floor slab.</p>
+      <div id="progBars">
+        <div class="prog-item"><div class="prog-label"><span>Foundation &amp; Structure</span><span>100%</span></div><div class="prog-bar"><div class="prog-fill" data-w="100"></div></div></div>
+        <div class="prog-item"><div class="prog-label"><span>Wing A — Slab Work</span><span>90%</span></div><div class="prog-bar"><div class="prog-fill" data-w="90"></div></div></div>
+        <div class="prog-item"><div class="prog-label"><span>Wing B — Slab Work</span><span>85%</span></div><div class="prog-bar"><div class="prog-fill" data-w="85"></div></div></div>
+        <div class="prog-item"><div class="prog-label"><span>Wing C — Slab Work</span><span>78%</span></div><div class="prog-bar"><div class="prog-fill" data-w="78"></div></div></div>
+        <div class="prog-item"><div class="prog-label"><span>Brickwork &amp; Plastering</span><span>55%</span></div><div class="prog-bar"><div class="prog-fill" data-w="55"></div></div></div>
+        <div class="prog-item"><div class="prog-label"><span>Optima Plus — Structure</span><span>62%</span></div><div class="prog-bar"><div class="prog-fill" data-w="62"></div></div></div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80&auto=format" alt="Construction Progress" style="width:100%;height:380px;object-fit:cover;margin-bottom:2px"/>
+      <div style="padding:1.5rem;border:1px solid var(--border);background:var(--slate)">
+        <div style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem">Key Milestones</div>
+        <div style="display:flex;flex-direction:column;gap:.55rem">
+          <div style="display:flex;justify-content:space-between;font-size:.8rem"><span style="color:var(--txt2)">Foundation to Plinth</span><span style="color:#4ade80">✓ Aug 2024</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.8rem"><span style="color:var(--txt2)">All Wings to 8F Slab</span><span style="color:#4ade80">✓ Feb 2025</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.8rem"><span style="color:var(--txt2)">All Wings to Terrace</span><span style="color:var(--gold)">Oct 2025</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.8rem"><span style="color:var(--txt2)">Internal Finishing</span><span style="color:var(--gold)">Q1 2026</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.8rem"><span style="color:var(--txt2)">Possession — Optima</span><span style="color:var(--gold)">Q2 2026</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:.8rem"><span style="color:var(--txt2)">Possession — Optima Plus</span><span style="color:var(--gold)">Q3 2026</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEARBY -->
+<section class="sec sec-alt" id="nearby">
+  <div class="nearby-grid">
+    <div class="reveal-l">
+      <div class="sec-label"><span>Location &amp; Connectivity</span></div>
+      <h2 class="sec-title">Connected to the<br><em>Best of Pune</em></h2>
+      <div class="gold-line"></div>
+      <div class="nearby-cat">
+        <div class="nc-head"><div class="nc-icon">🏥</div><div class="nc-title">Healthcare</div></div>
+        <div class="nc-items">
+          <div class="nc-item"><span class="nc-name">Aditya Birla Memorial Hospital</span><span class="nc-dist">4.2 km</span></div>
+          <div class="nc-item"><span class="nc-name">Sahyadri Hospital, Hadapsar</span><span class="nc-dist">5.1 km</span></div>
+          <div class="nc-item"><span class="nc-name">Katraj Hospital</span><span class="nc-dist">2.8 km</span></div>
+        </div>
+      </div>
+      <div class="nearby-cat">
+        <div class="nc-head"><div class="nc-icon">🎓</div><div class="nc-title">Education</div></div>
+        <div class="nc-items">
+          <div class="nc-item"><span class="nc-name">Ambegaon Vidyalay</span><span class="nc-dist">0.9 km</span></div>
+          <div class="nc-item"><span class="nc-name">MAEER's MIT College</span><span class="nc-dist">3.5 km</span></div>
+          <div class="nc-item"><span class="nc-name">DY Patil International School</span><span class="nc-dist">6.2 km</span></div>
+        </div>
+      </div>
+      <div class="nearby-cat">
+        <div class="nc-head"><div class="nc-icon">🚇</div><div class="nc-title">Connectivity</div></div>
+        <div class="nc-items">
+          <div class="nc-item"><span class="nc-name">Katraj Bus Depot</span><span class="nc-dist">2.4 km</span></div>
+          <div class="nc-item"><span class="nc-name">Swargate Bus Terminal</span><span class="nc-dist">7.8 km</span></div>
+          <div class="nc-item"><span class="nc-name">Pune Railway Station</span><span class="nc-dist">12 km</span></div>
+          <div class="nc-item"><span class="nc-name">Hinjewadi IT Park</span><span class="nc-dist">28 km</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div style="border:1px solid var(--border);overflow:hidden;margin-bottom:1.5rem">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.5!2d73.8456!3d18.4480!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2955f5ed46e77%3A0x94da32dc9fc45a62!2sAmbegaon%20Budruk%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000001" width="100%" height="320" style="border:0;filter:grayscale(1) contrast(.85);opacity:.75" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div style="padding:1.25rem;border:1px solid var(--border);background:var(--slate);text-align:center">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold)">15</div>
+          <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2)">min to Katraj</div>
+        </div>
+        <div style="padding:1.25rem;border:1px solid var(--border);background:var(--slate);text-align:center">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold)">22</div>
+          <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2)">min to Hadapsar</div>
+        </div>
+        <div style="padding:1.25rem;border:1px solid var(--border);background:var(--slate);text-align:center">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold)">28</div>
+          <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2)">min to Kothrud</div>
+        </div>
+        <div style="padding:1.25rem;border:1px solid var(--border);background:var(--slate);text-align:center">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold)">38</div>
+          <div style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--txt2)">min to Hinjewadi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="reveal" style="max-width:760px;margin:0 auto">
+    <div class="sec-label"><span>Frequently Asked Questions</span></div>
+    <h2 class="sec-title">Questions About<br><em>Optima Aspire</em></h2>
+    <div class="gold-line"></div>
+    <div style="margin-top:2.5rem">
+      <div class="accord-item">
+        <button class="accord-q" onclick="toggleAccord(this)"><span>What is the difference between Optima Aspire and Optima Aspire Plus?</span><span class="acc-arr">+</span></button>
+        <div class="accord-a"><p>Optima Aspire (Survey No. 28/1/6) offers 2 &amp; 3 BHK apartments starting ₹72 Lakhs with premium vitrified flooring, modular kitchen provisions and standard bathroom fittings. Optima Aspire Plus (Survey No. 28/9) offers larger 2.5 &amp; 3 BHK apartments starting ₹95 Lakhs with Italian marble flooring, designer modular kitchen, jacuzzi provision in master bath, and superior overall specifications. Both phases share the same clubhouse, infinity pool and amenity infrastructure.</p></div>
+      </div>
+      <div class="accord-item">
+        <button class="accord-q" onclick="toggleAccord(this)"><span>What are the possession timelines?</span><span class="acc-arr">+</span></button>
+        <div class="accord-a"><p>Optima Aspire is on track for possession in Q2 2026 (April–June 2026). Optima Aspire Plus is scheduled for Q3 2026 (July–September 2026). Construction is currently ahead of schedule — all wings have reached the 12th floor slab as of May 2025. Aspire Group has a 100% on-time delivery record across all past projects.</p></div>
+      </div>
+      <div class="accord-item">
+        <button class="accord-q" onclick="toggleAccord(this)"><span>Is the RERA registration in place?</span><span class="acc-arr">+</span></button>
+        <div class="accord-a"><p>Yes. Both Optima Aspire and Optima Aspire Plus are registered under MahaRERA with Registration No. P52100047822. All statutory approvals including Building Plan Approval, Pune Municipal Corporation NOC, Environmental Clearance, Fire NOC, and Tree Authority permission are in place. Details are publicly accessible on maharerait.mahaonline.gov.in.</p></div>
+      </div>
+      <div class="accord-item">
+        <button class="accord-q" onclick="toggleAccord(this)"><span>What payment plans are offered?</span><span class="acc-arr">+</span></button>
+        <div class="accord-a"><p>We offer 3 flexible payment plans for Optima Aspire: (1) Construction-Linked Plan — pay as construction progresses with fixed milestones. (2) Down-Payment Advantage Plan — pay 20% now and the balance at possession with attractive discounts. (3) Subvention Plan — select banks offer EMI moratorium until possession. Our team will explain each plan and advise the best option based on your financial situation. Home loans available from SBI, HDFC, ICICI, Axis, Kotak at competitive rates.</p></div>
+      </div>
+      <div class="accord-item">
+        <button class="accord-q" onclick="toggleAccord(this)"><span>How far is Optima Aspire from the Katraj highway?</span><span class="acc-arr">+</span></button>
+        <div class="accord-a"><p>Optima Aspire is located approximately 2.5 km from the Katraj–Dehu Road Bypass (NH-48), providing excellent connectivity to both Pune city (12 km) and the Pune–Bengaluru Highway for outstation travel. The NH-48 expansion project is expected to further reduce commute times. Swargate bus terminal is 7.8 km away and Pune Railway Station is 12 km.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ VIDEO WALKTHROUGH ══ -->
+<section class="vw-sec" id="walkthrough">
+  <div class="reveal">
+    <div class="sec-label"><span>Project Walkthrough</span></div>
+    <h2 class="sec-title">Experience Optima Aspire<br><em>Before You Visit</em></h2>
+    <div class="gold-line"></div>
+    <p style="font-size:.88rem;color:var(--txt2);max-width:500px;line-height:1.9;margin-bottom:0">Take a virtual tour through the apartments, amenities and the Ambegaon Budruk neighbourhood — from the comfort of your home.</p>
+  </div>
+  <div class="vw-grid">
+    <!-- Main featured video -->
+    <div class="reveal-l">
+      <div class="vw-main" onclick="openVideo('https://www.youtube.com/embed/AKOwBDP43L4?autoplay=1&rel=0&modestbranding=1','Optima Aspire — Full Project Walkthrough · 3:55')">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=85&auto=format" alt="Siddhi Optima Walkthrough"/>
+        <div class="vw-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="#c9a96e"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <span class="vw-main-lbl">▶ Full Project Tour</span>
+        <span class="vw-duration">4:32</span>
+      </div>
+      <div style="margin-top:1rem;padding:1.25rem;border:1px solid var(--border);background:var(--slate)">
+        <div style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">Featured</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--warm);margin-bottom:.3rem">Complete Project Walkthrough</div>
+        <div style="font-size:.8rem;color:var(--txt2)">Full tour of all BHK types, amenities, rooftop pool and construction progress at Optima Aspire, Ambegaon Budruk.</div>
+      </div>
+    </div>
+    <!-- Thumbnail list -->
+    <div class="vw-thumb-list reveal-r">
+      <div class="vw-thumb" onclick="openVideo('https://www.youtube.com/embed/JxblS5vl9zY?autoplay=1&rel=0&modestbranding=1','2 BHK Show Flat Tour · 2:15')">
+        <div class="vw-thumb-img">
+          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=300&q=80" alt="2 BHK Show Flat"/>
+          <div class="vw-thumb-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(201,169,110,.9)"><polygon points="5,3 19,12 5,21"/></svg></div>
+        </div>
+        <div class="vw-thumb-info">
+          <div class="vw-thumb-title">2 BHK Show Flat Tour</div>
+          <div class="vw-thumb-sub">Interiors, finishes & layout</div>
+          <div class="vw-thumb-dur">▶ 2:15</div>
+        </div>
+      </div>
+      <div class="vw-thumb" onclick="openVideo('https://www.youtube.com/embed/Rl4XSY2LdPU?autoplay=1&rel=0&modestbranding=1','Rooftop Pool & Clubhouse · 1:48')">
+        <div class="vw-thumb-img">
+          <img src="https://images.unsplash.com/photo-1631048835658-c8d8e31e73e0?w=300&q=80" alt="Amenities"/>
+          <div class="vw-thumb-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(201,169,110,.9)"><polygon points="5,3 19,12 5,21"/></svg></div>
+        </div>
+        <div class="vw-thumb-info">
+          <div class="vw-thumb-title">Rooftop Pool & Clubhouse</div>
+          <div class="vw-thumb-sub">World-class amenities tour</div>
+          <div class="vw-thumb-dur">▶ 1:48</div>
+        </div>
+      </div>
+      <div class="vw-thumb" onclick="openVideo('https://www.youtube.com/embed/PBQKxOW_jDo?autoplay=1&rel=0&modestbranding=1','Construction Progress Update · 3:05')">
+        <div class="vw-thumb-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300&q=80" alt="Construction"/>
+          <div class="vw-thumb-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(201,169,110,.9)"><polygon points="5,3 19,12 5,21"/></svg></div>
+        </div>
+        <div class="vw-thumb-info">
+          <div class="vw-thumb-title">Construction Progress — May 2025</div>
+          <div class="vw-thumb-sub">Site update across all 3 wings</div>
+          <div class="vw-thumb-dur">▶ 3:05</div>
+        </div>
+      </div>
+      <div class="vw-thumb" onclick="openVideo('https://www.youtube.com/embed/eRpvFuE-q-I?autoplay=1&rel=0&modestbranding=1','Ambegaon Neighbourhood Drive · 2:50')">
+        <div class="vw-thumb-img">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=300&q=80" alt="Location"/>
+          <div class="vw-thumb-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(201,169,110,.9)"><polygon points="5,3 19,12 5,21"/></svg></div>
+        </div>
+        <div class="vw-thumb-info">
+          <div class="vw-thumb-title">Ambegaon Neighbourhood Drive</div>
+          <div class="vw-thumb-sub">Connectivity, schools & hospitals</div>
+          <div class="vw-thumb-dur">▶ 2:50</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2.5rem;text-align:center" class="reveal">
+    <p style="font-size:.8rem;color:var(--txt3);margin-bottom:1rem">Want a live video call tour with our site team?</p>
+    <a href="https://wa.me/919890273861?text=I%20would%20like%20a%20live%20video%20call%20tour%20of%20Optima%20Aspire" target="_blank" class="btn-wa">Request Live Video Tour via WhatsApp</a>
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div class="vm-ov" id="videoModal">
+  <div class="vm-box">
+    <button class="vm-close" onclick="closeVideo()"><span style="font-size:1.1rem">✕</span> Close</button>
+    <iframe id="vmFrame" src="" frameborder="0" allow="autoplay;fullscreen" allowfullscreen></iframe>
+    <div class="vm-title-bar">
+      <span class="vm-ttl" id="vmTitle"></span>
+      <a href="https://wa.me/919890273861?text=I%20watched%20the%20walkthrough%20video%20for%20Optima%20Aspire%20and%20would%20like%20more%20details" target="_blank" class="vm-wa">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Enquire via WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- CONTACT -->
+<section class="sec sec-alt" id="contact">
+  <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:6rem">
+    <div class="reveal-l">
+      <div class="sec-label"><span>Project Enquiry</span></div>
+      <h2 class="sec-title">Enquire About<br><em>Optima Aspire</em></h2>
+      <div class="gold-line"></div>
+      <p style="font-size:.88rem;color:var(--txt2);line-height:1.9;margin-bottom:2rem">Our dedicated Optima Aspire sales team responds within 2 business hours. Site visits can be arranged 7 days a week, 10 AM – 6 PM.</p>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem">
+        <div style="display:flex;gap:1rem;align-items:center">
+          <div style="width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0">📞</div>
+          <div><div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem">Sales Office</div><a href="tel:+919890273861" style="font-size:.95rem;color:#ece8e0">+91 98902 73861</a></div>
+        </div>
+        <div style="display:flex;gap:1rem;align-items:center">
+          <div style="width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0">📍</div>
+          <div><div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem">Site Office</div><div style="font-size:.9rem;color:var(--txt2)">Survey No. 28/1/6, Ambegaon Budruk,<br>Pune — 411 041</div></div>
+        </div>
+      </div>
+      <a href="https://wa.me/919890273861?text=I%20would%20like%20to%20visit%20the%20Optima%20Aspire%20site%2C%20Ambegaon" target="_blank" class="btn-wa" style="width:100%;justify-content:center;margin-bottom:1rem">Schedule Visit via WhatsApp</a>
+      <a href="index.html" target="_blank" class="btn-outline" style="width:100%;justify-content:center">← Back to Aspire Group Website</a>
+    </div>
+    <div class="reveal-r">
+      <div style="padding:2.5rem;border:1px solid var(--border);background:var(--charcoal)">
+        <div style="font-size:.63rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;text-align:center">OPTIMA ASPIRE — ENQUIRY FORM</div>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Vikram"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Deshpande"/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="+91 99999 00000"/></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="vikram@email.com"/></div>
+        </div>
+        <div class="form-group">
+          <label>Interested Configuration</label>
+          <select>
+            <option>Optima — 2 BHK (₹72–82 Lakhs)</option>
+            <option>Optima — 3 BHK (₹82–90 Lakhs)</option>
+            <option>Optima Plus — 2.5 BHK (₹95L–1.1 Crore)</option>
+            <option>Optima Plus — 3 BHK (₹1.1–1.3 Crore)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Move-In Timeline</label>
+          <select>
+            <option>As soon as possible</option>
+            <option>Within 6 months</option>
+            <option>6 months to 1 year</option>
+            <option>1–2 years</option>
+            <option>Just Exploring</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Any Specific Questions</label><textarea placeholder="Preferred floor, facing, need home loan help, specific questions..."></textarea></div>
+        <button onclick="submitOptimaForm(this)" style="width:100%;padding:1.1rem;background:var(--gold);color:var(--bg);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border:none;cursor:pointer;font-family:'Jost',sans-serif">Submit Optima Enquiry</button>
+        <p style="font-size:.68rem;color:var(--txt3);margin-top:.75rem;text-align:center">This enquiry goes directly to the Optima Aspire sales team. Not shared with 3rd parties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-bar">
+    <a href="index.html" target="_blank"><img src="data:image/png;base64,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" alt="Aspire Group" style="height:48px;width:auto"/></a>
+    <div class="foot-links">
+      <a href="index.html" target="_blank">Main Website ↗</a>
+      <a href="aspire-siddhi.html" target="_blank">Siddhi Aspire ↗</a>
+      <a href="#contact">Enquire Now</a>
+      <a href="https://wa.me/919890273861" target="_blank">WhatsApp</a>
+    </div>
+    <a href="#contact" style="padding:.6rem 1.5rem;border:1px solid var(--gold);color:var(--gold);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase">Enquire Now</a>
+  </div>
+  <div class="foot-bottom">
+    <div class="foot-copy">© 2025 Aspire Group · Optima Aspire, Ambegaon Budruk, Pune</div>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <span class="rera-badge">MahaRERA: P52100047822</span>
+      <span class="foot-copy">Aspire Group, Baner, Pune — 411 045</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});
+});
+// Reveal
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('up'),i*90);obs.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+// Floor plan tabs
+function switchPlan(id,btn){
+  document.querySelectorAll('.plan-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.plan-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('plan-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+// Accordion
+function toggleAccord(btn){
+  const item=btn.closest('.accord-item');
+  const ans=item.querySelector('.accord-a');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.accord-item').forEach(i=>{i.classList.remove('open');i.querySelector('.accord-a').style.maxHeight='0';});
+  if(!isOpen){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+}
+// Progress bars
+const progObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.currentTarget.querySelectorAll('.prog-fill').forEach(bar=>{setTimeout(()=>bar.style.width=bar.dataset.w+'%',200);});
+      progObs.unobserve(e.currentTarget);
+    }
+  });
+},{threshold:.3});
+const progSec=document.getElementById('progBars');
+if(progSec)progObs.observe(progSec);
+// Lightbox
+const LB_IMGS=[
+  'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=90&auto=format',
+  'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=90&auto=format',
+  'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=90&auto=format',
+  'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=90&auto=format',
+  'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=90&auto=format'
+];
+let lbIdx=0;
+function openLb(i){lbIdx=i;document.getElementById('lbImg').src=LB_IMGS[i];document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+function lbNav(d){lbIdx=(lbIdx+d+LB_IMGS.length)%LB_IMGS.length;document.getElementById('lbImg').src=LB_IMGS[lbIdx];}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLb();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1);});
+
+// ── OPTIMA ASPIRE FORM SUBMISSION (Web3Forms)
+async function submitOptimaForm(btn){
+  const wrap = btn.closest('div');
+  const inputs = wrap.querySelectorAll('input,select,textarea');
+  let data = {
+    access_key: 'YOUR_WEB3FORMS_KEY',
+    subject: 'Optima Aspire Enquiry — New Lead',
+    from_name: 'Optima Aspire — Ambegaon',
+    project: 'Optima Aspire, Ambegaon Budruk'
+  };
+  inputs.forEach(el => {
+    const key = el.name || el.placeholder || 'field';
+    data[key] = el.value;
+  });
+  btn.textContent = 'Sending…'; btn.style.opacity = '.7'; btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (json.success) {
+      btn.textContent = '✓ Submitted — Our Team Will Call You Today';
+      btn.style.background = '#2d5a2d'; btn.style.opacity = '1';
+      if(window.gtag) gtag('event','form_submit',{event_category:'Enquiry',event_label:'Optima Aspire'});
+      if(window.fbq) fbq('track','Lead',{content_name:'Optima Aspire'});
+    } else {
+      btn.textContent = 'Submit Optima Enquiry'; btn.style.opacity = '1'; btn.disabled = false;
+      alert('Please try again or WhatsApp us at +91 98902 73861');
+    }
+  } catch(e) {
+    btn.textContent = 'Submit Optima Enquiry'; btn.style.opacity = '1'; btn.disabled = false;
+    alert('Network error. Please call +91 98902 73861.');
+  }
+}
+
+
+// ── VIDEO WALKTHROUGH
+function openVideo(url, title) {
+  document.getElementById('vmFrame').src = url;
+  document.getElementById('vmTitle').textContent = title;
+  document.getElementById('videoModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if(window.gtag) gtag('event','video_play',{event_category:'Walkthrough',event_label:title});
+}
+function closeVideo() {
+  document.getElementById('vmFrame').src = '';
+  document.getElementById('videoModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('videoModal')?.addEventListener('click', function(e){if(e.target===this)closeVideo();});
+
+</script>
+</body>
+</html>

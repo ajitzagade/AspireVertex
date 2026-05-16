@@ -16,6 +16,7 @@ export interface Photo {
   
   export interface FloorPlan {
     type: string          // "1 BHK", "2 BHK" etc
+    variant?: string      // "Type A", "Type B — Corner Unit", etc
     price: string
     carpetArea: string
     builtUpArea: string

@@ -1,7 +1,7 @@
 import { connectDB } from '@/lib/mongodb'
 import { ProjectModel } from '@/lib/models'
 import type { Project } from '@/types'
-import { SIDDHI_PROJECT, OPTIMA_PROJECT } from '@/data/seed'
+import { ALL_PROJECTS } from '@/data/seed'
 import ProjectPageClient from '@/components/sections/ProjectPageClient'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -16,8 +16,7 @@ async function getProject(slug: string): Promise<Project | null> {
     const p = await ProjectModel.findOne({ slug }).lean()
     return p ? JSON.parse(JSON.stringify(p)) : null
   } catch {
-    const seed = { 'siddhi-aspire': SIDDHI_PROJECT, 'optima-aspire': OPTIMA_PROJECT }
-    return (seed[slug as keyof typeof seed] as Project) || null
+    return (ALL_PROJECTS.find(p => p.slug === slug) as Project) || null
   }
 }
 

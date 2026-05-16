@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web && npx tsc --noEmit 2>&1 | head -60)",
+      "Bash(npx tsc:*)",
+      "Bash(grep -n \"ALL_PROJECTS\\\\|getProject\" /Users/priyanka/Desktop/Development/AspireGroup/apps/web/src/app/projects/[slug]/page.tsx)"
+    ]
+  }
+}

@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Aspire Group — Premium Real Estate Developers, Pune</title>
+<meta name="description" content="Aspire Group — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon &amp; Kondhwa. 825,000+ sq.ft. delivered."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- GA4: replace G-XXXXXXXXXX -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<style>
+/* ─────────────── RESET ─────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:#080808;color:#e8e2d8;font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:'Jost',sans-serif;cursor:pointer;border:none;background:none}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#080808}::-webkit-scrollbar-thumb{background:#8b6a35;border-radius:2px}
+
+/* ─────────────── TOKENS ─────────────── */
+:root{
+  --gold:#c9a96e;--gold-lt:#e8d5b0;--gold-dk:#8b6a35;
+  --bg:#080808;--ch:#111;--sl:#1a1a1a;--muted:#222;
+  --warm:#f5f0e8;--txt:#e8e2d8;--txt2:#888480;--txt3:#504c48;
+  --bdr:rgba(201,169,110,.14);--bdr2:rgba(201,169,110,.42);
+  --ease:cubic-bezier(.25,.46,.45,.94)
+}
+
+/* ─────────────── FADE-IN ANIMATION (CSS only, no JS needed) ─────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+.fade{animation:fadeUp .8s cubic-bezier(.16,1,.3,1) both}
+.fade-d1{animation-delay:.1s}
+.fade-d2{animation-delay:.2s}
+.fade-d3{animation-delay:.35s}
+.fade-d4{animation-delay:.5s}
+
+/* ─────────────── NAV ─────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:1.5rem 4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .4s var(--ease);
+  background:linear-gradient(to bottom,rgba(8,8,8,.7) 0%,transparent 100%);
+}
+#nav.scrolled{
+  background:rgba(8,8,8,.97);
+  backdrop-filter:blur(24px);
+  padding:1rem 4rem;
+  border-bottom:1px solid var(--bdr);
+}
+.nav-logo img{height:52px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-links a{
+  font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(232,226,216,.7);transition:color .3s;
+  position:relative;padding-bottom:3px;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease);
+}
+.nav-links a:hover{color:var(--warm)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{
+  padding:.55rem 1.5rem!important;
+  border:1px solid var(--gold)!important;
+  color:var(--gold)!important;
+  transition:all .3s!important;
+}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--gold)!important;color:var(--bg)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:1px;background:var(--warm);transition:.3s}
+/* mobile overlay */
+.mob-ov{
+  display:none;position:fixed;inset:0;
+  background:rgba(8,8,8,.99);z-index:999;
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+}
+.mob-ov.open{display:flex}
+.mob-ov a{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--txt2);transition:color .3s}
+.mob-ov a:hover{color:var(--gold)}
+.mob-close{position:absolute;top:1.5rem;right:2rem;font-size:1.8rem;color:var(--txt2);cursor:pointer;background:none;border:none;transition:color .3s}
+.mob-close:hover{color:var(--gold)}
+
+/* ─────────────── BUTTONS ─────────────── */
+.btn-gold{
+  display:inline-flex;align-items:center;gap:.7rem;
+  padding:.9rem 2.2rem;background:var(--gold);color:var(--bg);
+  font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  transition:all .3s;position:relative;overflow:hidden;border:none;
+}
+.btn-gold::before{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:rgba(255,255,255,.18);transition:left .4s var(--ease);
+}
+.btn-gold:hover::before{left:100%}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(201,169,110,.3)}
+.btn-out{
+  display:inline-flex;align-items:center;gap:.7rem;
+  padding:.85rem 2rem;border:1px solid var(--bdr2);color:var(--warm);
+  font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;transition:all .3s;
+}
+.btn-out:hover{border-color:var(--gold);color:var(--gold)}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:.65rem;
+  padding:.85rem 1.75rem;
+  border:1px solid rgba(37,211,102,.38);background:rgba(37,211,102,.07);color:#25d366;
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .3s;
+}
+.btn-wa:hover{background:rgba(37,211,102,.15)}
+
+/* ─────────────── SECTION HELPERS ─────────────── */
+.sec-eye{display:flex;align-items:center;gap:.9rem;margin-bottom:.9rem}
+.sec-eye::before{content:'';width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.sec-eye span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.sec-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;
+  color:var(--warm);line-height:1.1;
+}
+.sec-h em{font-style:italic;color:var(--gold)}
+.gold-line{width:48px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:1.4rem 0}
+
+/* ─────────────── ① HERO ─────────────── */
+.hero{
+  height:100vh;min-height:680px;
+  position:relative;overflow:hidden;display:flex;align-items:flex-end;
+}
+.hero-slides{position:absolute;inset:0}
+.slide{
+  position:absolute;inset:0;
+  opacity:0;transition:opacity 1.8s var(--ease);
+}
+.slide.active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.slide-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,8,8,.97) 0%,rgba(8,8,8,.5) 45%,rgba(8,8,8,.2) 100%);
+}
+.hero-body{
+  position:relative;z-index:2;
+  padding:0 4rem 5.5rem;max-width:820px;
+}
+.h-eye{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.h-eye::before{content:'';width:36px;height:1px;background:var(--gold)}
+.h-eye span{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.h-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,7vw,6.2rem);font-weight:300;
+  color:var(--warm);line-height:1.05;margin-bottom:1.1rem;
+}
+.h-title em{font-style:italic;color:var(--gold)}
+.h-sub{font-size:.9rem;color:var(--txt2);max-width:440px;line-height:1.9;margin-bottom:2.5rem}
+.h-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+/* stats */
+.h-stats{
+  position:absolute;right:4rem;bottom:5.5rem;z-index:2;
+  display:flex;flex-direction:column;gap:2rem;text-align:right;
+}
+.h-snum{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--gold);line-height:1}
+.h-slbl{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(80,76,72,.9);margin-top:.2rem}
+/* dots */
+.h-dots{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;gap:.75rem}
+.h-dot{width:24px;height:2px;background:rgba(201,169,110,.3);cursor:pointer;transition:all .4s;border:none}
+.h-dot.active{background:var(--gold);width:48px}
+/* scroll cue */
+.h-scroll{position:absolute;bottom:2.5rem;left:4rem;z-index:2;display:flex;align-items:center;gap:.75rem}
+.h-scroll span{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--txt3)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ─────────────── ② MARQUEE ─────────────── */
+.marquee{background:var(--gold);padding:.65rem 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;animation:marqueeAnim 30s linear infinite}
+.marquee-item{display:inline-flex;align-items:center;gap:1.5rem;padding:0 2rem;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bg);font-weight:500}
+.marquee-dot{width:3px;height:3px;background:rgba(0,0,0,.3);border-radius:50%}
+@keyframes marqueeAnim{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─────────────── ③ ABOUT ─────────────── */
+.about{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  padding:8rem 4rem;background:var(--bg);
+}
+.about-img-wrap{position:relative}
+.about-img{width:100%;height:520px;object-fit:cover;object-position:center;display:block}
+.about-badge{
+  position:absolute;bottom:2.5rem;right:-1.5rem;
+  width:130px;height:130px;
+  border:1px solid var(--bdr2);
+  background:rgba(8,8,8,.92);backdrop-filter:blur(12px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:.3rem;z-index:2;
+}
+.about-badge-n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--gold);line-height:1}
+.about-badge-l{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--txt2);padding:0 .5rem}
+.about-corner{
+  position:absolute;top:2.5rem;right:-1.5rem;
+  width:56px;height:56px;
+  border-top:1px solid var(--bdr2);border-right:1px solid var(--bdr2);
+}
+.about-desc{font-size:.9rem;color:var(--txt2);line-height:1.9;margin-bottom:2rem}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem}
+.pillar{
+  padding:1.25rem;border:1px solid var(--bdr);
+  transition:all .35s;position:relative;overflow:hidden;
+}
+.pillar::before{
+  content:'';position:absolute;top:0;left:0;
+  width:0;height:2px;background:var(--gold);transition:width .4s var(--ease);
+}
+.pillar:hover{border-color:var(--bdr2);transform:translateY(-4px)}
+.pillar:hover::before{width:100%}
+.pillar-ic{font-size:1.25rem;margin-bottom:.5rem}
+.pillar-t{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--warm);margin-bottom:.25rem}
+.pillar-d{font-size:.77rem;color:var(--txt2);line-height:1.7}
+
+/* ─────────────── ④ STATS ─────────────── */
+.stats-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--ch);
+  border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);
+}
+.stat-cell{padding:3.5rem 1.5rem;text-align:center;border-right:1px solid var(--bdr)}
+.stat-cell:last-child{border-right:none}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3.6rem;font-weight:300;color:var(--gold);line-height:1;display:block}
+.stat-lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt2);margin-top:.5rem;display:block}
+
+/* ─────────────── ⑤ PROJECTS ─────────────── */
+.projects{padding:8rem 4rem;background:var(--bg)}
+.proj-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.proj-filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.pf{
+  padding:.45rem 1.25rem;
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--bdr);color:var(--txt2);cursor:pointer;transition:all .3s;
+}
+.pf.active,.pf:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.05)}
+
+/* Bento grid */
+.bento{display:grid;grid-template-columns:1.55fr 1fr 1fr;grid-template-rows:340px 280px;gap:3px}
+.proj-card{position:relative;overflow:hidden;cursor:pointer;background:var(--sl)}
+.proj-card:first-child{grid-row:1/3}
+.proj-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s var(--ease)}
+.proj-card:hover img{transform:scale(1.05)}
+.proj-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,8,8,.97) 0%,rgba(8,8,8,.3) 55%,transparent 100%);
+  transition:background .4s;
+}
+.proj-card:hover .proj-overlay{background:linear-gradient(to top,rgba(8,8,8,1) 0%,rgba(8,8,8,.6) 60%,rgba(8,8,8,.12) 100%)}
+.proj-info{position:absolute;bottom:0;left:0;right:0;padding:1.75rem}
+.proj-tag{
+  display:inline-block;padding:.25rem .75rem;
+  border:1px solid var(--gold);font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.6rem;
+}
+.proj-name{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:300;color:var(--warm);line-height:1.2;margin-bottom:.3rem}
+.proj-card:first-child .proj-name{font-size:2.3rem}
+.proj-loc{font-size:.7rem;color:var(--txt2);display:flex;align-items:center;gap:.4rem}
+.proj-loc::before{content:'●';font-size:.35rem;color:var(--gold)}
+.proj-details{
+  opacity:0;transform:translateY(8px);
+  transition:all .4s;margin-top:.75rem;display:flex;gap:1.5rem;
+}
+.proj-card:hover .proj-details{opacity:1;transform:none}
+.proj-spec strong{display:block;font-size:.82rem;color:var(--warm);font-weight:400}
+.proj-spec span{font-size:.66rem;color:var(--txt2)}
+/* ext link */
+.proj-ext{
+  position:absolute;top:1.25rem;right:1.25rem;
+  width:38px;height:38px;
+  border:1px solid rgba(201,169,110,.3);background:rgba(8,8,8,.75);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);
+  opacity:0;transform:scale(.8);transition:all .35s;z-index:2;
+}
+.proj-card:hover .proj-ext{opacity:1;transform:scale(1)}
+
+/* ─────────────── ⑥ PROCESS ─────────────── */
+.process{padding:8rem 4rem;background:var(--ch);border-top:1px solid var(--bdr)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:5rem;position:relative}
+.process-grid::before{
+  content:'';position:absolute;top:2.5rem;left:12%;right:12%;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold-dk),var(--gold),var(--gold-dk),transparent);
+}
+.proc-step{padding:0 1.75rem;padding-top:6.5rem;position:relative;text-align:center;transition:transform .3s}
+.proc-step:hover{transform:translateY(-8px)}
+.proc-num{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:52px;height:52px;border:1px solid var(--gold);background:var(--ch);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);
+}
+.proc-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--warm);margin-bottom:.65rem}
+.proc-desc{font-size:.78rem;color:var(--txt2);line-height:1.85}
+
+/* ─────────────── ⑦ TESTIMONIALS ─────────────── */
+.testimonials{padding:8rem 4rem;background:var(--bg)}
+.testi-layout{display:grid;grid-template-columns:1fr 2fr;gap:6rem;margin-top:4rem;align-items:start}
+.testi-score-n{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:300;color:var(--gold);line-height:1}
+.testi-stars{color:var(--gold);font-size:1.1rem;letter-spacing:4px;margin:.4rem 0}
+.testi-base{font-size:.72rem;color:var(--txt2)}
+.testi-projs{margin-top:2.5rem;display:flex;flex-direction:column;gap:.85rem}
+.tproj{display:flex;align-items:center;gap:.9rem;padding:.85rem 1rem;border:1px solid var(--bdr);transition:border-color .3s}
+.tproj:hover{border-color:var(--bdr2)}
+.tproj-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.tproj-name{font-size:.78rem;color:var(--txt2)}
+.testi-cards{display:flex;flex-direction:column;gap:1.5rem}
+.tcard{padding:2.5rem;border:1px solid var(--bdr);background:var(--ch);transition:all .35s}
+.tcard:hover{border-color:var(--bdr2);transform:translateX(6px)}
+.tcard-q{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);opacity:.3;line-height:.5;margin-bottom:.8rem}
+.tcard-txt{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--txt);line-height:1.85;margin-bottom:1.4rem}
+.tcard-auth{display:flex;align-items:center;gap:1rem}
+.tcard-av{width:42px;height:42px;border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--gold);background:rgba(201,169,110,.08)}
+.tcard-name{font-size:.88rem;color:var(--warm)}
+.tcard-proj{font-size:.66rem;color:var(--gold);letter-spacing:.08em}
+
+/* ─────────────── ⑧ CTA BAND ─────────────── */
+.cta{padding:8rem 4rem;text-align:center;background:var(--ch);border-top:1px solid var(--bdr);position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.055) 0%,transparent 70%);pointer-events:none}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.4rem);font-weight:300;color:var(--warm);line-height:1.1;margin-bottom:1.2rem;position:relative}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-sub{font-size:.88rem;color:var(--txt2);max-width:440px;margin:0 auto 2.75rem;position:relative;line-height:1.9}
+.cta-actions{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap;position:relative}
+
+/* ─────────────── ⑨ CONTACT ─────────────── */
+.contact{padding:8rem 4rem;background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;margin-top:4rem}
+.c-item{display:flex;gap:1.25rem;margin-bottom:1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--bdr)}
+.c-item:last-of-type{border-bottom:none;margin-bottom:2rem}
+.c-icon{width:46px;height:46px;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;flex-shrink:0;transition:all .3s}
+.c-item:hover .c-icon{border-color:var(--gold);background:rgba(201,169,110,.07)}
+.c-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.c-val{font-size:.9rem;color:var(--txt)}
+.map-frame{width:100%;height:220px;border:none;filter:grayscale(1) contrast(.85);opacity:.7;display:block}
+/* form */
+.fg{margin-bottom:1.35rem}
+.fg label{display:block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:transparent;border:none;border-bottom:1px solid var(--bdr);
+  padding:.75rem 0;color:var(--txt);font-family:'Jost',sans-serif;
+  font-size:.9rem;outline:none;transition:border-color .3s;-webkit-appearance:none;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--txt3);font-size:.85rem}
+.fg select option{background:var(--sl);color:var(--txt)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.fg textarea{resize:none;height:105px}
+.submit-btn{
+  width:100%;padding:1.1rem;background:var(--gold);color:var(--bg);
+  font-size:.77rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  border:none;cursor:pointer;font-family:'Jost',sans-serif;transition:all .35s;
+}
+.submit-btn:hover{background:var(--gold-lt)}
+
+/* ─────────────── ⑩ FOOTER ─────────────── */
+footer{background:#040404;border-top:1px solid var(--bdr);padding:5rem 4rem 2rem}
+.foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem;padding-bottom:3.5rem;border-bottom:1px solid var(--bdr)}
+.foot-tagline{font-size:.82rem;color:var(--txt2);line-height:1.9;margin:1rem 0 1.5rem;max-width:260px}
+.foot-social{display:flex;gap:.65rem}
+.soc{width:36px;height:36px;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;color:var(--txt2);transition:all .3s}
+.soc:hover{border-color:var(--gold);color:var(--gold)}
+.foot-heading{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
+.foot-links{list-style:none}
+.foot-links li{margin-bottom:.7rem}
+.foot-links a{font-size:.82rem;color:var(--txt2);transition:color .3s;display:flex;align-items:center;gap:.5rem}
+.foot-links a::before{content:'';width:0;height:1px;background:var(--gold);transition:width .3s;flex-shrink:0}
+.foot-links a:hover{color:var(--warm)}
+.foot-links a:hover::before{width:8px}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-size:.7rem;color:var(--txt3)}
+.rera-badge{padding:.2rem .7rem;border:1px solid var(--bdr);font-size:.58rem;letter-spacing:.1em;color:var(--gold)}
+
+/* WhatsApp */
+.wa-float{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:997;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:all .3s;color:#fff}
+.wa-float:hover{transform:scale(1.1)}
+
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(4,4,4,.96);z-index:2000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(12px);padding:2rem}
+.modal-bg.open{display:flex}
+.modal-box{background:var(--ch);border:1px solid var(--bdr);max-width:860px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.modal-x{position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;color:var(--txt2);font-size:1.5rem;cursor:pointer;z-index:1;transition:color .3s}
+.modal-x:hover{color:var(--gold)}
+.modal-head{padding:2.5rem 2.5rem 0}
+.modal-body{padding:2rem 2.5rem 2.5rem}
+.modal-head h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--warm);margin-bottom:.25rem}
+.modal-head p{font-size:.77rem;color:var(--txt2)}
+.modal-div{height:1px;background:var(--bdr);margin:1rem 0}
+
+/* ─────────────── RESPONSIVE ─────────────── */
+@media(max-width:1100px){
+  #nav,#nav.scrolled{padding-left:2.5rem;padding-right:2.5rem}
+  .about{grid-template-columns:1fr;gap:3rem;padding:6rem 2.5rem}
+  .about-img{height:380px}
+  .about-badge{right:0}
+  .about-corner{display:none}
+  .bento{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .proj-card:first-child{grid-row:auto;grid-column:1/3;height:380px}
+  .proj-card:not(:first-child){height:260px}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--bdr)}
+  .stat-cell:nth-child(odd){border-right:1px solid var(--bdr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid::before{display:none}
+  .testi-layout{grid-template-columns:1fr;gap:3rem}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .projects,.process,.testimonials,.cta,.contact{padding-left:2.5rem;padding-right:2.5rem}
+}
+@media(max-width:768px){
+  #nav,#nav.scrolled{padding:.9rem 1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-body{padding:0 1.5rem 4.5rem}
+  .h-stats,.h-scroll{display:none}
+  .about{padding:5rem 1.5rem;gap:2.5rem}
+  .about-img{height:280px}
+  .pillars{grid-template-columns:1fr}
+  .stat-cell{padding:2.5rem 1rem}
+  .bento{grid-template-columns:1fr;grid-template-rows:auto}
+  .proj-card:first-child{grid-column:auto;height:280px}
+  .proj-card:not(:first-child){height:240px}
+  .process-grid{grid-template-columns:1fr}
+  .proc-step{padding-top:5.5rem}
+  .projects,.process,.testimonials,.cta,.contact{padding:5rem 1.5rem}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .frow{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:2rem}
+  footer{padding:3.5rem 1.5rem 2rem}
+  .foot-bottom{flex-direction:column;text-align:center}
+  .proj-header{flex-direction:column;align-items:flex-start}
+}
+
+/* ─── JOURNEY / PROCESS ─── */
+.process{padding:8rem 4rem;background:var(--ch);border-top:1px solid var(--bdr)}
+.journey{display:flex;flex-direction:column;gap:0;max-width:900px;margin:0 auto}
+.journey-step{display:grid;grid-template-columns:64px 48px 1fr;gap:0 1.5rem;position:relative}
+.journey-num{
+  width:52px;height:52px;border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold);
+  flex-shrink:0;position:relative;z-index:2;background:var(--ch);
+  margin-top:.25rem;
+}
+.journey-connector{
+  width:1px;background:linear-gradient(to bottom,var(--gold-dk),rgba(201,169,110,.15));
+  margin:52px auto 0;
+}
+.journey-card{
+  padding:2rem 2.25rem;border:1px solid var(--bdr);background:var(--sl);
+  margin-bottom:1.5rem;position:relative;overflow:hidden;
+  transition:border-color .35s;
+}
+.journey-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:0;
+  background:var(--gold);transition:height .5s var(--ease);
+}
+.journey-card:hover{border-color:var(--bdr2)}
+.journey-card:hover::before{height:100%}
+.jc-icon{font-size:2rem;margin-bottom:.75rem;line-height:1}
+.jc-head{
+  font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;
+  color:var(--warm);margin-bottom:.75rem;line-height:1.25;
+}
+.jc-body{font-size:.85rem;color:var(--txt2);line-height:1.9;margin-bottom:1.25rem}
+.jc-trust{display:flex;flex-wrap:wrap;gap:.5rem}
+.jc-badge{
+  padding:.25rem .75rem;border:1px solid var(--bdr);
+  font-size:.62rem;letter-spacing:.1em;color:var(--gold);
+  background:rgba(201,169,110,.05);
+}
+/* trust bar */
+.proc-trust-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;margin-top:4rem;
+  border:1px solid var(--bdr);background:var(--sl);
+  flex-wrap:wrap;
+}
+.ptb-item{padding:2rem 3rem;text-align:center;flex:1;min-width:150px}
+.ptb-n{
+  font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;
+  color:var(--gold);line-height:1;margin-bottom:.4rem;
+}
+.ptb-l{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--txt2)}
+.ptb-div{width:1px;height:64px;background:var(--bdr);flex-shrink:0}
+
+/* View All Projects btn */
+.view-all-wrap{
+  text-align:center;margin-top:3.5rem;padding-top:3rem;
+  border-top:1px solid var(--bdr);
+}
+.view-all-wrap p{font-size:.82rem;color:var(--txt2);margin-bottom:1.25rem}
+
+@media(max-width:768px){
+  .process{padding:5rem 1.5rem}
+  .journey-step{grid-template-columns:44px 28px 1fr;gap:0 .75rem}
+  .journey-num{width:42px;height:42px;font-size:1rem}
+  .journey-connector{display:none}
+  .journey-card{padding:1.5rem;margin-bottom:1rem}
+  .jc-head{font-size:1.25rem}
+  .proc-trust-bar{flex-wrap:wrap}
+  .ptb-div{display:none}
+  .ptb-item{padding:1.5rem;border-bottom:1px solid var(--bdr);min-width:50%}
+}
+
+/* ── Journey step 06 fix — last step has no connector, card spans col 2+3 */
+.journey-step-last{
+  display:grid;
+  grid-template-columns:64px 1fr;
+  gap:0 1.5rem;
+  position:relative;
+}
+.journey-num-gold{
+  background:var(--gold)!important;
+  color:var(--bg)!important;
+  border-color:var(--gold)!important;
+}
+.journey-card-last{
+  padding:2rem 2.25rem;
+  border:1px solid var(--bdr2);
+  background:linear-gradient(135deg,rgba(201,169,110,.07),rgba(139,106,53,.04));
+  margin-bottom:1.5rem;
+  position:relative;overflow:hidden;
+  transition:border-color .35s;
+}
+.journey-card-last::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:linear-gradient(to bottom,var(--gold),var(--gold-dk));
+}
+.journey-card-last .jc-icon{font-size:2.2rem;margin-bottom:.75rem}
+.journey-card-last .jc-head{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.55rem;font-weight:400;
+  color:var(--warm);margin-bottom:.75rem;line-height:1.25;
+}
+.journey-card-last .jc-body{font-size:.85rem;color:var(--txt2);line-height:1.9;margin-bottom:1.25rem}
+.journey-card-last .jc-trust{display:flex;flex-wrap:wrap;gap:.5rem}
+.journey-card-last .jc-badge{
+  padding:.25rem .75rem;border:1px solid var(--bdr2);
+  font-size:.62rem;letter-spacing:.1em;color:var(--gold);
+  background:rgba(201,169,110,.08);
+}
+@media(max-width:768px){
+  .journey-step-last{grid-template-columns:44px 1fr;gap:0 .75rem}
+  .journey-card-last{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp -->
+<a class="wa-float" href="https://wa.me/919890273861?text=Hello%20Aspire%20Group%2C%20I%27m%20interested%20in%20your%20properties." target="_blank" aria-label="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Mobile Menu -->
+<div class="mob-ov" id="mobMenu">
+  <button class="mob-close" onclick="document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''">✕</button>
+  <a href="#home" onclick="document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''">Home</a>
+  <a href="#about" onclick="document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''">About</a>
+  <a href="#projects" onclick="document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''">Projects</a>
+  <a href="#process" onclick="document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''">Process</a>
+  <a href="#testimonials" onclick="document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''">Testimonials</a>
+  <a href="#contact" onclick="document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div><a href="#home"><img src="data:image/png;base64,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" alt="Aspire Group" style="height:52px;width:auto"/></a></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden'" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-slides">
+    <div class="slide active" id="slide0">
+      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85&auto=format" alt="Aspire Group" loading="eager"/>
+      <div class="slide-grad"></div>
+    </div>
+    <div class="slide" id="slide1">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85&auto=format" alt="Premium Interiors" loading="lazy"/>
+      <div class="slide-grad"></div>
+    </div>
+    <div class="slide" id="slide2">
+      <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=85&auto=format" alt="Luxury Living" loading="lazy"/>
+      <div class="slide-grad"></div>
+    </div>
+  </div>
+  <div class="hero-body">
+    <div class="h-eye fade fade-d1"><span>Pune's Premier Real Estate Developers</span></div>
+    <h1 class="h-title fade fade-d2">Where Vision<br>Becomes <em>Architecture</em></h1>
+    <p class="h-sub fade fade-d3">Aspire Group crafts landmark residences across Katraj, Ambegaon &amp; Kondhwa — built on trust, designed for generations.</p>
+    <div class="h-actions fade fade-d4">
+      <a href="#projects" class="btn-gold">Explore Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#contact" class="btn-out">Schedule Site Visit</a>
+    </div>
+  </div>
+  <div class="h-stats">
+    <div style="text-align:right"><div class="h-snum">825K<small style="font-size:1rem">+</small></div><div class="h-slbl">Sq.Ft. Delivered</div></div>
+    <div style="text-align:right"><div class="h-snum">₹375<small style="font-size:1rem">Cr</small></div><div class="h-slbl">Turnover</div></div>
+    <div style="text-align:right"><div class="h-snum">10<small style="font-size:1rem">+</small></div><div class="h-slbl">Years of Trust</div></div>
+  </div>
+  <div class="h-dots">
+    <button class="h-dot active" onclick="goSlide(0)" aria-label="Slide 1"></button>
+    <button class="h-dot" onclick="goSlide(1)" aria-label="Slide 2"></button>
+    <button class="h-dot" onclick="goSlide(2)" aria-label="Slide 3"></button>
+  </div>
+  <div class="h-scroll"><div class="scroll-line"></div><span>Scroll to Explore</span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Siddhi Aspire · Katraj<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Optima Aspire · Ambegaon<span class="marquee-dot"></span></span>
+    <span class="marquee-item">825,000+ Sq Ft Delivered<span class="marquee-dot"></span></span>
+    <span class="marquee-item">₹375 Crore Turnover<span class="marquee-dot"></span></span>
+    <span class="marquee-item">10+ Years of Excellence<span class="marquee-dot"></span></span>
+    <span class="marquee-item">8+ Ongoing Projects<span class="marquee-dot"></span></span>
+    <span class="marquee-item">MahaRERA Registered<span class="marquee-dot"></span></span>
+    <span class="marquee-item">500+ Happy Families<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Siddhi Aspire · Katraj<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Optima Aspire · Ambegaon<span class="marquee-dot"></span></span>
+    <span class="marquee-item">825,000+ Sq Ft Delivered<span class="marquee-dot"></span></span>
+    <span class="marquee-item">₹375 Crore Turnover<span class="marquee-dot"></span></span>
+    <span class="marquee-item">10+ Years of Excellence<span class="marquee-dot"></span></span>
+    <span class="marquee-item">8+ Ongoing Projects<span class="marquee-dot"></span></span>
+    <span class="marquee-item">MahaRERA Registered<span class="marquee-dot"></span></span>
+    <span class="marquee-item">500+ Happy Families<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-img-wrap">
+    <img class="about-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85&auto=format" alt="Aspire Group Development"/>
+    <div class="about-badge">
+      <div class="about-badge-n">₹375</div>
+      <div class="about-badge-l">Crore Turnover</div>
+    </div>
+    <div class="about-corner"></div>
+  </div>
+  <div>
+    <div class="sec-eye"><span>About Aspire Group</span></div>
+    <h2 class="sec-h">Building Pune's<br><em>Future Skyline</em></h2>
+    <div class="gold-line"></div>
+    <p class="about-desc">Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire Group is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014. With a focus on Katraj, Ambegaon, Kondhwa and Hadapsar, every Aspire project reflects superior planning, sustainability and excellence.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-ic">⬛</div><div class="pillar-t">Architectural Excellence</div><p class="pillar-d">Premium materials, modern design and meticulous planning at every scale.</p></div>
+      <div class="pillar"><div class="pillar-ic">⏱</div><div class="pillar-t">On-Time Delivery</div><p class="pillar-d">Every project delivered on schedule — no delays, no compromises.</p></div>
+      <div class="pillar"><div class="pillar-ic">✓</div><div class="pillar-t">RERA Registered</div><p class="pillar-d">Fully MahaRERA compliant — transparent, ethical and trusted.</p></div>
+      <div class="pillar"><div class="pillar-ic">★</div><div class="pillar-t">Customer First</div><p class="pillar-d">Dedicated relationship managers and lifetime post-possession support.</p></div>
+    </div>
+    <a href="#contact" class="btn-gold">Schedule a Meeting <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-cell"><span class="stat-num"><span class="counter" data-target="825">0</span>K+</span><span class="stat-lbl">Sq. Ft. Delivered</span></div>
+  <div class="stat-cell"><span class="stat-num">₹<span class="counter" data-target="375">0</span>Cr</span><span class="stat-lbl">Turnover</span></div>
+  <div class="stat-cell"><span class="stat-num"><span class="counter" data-target="8">0</span>+</span><span class="stat-lbl">Ongoing Projects</span></div>
+  <div class="stat-cell"><span class="stat-num"><span class="counter" data-target="500">0</span>+</span><span class="stat-lbl">Happy Families</span></div>
+</div>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="proj-header">
+    <div>
+      <div class="sec-eye"><span>Our Portfolio</span></div>
+      <h2 class="sec-h">Landmark <em>Developments</em></h2>
+    </div>
+    <div class="proj-filters">
+      <button class="pf active" data-filter="">All</button>
+      <button class="pf" data-filter="ongoing">Ongoing</button>
+      <button class="pf" data-filter="completed">Completed</button>
+      <button class="pf" data-filter="upcoming">Upcoming</button>
+    </div>
+  </div>
+  <div class="bento">
+    <!-- Card 1: Siddhi Aspire – featured full height -->
+    <div class="proj-card" data-status="ongoing" onclick="window.open('aspire-siddhi.html','_blank')" title="View Siddhi Aspire">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000&q=85&auto=format" alt="Siddhi Aspire" loading="lazy"/>
+      <div class="proj-overlay"></div>
+      <a class="proj-ext" href="aspire-siddhi.html" target="_blank" onclick="event.stopPropagation()" title="Open full page">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <div class="proj-info">
+        <span class="proj-tag">Ongoing · Residential</span>
+        <h3 class="proj-name">Siddhi Aspire</h3>
+        <p class="proj-loc">Katraj, Pune</p>
+        <div class="proj-details">
+          <div class="proj-spec"><strong>1, 2, 3 &amp; 4 BHK</strong><span>Unit Types</span></div>
+          <div class="proj-spec"><strong>₹55L+</strong><span>Starting</span></div>
+          <div class="proj-spec"><strong>MahaRERA</strong><span>Registered</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2: Optima Aspire -->
+    <div class="proj-card" data-status="ongoing" onclick="window.open('aspire-optima.html','_blank')" title="View Optima Aspire">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=85&auto=format" alt="Optima Aspire" loading="lazy"/>
+      <div class="proj-overlay"></div>
+      <a class="proj-ext" href="aspire-optima.html" target="_blank" onclick="event.stopPropagation()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <div class="proj-info">
+        <span class="proj-tag">Ongoing</span>
+        <h3 class="proj-name">Optima – Aspire</h3>
+        <p class="proj-loc">Ambegaon Bk, Pune</p>
+        <div class="proj-details">
+          <div class="proj-spec"><strong>2 &amp; 3 BHK</strong><span>Unit Types</span></div>
+          <div class="proj-spec"><strong>₹72L+</strong><span>Starting</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3: Mahadev Prangan -->
+    <div class="proj-card" data-status="completed" onclick="openModal('mahadev')">
+      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=85&auto=format" alt="Mahadev Prangan" loading="lazy"/>
+      <div class="proj-overlay"></div>
+      <div class="proj-info">
+        <span class="proj-tag">Completed</span>
+        <h3 class="proj-name">Mahadev Prangan</h3>
+        <p class="proj-loc">Kondhwa, Pune</p>
+        <div class="proj-details">
+          <div class="proj-spec"><strong>1 &amp; 2 BHK</strong><span>Unit Types</span></div>
+          <div class="proj-spec"><strong>Delivered</strong><span>Status</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4: Optima Aspire Plus -->
+    <div class="proj-card" data-status="ongoing" onclick="window.open('aspire-optima.html','_blank')">
+      <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=85&auto=format" alt="Optima Aspire Plus" loading="lazy"/>
+      <div class="proj-overlay"></div>
+      <a class="proj-ext" href="aspire-optima.html" target="_blank" onclick="event.stopPropagation()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+      <div class="proj-info">
+        <span class="proj-tag">Ongoing · Premium</span>
+        <h3 class="proj-name">Optima – Aspire Plus</h3>
+        <p class="proj-loc">Ambegaon Bk, Pune</p>
+        <div class="proj-details">
+          <div class="proj-spec"><strong>2.5 &amp; 3 BHK</strong><span>Unit Types</span></div>
+          <div class="proj-spec"><strong>₹95L+</strong><span>Starting</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Card 5: Aspire Icon -->
+    <div class="proj-card" data-status="upcoming" onclick="openModal('icon')">
+      <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=85&auto=format" alt="Aspire Icon" loading="lazy"/>
+      <div class="proj-overlay"></div>
+      <div class="proj-info">
+        <span class="proj-tag">Upcoming · Commercial</span>
+        <h3 class="proj-name">Aspire Icon</h3>
+        <p class="proj-loc">Katraj, Pune</p>
+        <div class="proj-details">
+          <div class="proj-spec"><strong>Commercial</strong><span>Type</span></div>
+          <div class="proj-spec"><strong>Q3 2026</strong><span>Launch</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="view-all-wrap">
+    <p>Explore our complete portfolio — ongoing, completed, upcoming &amp; commercial developments across Pune.</p>
+    <a href="all-projects.html" target="_blank" class="btn-gold" style="display:inline-flex">
+      View All Projects &amp; Developments
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:.5rem"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal-bg" id="projModal">
+  <div class="modal-box">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div class="modal-head">
+      <div id="m-tag" style="font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem"></div>
+      <h2 id="m-name"></h2>
+      <p id="m-loc"></p>
+      <div class="modal-div"></div>
+    </div>
+    <div class="modal-body">
+      <img id="m-img" src="" alt="" style="width:100%;height:260px;object-fit:cover;margin-bottom:1.75rem;display:block"/>
+      <div id="m-content"></div>
+      <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
+        <a href="#contact" class="btn-gold" onclick="closeModal()">Enquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="https://wa.me/919890273861" target="_blank" class="btn-wa">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div style="text-align:center;max-width:680px;margin:0 auto 5rem">
+    <div class="sec-eye" style="justify-content:center"><span>Your Home Buying Journey</span></div>
+    <h2 class="sec-h">We Walk Every Step<br><em>With You</em></h2>
+    <div class="gold-line" style="margin:1.4rem auto"></div>
+    <p style="font-size:.9rem;color:var(--txt2);line-height:1.9">Buying a home is not just a financial decision — it is a dream your entire family has cherished. We honour that emotion at every stage of your journey with us.</p>
+  </div>
+
+  <!-- Step journey - vertical timeline on mobile, horizontal on desktop -->
+  <div class="journey">
+
+    <div class="journey-step">
+      <div class="journey-num">01</div>
+      <div class="journey-connector"></div>
+      <div class="journey-card">
+        <div class="jc-icon">🤝</div>
+        <div class="jc-head">Your Dream, Our First Priority</div>
+        <p class="jc-body">We begin by listening — truly listening. Our advisors understand your family's needs, budget, lifestyle and timeline without any sales pressure. No calls at odd hours. No pushy follow-ups. Just honest, patient conversations.</p>
+        <div class="jc-trust">
+          <span class="jc-badge">✓ Free Consultation</span>
+          <span class="jc-badge">✓ No Obligations</span>
+          <span class="jc-badge">✓ Home Loan Guidance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-step">
+      <div class="journey-num">02</div>
+      <div class="journey-connector"></div>
+      <div class="journey-card">
+        <div class="jc-icon">🏛</div>
+        <div class="jc-head">Transparent, Zero-Surprise Pricing</div>
+        <p class="jc-body">Every rupee is accounted for upfront. We share the complete cost sheet — base price, GST, stamp duty, registration and maintenance charges — clearly and honestly. What you see is exactly what you pay. No hidden costs, ever.</p>
+        <div class="jc-trust">
+          <span class="jc-badge">✓ Complete Cost Sheet</span>
+          <span class="jc-badge">✓ MahaRERA Registered</span>
+          <span class="jc-badge">✓ Bank-Approved Project</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-step">
+      <div class="journey-num">03</div>
+      <div class="journey-connector"></div>
+      <div class="journey-card">
+        <div class="jc-icon">🔑</div>
+        <div class="jc-head">Your Family Visits, Your Family Decides</div>
+        <p class="jc-body">We invite your entire family — parents, spouse, children — to visit the site. We believe the people who will live in the home should experience it first. Our site team will walk you through every detail at your own pace, on your schedule.</p>
+        <div class="jc-trust">
+          <span class="jc-badge">✓ Weekend Site Visits</span>
+          <span class="jc-badge">✓ Video Call Tours</span>
+          <span class="jc-badge">✓ Vastu Guidance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-step">
+      <div class="journey-num">04</div>
+      <div class="journey-connector"></div>
+      <div class="journey-card">
+        <div class="jc-icon">📋</div>
+        <div class="jc-head">Simple, Stress-Free Documentation</div>
+        <p class="jc-body">Paperwork should never feel overwhelming. Our dedicated legal team assists you with every document — sale agreement, home loan application, registration and beyond. We coordinate with your bank directly so you don't have to run around.</p>
+        <div class="jc-trust">
+          <span class="jc-badge">✓ Legal Team Support</span>
+          <span class="jc-badge">✓ Bank Coordination</span>
+          <span class="jc-badge">✓ Flexible Payment Plans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-step">
+      <div class="journey-num">05</div>
+      <div class="journey-connector"></div>
+      <div class="journey-card">
+        <div class="jc-icon">🏗</div>
+        <div class="jc-head">Monthly Construction Updates — Always Informed</div>
+        <p class="jc-body">You have invested your life savings with us. You deserve to see every milestone. We send monthly progress photos, video updates and construction reports directly to your WhatsApp and email — so your family is always in the loop, from foundation to terrace.</p>
+        <div class="jc-trust">
+          <span class="jc-badge">✓ Monthly Video Updates</span>
+          <span class="jc-badge">✓ WhatsApp Notifications</span>
+          <span class="jc-badge">✓ On-Time Delivery Commitment</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-step journey-step-last">
+      <div class="journey-num journey-num-gold">06</div>
+      <div class="journey-card-last">
+        <div class="jc-icon">🎉</div>
+        <div class="jc-head">Griha Pravesh — A Moment We Celebrate Together</div>
+        <p class="jc-body">Possession day is not just a handover for us — it is your family's Griha Pravesh, a milestone we celebrate with you. We ensure every room is snagged and perfect before the keys reach your hands. And after you move in, our team remains just one call away — forever.</p>
+        <div class="jc-trust">
+          <span class="jc-badge">✓ Full Snagging Inspection</span>
+          <span class="jc-badge">✓ Lifetime Customer Support</span>
+          <span class="jc-badge">✓ Facility Management</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Trust bar -->
+  <div class="proc-trust-bar">
+    <div class="ptb-item">
+      <div class="ptb-n">100%</div>
+      <div class="ptb-l">On-Time Delivery Record</div>
+    </div>
+    <div class="ptb-div"></div>
+    <div class="ptb-item">
+      <div class="ptb-n">₹0</div>
+      <div class="ptb-l">Hidden Charges. Ever.</div>
+    </div>
+    <div class="ptb-div"></div>
+    <div class="ptb-item">
+      <div class="ptb-n">500+</div>
+      <div class="ptb-l">Families Who Trust Us</div>
+    </div>
+    <div class="ptb-div"></div>
+    <div class="ptb-item">
+      <div class="ptb-n">4.9★</div>
+      <div class="ptb-l">Average Customer Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div>
+    <div class="sec-eye"><span>Client Stories</span></div>
+    <h2 class="sec-h">What Our Homeowners<br><em>Say About Us</em></h2>
+  </div>
+  <div class="testi-layout">
+    <div>
+      <div class="testi-score-n">4.9</div>
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-base">Average Rating · 200+ Reviews</div>
+      <div class="testi-projs">
+        <div class="tproj"><div class="tproj-dot"></div><span class="tproj-name">Siddhi Aspire, Katraj</span></div>
+        <div class="tproj"><div class="tproj-dot"></div><span class="tproj-name">Optima – The Pavilion</span></div>
+        <div class="tproj"><div class="tproj-dot"></div><span class="tproj-name">Mansi Residency</span></div>
+        <div class="tproj"><div class="tproj-dot"></div><span class="tproj-name">Rajveer Heights</span></div>
+        <div class="tproj"><div class="tproj-dot"></div><span class="tproj-name">Aradhya Residency</span></div>
+      </div>
+    </div>
+    <div class="testi-cards">
+      <div class="tcard">
+        <div class="tcard-q">"</div>
+        <p class="tcard-txt">Aspire Group has completely redefined what a dream home should feel like. Every detail at Siddhi Aspire — the finishes, the layout, the amenities — reflects their uncompromising commitment to quality.</p>
+        <div class="tcard-auth"><div class="tcard-av">RK</div><div><div class="tcard-name">Mr. Rohan Kulkarni</div><div class="tcard-proj">Siddhi Aspire, Katraj · 3 BHK Owner</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-q">"</div>
+        <p class="tcard-txt">Transparency, ethical practices and on-time delivery at Optima Pavilion won us over completely. Proud Aspire homeowners — would recommend without hesitation.</p>
+        <div class="tcard-auth"><div class="tcard-av">SP</div><div><div class="tcard-name">Mrs. Sneha Patil</div><div class="tcard-proj">Optima – The Pavilion · 2 BHK Owner</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-q">"</div>
+        <p class="tcard-txt">As a first-time homebuyer I was anxious, but the Aspire team made the entire journey effortless. The construction quality is outstanding and after-possession support excellent.</p>
+        <div class="tcard-auth"><div class="tcard-av">PJ</div><div><div class="tcard-name">Ms. Priya Joshi</div><div class="tcard-proj">Aradhya Residency · 2 BHK Owner</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta">
+  <h2 class="cta-title">Ready to Find Your<br><em>Dream Home?</em></h2>
+  <p class="cta-sub">Speak with our expert advisors — no pressure, just genuine guidance for your family.</p>
+  <div class="cta-actions">
+    <a href="#contact" class="btn-gold">Schedule a Site Visit <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="https://wa.me/919890273861" target="_blank" class="btn-wa">WhatsApp Us Now</a>
+    <a href="aspire-siddhi.html" target="_blank" class="btn-out">View Siddhi Aspire ↗</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <div class="sec-eye"><span>Get In Touch</span></div>
+    <h2 class="sec-h">Let's Start Your<br><em>Property Journey</em></h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <div class="c-item">
+        <div class="c-icon">📍</div>
+        <div><div class="c-label">Office Address</div><div class="c-val">Baner Road, Near Balewadi, Pune — 411 045<br><small style="color:var(--txt3)">Serving Katraj · Ambegaon · Kondhwa</small></div></div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">📞</div>
+        <div><div class="c-label">Phone</div><div class="c-val"><a href="tel:+919890273861" style="color:inherit">+91 98902 73861</a></div></div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">✉</div>
+        <div><div class="c-label">Email</div><div class="c-val"><a href="mailto:info@aspiregroup.com" style="color:inherit">info@aspiregroup.com</a></div></div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">⏰</div>
+        <div><div class="c-label">Office Hours</div><div class="c-val">Mon – Sat: 10:00 AM – 7:00 PM<br>Sunday: By Appointment</div></div>
+      </div>
+      <div style="border:1px solid var(--bdr);overflow:hidden">
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0!2d73.8553!3d18.4528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295617a30fce5%3A0x3f2f63c60caaef8a!2sKatraj%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000" height="220" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div>
+      <div class="frow">
+        <div class="fg"><label>First Name</label><input type="text" name="fname" placeholder="Rahul"/></div>
+        <div class="fg"><label>Last Name</label><input type="text" name="lname" placeholder="Sharma"/></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Phone</label><input type="tel" name="phone" placeholder="+91 98765 43210"/></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="rahul@email.com"/></div>
+      </div>
+      <div class="fg">
+        <label>Interested Project</label>
+        <select name="project">
+          <option value="">Select a Project</option>
+          <option>Siddhi Aspire — Katraj (1/2/3/4 BHK)</option>
+          <option>Optima – Aspire — Ambegaon (2/3 BHK)</option>
+          <option>Optima – Aspire Plus — Ambegaon (2.5/3 BHK)</option>
+          <option>Aspire Icon — Katraj (Commercial)</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Budget Range</label>
+        <select name="budget">
+          <option value="">Select Budget</option>
+          <option>₹40L – ₹70L</option>
+          <option>₹70L – ₹1Cr</option>
+          <option>₹1Cr – ₹1.5Cr</option>
+          <option>₹1.5Cr+</option>
+        </select>
+      </div>
+      <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us what you're looking for — unit type, preferred floor, move-in timeline..."></textarea></div>
+      <button class="submit-btn" onclick="submitForm(this)">Send Enquiry — We'll Call You Within 2 Hours</button>
+      <p style="font-size:.68rem;color:var(--txt3);margin-top:.7rem;text-align:center">Your data is never shared or sold. 100% private.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCADUAMwDASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAcIBQYJBAMCAf/EAFcQAAEDBAECAwMHBAkQCAcAAAECAwQABQYRBxIhCDFBE1FhCRQVIjJxgUJSkbIWFyM2YoKiscEYJDM1N1Vyc3R1kqGz0dLTJSY0U5SVpMM5Q0djZGV2/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAID/8QAGREBAQEBAQEAAAAAAAAAAAAAAAERAgMx/9oADAMBAAIRAxEAPwCmVKUoFKUoFKUoFKUoFKUoFKUoFKV6rRCcuV1h25n+yyn0Mo+9Sgkfz0H7vsb5nfJ8PXT7CS43r3dKiP6K8VbRy20ljlbLmEDSW75NQB7gH1itXoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFblwbCVcOaMKhpbLgcv0LqA/ND6Co/gATWm1NPgltS7p4kMbUGutqEmTLe/ghLCwk/6akUGj84o9lzVnLf5uRXAf8AqXK06t68QiOjnbOk++/zD+l5R/prRaBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBVsPk2bH84zvKskJOoFtbhga7bfc69/eBHI/Gqn10M+T5xw2ngxd6dSj2l8uT0hCgO/sm9MhJ+5bbh/jUFNPEiNc95wP8A93JP8s1H1SL4hG1S/ELmbDf2nb/IbH3l0io6oFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoFKUoPpGYelSWo0ZpbzzqwhttCdqWonQAHqSa66cbY21h/H9hxdkpULXAZjKWkaDi0pAWvX8JW1fjXPDwXYYcw56s7jzXXBsm7rJ2SO7RHsh9/tVNnXqAqul9By/y5tFz8XVzjr7tv5ytk/EGb0/zVFs2M7DmvxH09LzDim3B7lJOiP0ipHs7/0h4qIcoHfznN0OD49U4H+msNztbXLRzTmlvW17IN3yWW0//bU6pSD+KSk/jQaXSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBX9SCogAEk9gB61uvBmDftkcqWTDlSzDZnOrL7yQCpDTaFOL6d/lFKCB8SN9q6W4JxngvHtsQzimMW+K+hISJKmwuQ6ryBW6QV9yfuG+woOXkDCcznthyBiN/loPcKZtrywfxCa9CuO+QErCFYLk6VHyBtL+z/JrrQ3F2oOPvOPOaIP1ilHf06Ada+/Z+JqLMwuON3vNWcQx6/W36bcKkvR4TyVOx0pG1qcCO6AB+drZIHmQKz9e7xzsmr8+Z11luNP8AAZx1Jw/jGXkF3hPRLvf5PUWn21IcajtFSG0qSruCVFxXxCk+6rDTZDcSG9KeOm2W1OLPuAGz/NX9jMojx22GgQhtAQnZ2dAaHesByfcbfaeO7/OurqWoSIDqXllRACVJKfMdx9qrtyamTbjmDww+uVzthcl07W9k8BavvMpBNSJ487EbP4h583f1LzBjTkgD7OkexI/SyT+NSLx/xNw1KvVgynEs+Qq9QLtElC2sTG3kgNuoVotq/dQDrXV1EDfkfKtx+UE47u+UWTGsksFvcnS7e87EkMspBdW24kLSQPNXSW1DQ2duVPPpLN+K64suKHUr6yo78SS5GlMOsPtKKXG3EFKkEeYIPcGvlVoKUpQKUpQKUpQKUpQKUpQKUpQKUpQKUpQZ/jzK7ng+bWnLLOU/PbbIDyEq+y4O4Ug/BSSpJ+BNdQ+JOR8W5Vw5F5sMkKCkBubCWrT0VZHdCwO/v0odiO4rk7WewTMclwbIGr7i12kW2c3262ztLifVK0nstJ9xBFB085v/AGSr4hyiFjjr6L6u3OiE6z2cdIG1JRrydKArQGjvuPLtFngT4qXh+COZreo3RfMibSpkLA62If2kD3guHSz38g3vRBrZ/Cvy9d+YsUnyb7i4grt7iGHZjR3FluEbIQlXdKkjpJTtQHUnv3AqaqBUB+PS/Cz+HydBDnS7eJ0eEnR7kBXtlfhpoj8anyqPfKRZUJOU41hrDgKYMVc+SkH8t09KAfiEtqP3LoKwYRLEDNLHOJ0I1xjuk+7pcSf6K6wcj227XbBrvCsEr5peVRVrtz5SkhElI6myQoEdPUADsHsTXIgEgggkEeRFdhMSuab3ilovKCFJnwWZQI9Q42lX9NBzykc32TL2vonmPj2Bc3Gx7L6UtjfzWcxrY+zsA6PfoSWwSO4Na3kvFlvuVvkZBxVfxldqZT7R+CpPRcoad6+u1oFYGwOpI0SToEAmto8cXHSsK5ffvcNjotGS9c5kjyRI2Pbo8/ziF+g04APKoNtVxn2m4M3C2TJEKWyrqafYcKFoPwI70HlpW25Xe4mXxXLzLYYh5G3ozFsoCG7ik9i70jsl4HurXZQJV2IPVqVApSlApSlApSlApSlApSlApSlApSlAreOFeM8g5UzVjHbIj2TQ05OmrQS3EZ33Wr3n0Snf1j7hsj7cJ8UZTyvk6bTYI5aiNEGdcXUn2ERB9SfylHv0oHc/AAkdKOH+N8b4vxFnHsdj6HZcqU4B7aU7rutZ/mHkB2FBlOPsTs+DYbbcUsDK2rfb2vZt9aupaySVKWo+qlKKlHWhs9gB2rPUpQfOU+xFjOypLqGWGUFxxxatJQkDZJPoAKpJneW+FvmO+ybvkUvJsUvrxDariW1lLoQAlBKU+1QE6A/JQfea37x7csNY7h37Xdnkj6Xvbe55QrvHh77pPuLhHTr80K94qhFBYSf4crLdtu8dcy4VkAPdMaXKTFkAe7pBX3+8Jq7PAFryCxcO43YsnjtsXS2xfmjiW3kuoKG1FLakqSSCC2EH4eVcoquB8nLnqY10vXHM15KUTP8ApK3A9tupAS8ke8lAQoD0CFGgsn4iuNI3KnGE/HT7Nu5N/wBdWt9Z0G5KQenZ/NUCUHz0Fb1sCuZVyw3Lra9IZn4xeI64zim3uuE4AhSTognWvMV16qqnjg4Ll5TGXyPiTDj92hshNzgo2TJZSOzrY/7xIGin8pIGu6dKCii0lCyk62Do6II/SK/NKUClKUClKUClKUClKUClKUClZKzxbS+4Ddbs5Ca9fYxS+v8A0SUj+VUi4fD8PsRwO5VfuQLsQoKDUK1RoiCPzVFTziiPiCk0EXQosmbLahwo70mS8sIaZaQVrcUewSlI7kn3CrOcF+EXJcicj3jkRT2PWg6WICdfPXxrYBHcMjv+VtXYjpHnW68ec/8Ahp4/Z6MSwa+W10pKVSRb2nJCwTshTq3isj4b18K3D+rO4m/vblf/AIJn/nUE84djFgw/H49hxq1R7ZbY402yyn19VKJ7qUfVSiSfU1mKrd/VncTf3tyv/wAEz/zqx128bHHjLR+i8YyeY6PIPoYZQfxDij/qoLRVD/iL53xziezORkOM3LKH2/6ztqV76Njs49r7CPh5q8h6kVa5L8YXIORx3YWMQoeKxXAQXWle3la+DigEp+8IBHoarnPmS7hNemz5T8qU+srdeecK1uKPmVKPcn4mg9uV3+75Tkc7Ib7Ncm3Kc6XX3l+aifQD0AGgAOwAAHlWLpSgVlsOyG6YnlNtySyv+wuFukJfYX6bHmCPVJGwR6gkViaUHWLhfkmw8o4TGyOyupS4QETYZVtyI9r6yFfD1B9Ro/AbtXI3jjPMq48yFF8xO7OwJQHS6kfWbfR+Y4g9lJ+/y8xo96thhHjctyojbWa4bLbkJGlv2h1K0rPvDbhSU/d1mgyfih8LLeSyZOYcbMsRbu4S5NtJIbalq8ytonshwnzSdJV57Sd9VIbvbbjZ7k/bLtBkwJ0dXQ9HktFtxtXuUlWiDV/B4zuJyN/RuWD4fMmf+dWmcmc++GzkeGljLsNyKc6hPS1KTCabkND3JcS8Fa336dlJ9QaCldKkPL7dw04+t3EcnzKO1r6ke6Wdhw7+Lrbye38StBktttulLT6Hkb7KSCNj7iBQfKlKUClKUClKUGXxbGb/AJTLkxMetUm5PxYrkx9DCdlDLY2pZ+A7fEkgDZIrEV0A+T+4+GPcZycynMdM/InP3HqHdMRskI+7qV1q+I6Kqn4qOPv2uuZbtaozHsrXNV8/tuhpIZcJPQPghQWj7kj30EV0pX0isOypLUZhBW66sIQkealE6A/TQeuw2a73+5N22x2ubc5rn2I8RhTrivuSkE1IrPh25qejh9HH9yCCN6W40lX+iVg/6qu3asTtnh78PN5nY5bY8q9wLWqTLlKRtUqSE/aUfP2aVHYTvske8k1R17n3mR27G5nkG9JeK+voS4AyD7vZAdGvh06oNWzHA80w7oOU4td7Q2tXQh2VFUhtau50leulR7HsDXzxrB80yaE5NxzEr9eYrbnslvQLe6+hK9A9JKEkA6IOviKnLmDmK4creFqF9OIZRfLVlMZmYtlPSiQhUWSW3On8knSgQO207Gt6EH8aXKZaOQseuMCS7HkM3KOpK21FJ/sidjt6HyI9aD3nivk8K6TxxmHV7voSTv8AUr9OcT8pNtlxfG2YJSO5Jskjt/IrrLXPa3+KjlHGuS55u1zavllauLrbtvejNN6aDhGm1oSFJUB5bJHvBoK9XS23G1S1RLpAlQZKftNSWVNrH8VQBr5wosmbMZhw47smS+4lpllpBWtxajpKUpHckkgACust6sWF8rYLEVd7XFvFmucREmMt1v66UOICkrQr7SFaI7gg1zI5vwZ3jjlG94gp5T7UJ4GM8od3GVpC2yfTfSoA69QaD+OcT8pNja+NsxA9/wBCSdfqURxPykobTxtmOvf9CSdfqVcr5Oi5TJfD94hSZDrzUO8rTHStRPs0KZbJSnfkN7OveT76wXylNxlsYxh9sakOojSpcp15tKiEuFtLYTseuutX6aClEeBOkXNFrjwpLs9x4MIjIaJdU4T0hASBsq32157ranOKOUmxtfG2Yge/6Ek6/UrTKvP8m3c5snC8rtr8p12PEnMLYbWslLfWhXV0j030CgqW3xPym4No42zEj3/Qkn/gryXTjrkG1MqfueC5PCaSNlyRaX20ge/akgVevxs8n5lxnj+NysOuLUF6dLeRIUuM291JSlJA0sEDuT5V8fCJ4gpnKT0zGMpjxWMhhsfOWn46ehuWyCEqPSSelaSpO9diDsAaNBzyr9IQpxaUISVLUdJSBsk+4Ve/x18QWCdgUzkiz29iDe7YtC5ymEBImMrWEErA7FaSoHq89Ag77aodQbmvijlFCQpXG+YdJ8j9CSNfqV8xxbyaf/p1l/8A5LI/4KtJ8mjcZbsLOLW7IdXFYXCeZaKiUtqX7cLIHpvoRv8AwRUveL/krJOLeN7df8X+ZfPJF4bhr+dMlxPs1MvLOgCO+209/voOf6eKuUFHSeN8xJPuskn/AIK17IbLd8eu71ovttlWy4MhJdjSmi2431JCk9ST3G0qB7++rD2jxn8oR5bSrhacanRgoe1bEZ1pak+oSoOaB+JB+6ou8S1+iZPzlk99gyESIsqQ2WXELCgUpZQkdx27BOvwoI5rZ+KsQmZ7yHZMShdSV3GUltxxI37JofWcX/FQFH8K1irnfJ3YF83gXzk2fFW4pSVW+2JCdqUkaU8pIPmSQhAPwWKCwFj5Axq18wMcKW5luObfYmno/Srsgp7COB7wz0r+7dR14++P/wBk/FTeWQmOu4424XV9I7rir0HR/FIQv4BKvfUCs4T4gUc5jlT9r+7/AD/6WM8tdbf9jKtFnfV9n2f7n91X/mRYt2tD0KdG9pFmsKafYdT9pC06UlQ+4kGg4416bVMXb7pEntJCnIzyHkg+RKVAj+atk5gwyVx9yVe8SldahAkkMOKHd1lX1ml/igpJ+Ox6VqVB19x+6WTOMKiXWJ7GfZ7zCC+hYCkuNuJ0pCh+JSQfXYNUo8RHhPvGOLl5Hxwh672bZcctndUqKPP6n/eoH+mO3ZXc1pPhm8Qd54nlfRFxadu2KPudbsQK/dYyj5uMk9viUHQPvB2a6EYBmmM55jzV+xW7MXGE52UUHS2leqFpPdCh7iP9VByJJWkKaJUkb2pPxG/Me/uf01ksQ/fZZ/8AL2P9omrd+Pfhy1RbSrlPHYiIj4fQ3emW06Q77Q9KX9eiuopSr87qB8wSaiYh++yz/wCXMf7RNB2Erj9m37873/nGR/tFV2BrlpDXxbGzS7TM5GVTnW7rIUqBbWWUMupDp0FPKc6gD66SD7j60HQHwuNyW/D3hKZYUHDa0KHV+YSSj+SU1QrxdZTAy7n3IrjanUPwo6m4TTqDsOeyQEKUD6jrCtH1GjW58ueKzJcnx44thdoaxCx+xEcll3rkqaA6QhKgAG067aSN+nVqq50F8Pk3P7mGS/56/wDYbrB/KY/2vwT/ABs7+Zis58m5/cwyX/PX/sN1g/lMf7X4J/jZ38zFBSursfJof2lzcf8A5MP9V6qT1dj5ND+0ucf5RD/VeoPv8pX+9bDf8uk/qIqHPATGlP8AiKt7sdKi3HgSnJBHkEFvoG/4ykVbPxXXPiGBj1na5cs8y5Q35DnzH5qFhbbgSOo9SFpI7EepB91ZzgHCuK7HizWS8YWttiJe46XPnhdW68tP5hLhUU9KtgpGhsdxsUGh+PLPrZjvEEnEUyELvOQlDbbAO1NsJcC1uKHoD09A95UdeR1zwqUPFBi+X4tzBdo2Y3KXd5ElfziJcpB7yo5J6CNdk610lI0ElJA7aqL6C43yZ3/bc8/xcD+eRUoePHFsjy3iS02/GLJPvEtq/NPuMw2S4tLYYfSVED02pI38RUX/ACZ3/bc8/wAXA/nkVMfjN5DynjXjK2XzEZrUSdIvLcRxbjCHQWyy8sjSgR5oT3+FBRuJwZy/KeQ03x1kKVKOgXYhbT+KlaA/E1p+X2KZi+UXPHLitlc22ynIsgsqKke0QopUASBvuCKnfFPF9yrEvsJd8kWm4272yBKaVBS2ot7HV0qRrR1vR79/Q1DPK06Pc+UcsuUSQiTHl3uY+08hW0uIW+tSVA+oIINBh8etM6/X6BZLYyX50+Q3Gjtj8pa1BKR+k1fnnvMXfDnwViuL4Y7GRdlKTFjrdaCgUNp65DxSexKlqT+Lh91Vm4FzriLjPIY2VTbTlV+vjDOmAtqO1HjuKTpSkjrJUdEgE67EnW9azPiQ5g465kdt056Jltnm22O60whLUd5lZUQfrAuJI7gbI329O1B4/wCq45o/vtav/LW6tb4PeXrhyrg885C7HVkFqldEn2TYQHGlgqaX0jsPJaf4m/Wua9S74W+VbZxJmc+/XSPdZjEmEYvzWH0dLm1BXUvrI+z0jWvefxCfflFuPvnNptHJEBjbkMi33IpH/wApRJZWfuUVJ3/DT7qqhw5aId/5ZxKyXBkPwp15iMSWiSAtpTqQtPb3p2KtnlHi94vyjHJ+PX3CMik26ewpiQ0Sz3SfcevsR5gjuCAaq9CyDDsQ5AsGV4Qm/TUWy4tzFRLw202SlCwoJDjSlbJ0QT0jXY6PlQYXkvFbhhOd3jF7mwtl6BKW2nqGvaN7+ose9Kk6UD7jW5+FHL7/AIrzfjbVlfe9hdrgxb50ZJJQ+y4sJJUPenqKgfQj3bqeMt578OnKUBgciYReW5zKOlLwZSXGvXpQ804lZTv0IA+FYPHOWvDRxjMVeuP8Cvt0vyEkMSJi9BvY0dLcWro2CRtKN6JG6Cd/HFeoNq8Ol9iynEB+5ux4kVBPda/bIcOvuQ2s/hXO/Bmy9mtiaA2V3KOkfi4mto5v5byrlnIUXPIHW2YkYKTCgMbDMZJ89b7qUdDaj3OvQAAebiG6YLYMmt+QZcm/yXLbOalMw7ey0W3fZqCgFrWsEDqHcBPl6jfYOsFcgc8QW84vzahopuUgH8HVVdT+rbwjq/efkXT7+tnf61VR5aunG+QXy7ZDigyeFMuExcow5zDCmUFxZUsBxC+oAEnQ6T6DfrQR/SlfaEIqpjCZrjzcUuJDy2UBa0o39YpSSATregSPvFBe75N1sjifIXddlX1Sf0MNf76wXyl6CbRgznomRNT+lLP+6tZ4K8RfGXEmDHGLTYMruXtZa5b8iQmO2XHFJSnskLOgEoSNbPlXj5+564s5hxyDa7tY8vtb8CQX40mMmO5oqT0qSpKljYPb1B2B3oKtVdv5NJBGP5q5rsqXET+hDn++qYTE2wXZaIb8xdu9rpDrrKUvez35lAUU9WvTq18aszwBz7xjw7i82z2uyZZdnp0r5xIkyER2tkJCUpCUrOgNE+ZOyaDfPlKkE4jh69dhPkA/i2n/AHVp3gC5aTZb67xnfJXTAujhdtK3FdmpOvrNbPkHANj+ENea6+fO/iC4r5exKPYrzj+XW5yLJEmNJjCOsoV0lJBCl/WSQry7HYHeqwT1xIt4W7Y5U0x2nAuK88gNPjXcEhKlBKgfco0HTjxL8SQeWsBct6Q0xfYPU/apSuwS5ru2o/mL0AfcQk99armNe7XcLJd5dou0R2HPhuqZkMOp0ptaTog1a3jLxo3K2WWPbc6xpd4kMICPpGG+G3HQPVbah0lXvIIB91arzzypwhyzKau0rGstst9bSEKnxG4yvbIHkl1BcHXr0OwfTZAAoN8+TMbPXnzuuwFvSP8A1Nbt8oyy65wjaXG0KUlrIWVOED7IMeQNn8SB+NQ54eudOMOG7Jc4Vts+WXeTcn0OyJD7cdkaQCEpCQ4rQHUo+Z86ke5eMnjW8QHbdesBvM2E8Ol2O+3HebWPcpKlaP40FGqkmFxd/wBXLJdrpeTb3LvCM1lhcfZDXtnG0q2VDsr2fUO3kRU7xOefDExITIRwmUOpOwRZIKgD7wC5qoX8TPKsPlDkRm+2CJNtlsiW5qDGYe6UL6UKWokpQSkd3CAAT2AoInpSlApSlApSpH4y4/t9zxa6cgZnMlW7DrS4lhRjAGTcJKu6YzHV2B0QVKOwkd9HvoI4pUgvcjWyG8W8c44w+BDSdNpnQzcXlD3rcfUQT/gpSPcBW4cY8gce5HlNusPJHFWLLgzpCI/z+0NuW91hS1BIWoNLCVJBI3rpIGz38qCDqV95hbRcHiwgJbS6r2aT9YAb7Dv5/jViUxcTh+Eu38jKwLG5eRLvZtrrr7TobWj656vZocSkK0AO3b4UFb6VYjhTH+O+cRcsOlYxDxHL24a5NsuVqee+bv8ATraHWXFrHbYJKdbHV5a71/uUORbrjJt8tHRIivLZdTvfStJII/SDQeelSVxrx9bpeH3HkbOJMqDiFteEZtuNoSbpKI2I7JVsJGu6lkHQ3oHR15HuSI0Z7osPH2F26Ek6Q1JtonuEfw3ZBUon3kdI9wFBoFKn3jSHxlzVK/YldLHDwXM5CFfRlytRWIMxwDfsnY61EIUe+ugjq+B0kw/muNXnB8xnY3foqWLlbX+h1BHUhXkUqG/tIUCCPeCKDBUqyWQ2bEmvBvZuQmMPsrWTTrmbe9MS0rXSHHh1Bsq6AopbSPLXckAelbaBSpw4KiY7deKuSbhe8Vs9yn47ampNtkOtKSpC1FaT19KgF9+k/WB8vWoaiTlx7l8++bxHVdRUWnWEqaO/MdHkB93l6UHkpVmPEixh3H7OEP47xzixF7sqLhLTKbkOArUE/VTp0aT3Pl3+NYa/YNgmfcB3Hk/BbQvG71j7yW73Z0SVvR3Ekge1aLhKk9ldWt6+qsaJAJCAKUpQKUpQKUpQKUpQKsf4iYf7H/C9wvZYSemHOjP3ORryW+tDawT7z+7rH3dqrhVsrHDHOvhBi45aCl/MsFc6m4gP7pIYAUEhI9ymzoe9bQHbYoKm1seKYLmGWNrcxnHp94DY2tMNv2qkDetqSnuBv1IrX3mnGXlsvNrbcbUUrQsaUkjsQQfI1Yv5PJSk89SQkkBVjkBXxHtGT/QKCvt5tc+z3F23XOMqNLZPS60sjqQfUEDyPw86sbFtF2vXgHhxrPbJtxfbypTq24rCnVJQAsFRCQToEjv8RVbrmtTlylLWSVKeWST6nZqxyZtwt3gFgSbfMkw3Tlah7Rh1TaunS+2wd62KDWvDmm48XZDM5Tyq1TbdbbTBfZhIlMqZNwmOoKG2GwoAq7FSlEbCQnZ9Nwtcpj9xuMm4Sl9ciS8t51WvNSiST+k1YLw95zbM5sk3hPlG4PSLbeXOuyXOQ4VuwJv5IClHelHy762SnyWdQ3yfg9+48zObi2Qx/ZSoytocSD7OQ2fsuoPqlQ/Qdg6IIoJ08WMBOMcEcL4vBHRDXbnpr4T5OSC2wpS/v6nnD/GqstWyy1hXNfg8x+52QfO8jwICPPiI+s6WEthClAeZ2hDTm/XoWBsiqm0Hrstxl2e8QrtAdLUuFIRIYWPNK0KCkn9IFWW+URhw155iuQR2w29c7KPageZ6FkpJ+Ol63/BFQDxpiVxznOrRi1saWt6fJS2tSRv2Te9rcPuCU7UfuqR/GVntuzjmB1uxvIes9jjJtkRxs7Q6UFRcWk+o6lFIPkQgH1oNuyX/AOHpjH/9Kv8AXk1WerM2cHLPAJcbdbx7aXit9+dSWU91hpSirr1+bp5R3/AV7qrNQTd4fP7j3NH+YY/+1VUI1NXFq/2PeGflC/S/3NN8egWS3b7e2dC1OPAf4LZBqFaCzXjCtlyu8fiqLarfLnyBiLKi1GZU4rp0gb0kE67jv8a0+Ffo3GvAeS4c5MjyMpzCQwJMSO6l0W6I1s/uqkkpDqyVD2eyUg7Vo9q2fxtIKbbxVsa/6qtD9CUVW6gUpSgUpSgUpSgUpSgVmcNynIMOv7F+xm6ybZcWPsPMq8wfNKgeykn1SQQfdSlBbPiCBjfiKjqufImI2QXYL9m5cbWh2I+9rt1OdK+laviU/dqvXybarF4aYknIONbFD+mJDXzX55c3HpC221KBISnrCAdgHfSfL3dqUoKVLUpa1LUdqUdk+81bcRob/DkfiZcNr6EQ4JSZIKvnXtSsr6+rfRvuR9jWv00pQVOntCLcZDLSlaZeUlJJ79joH76sVjGXTOZcCasXIVvt11kWf9xhXfoWiehOh9pwK0r031JO9AnZ70pQRTY8syPiTkmdKwq7SIjkV5TCg5paJDYP2HU66VD8O3mNHvVqcC4l485pxdGaZBjMay3WUj20j6DccjNOKPcktqUtIJPmQBv1pSggPl6/O8c3a7YFgsCFYIL7Xsps2OFqnTGye7a3lqUUoOhtLfQD6g1C1KUG5cS8i5NxxkK7jjshgty0ewmwpTftY0to/kOI2Njue4II2e/c7tsPD/xbesQObuWByHJcb9uuBEluoiFRGyAkqK0p+CVDXpqlKCpHJuZ3bJZjFqeZh26zWdTjFttcBotRoyer6xCSSVLURtS1FSifM1isDtMa+ZdbrVMU6mPIcKVlsgK0Ek9iQfdSlBYvxDSG88w9iZdIUeG7jMJxuAYXUkFGk6QvrUrYHQPLR8+9VYpSgUpSgUpSg//Z" alt="Aspire Group" style="height:54px;width:auto;margin-bottom:.5rem;display:block"/>
+      <p class="foot-tagline">Building landmark residential and commercial spaces across Pune since 2014. Trust, quality and integrity — in every brick we lay.</p>
+      <div class="foot-social">
+        <a href="https://www.facebook.com/profile.php?id=61577758784546" target="_blank" class="soc" title="Facebook"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/_aspire_group_" target="_blank" class="soc" title="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCH9UX3ZWXM4tq3Nf2-Bg7ew" target="_blank" class="soc" title="YouTube"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.57A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#040404"/></svg></a>
+        <a href="https://www.linkedin.com/company/108254523" target="_blank" class="soc" title="LinkedIn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-heading">Quick Links</div>
+      <ul class="foot-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-heading">Our Projects</div>
+      <ul class="foot-links">
+        <li><a href="aspire-siddhi.html" target="_blank">Siddhi Aspire ↗</a></li>
+        <li><a href="aspire-optima.html" target="_blank">Optima – Aspire ↗</a></li>
+        <li><a href="aspire-optima.html" target="_blank">Optima – Aspire Plus ↗</a></li>
+        <li><a href="#projects">Mahadev Prangan</a></li>
+        <li><a href="#projects">Aspire Icon</a></li>
+        <li><a href="all-projects.html" target="_blank">All Projects ↗</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-heading">Contact</div>
+      <ul class="foot-links">
+        <li><a href="tel:+919890273861">+91 98902 73861</a></li>
+        <li><a href="mailto:info@aspiregroup.com">info@aspiregroup.com</a></li>
+        <li><a href="https://wa.me/919890273861" target="_blank">WhatsApp Us</a></li>
+        <li><a href="#contact">Send Enquiry</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="foot-copy">© 2025 Aspire Group. All rights reserved. Baner, Pune — 411 045.</div>
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <span class="rera-badge">MahaRERA Registered</span>
+      <span class="foot-copy">RERA: P52100047821 | P52100047822</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAV SCROLL
+const navEl = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── SMOOTH SCROLL (anchor links)
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// ── HERO SLIDER
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.h-dot');
+function goSlide(idx) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = idx;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+setInterval(() => goSlide((currentSlide + 1) % slides.length), 5500);
+
+// ── COUNTER ANIMATION (triggered on scroll into view)
+function runCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 1800;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current += step;
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current);
+  }, 16);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      runCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+// ── PROJECT FILTER
+document.querySelectorAll('.pf').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.pf').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.dataset.filter;
+    document.querySelectorAll('.proj-card').forEach(card => {
+      const show = !filter || card.dataset.status === filter;
+      card.style.opacity = show ? '1' : '0.25';
+      card.style.pointerEvents = show ? 'all' : 'none';
+    });
+  });
+});
+
+// ── MODAL
+const MODAL_DATA = {
+  mahadev: {
+    tag: 'Completed · Residential',
+    name: 'Mahadev Prangan',
+    loc: 'Kondhwa–Katraj Road, Pune — 411 048',
+    img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=85&auto=format',
+    content: `
+      <p style="font-size:.88rem;color:#888480;line-height:1.9;margin-bottom:1.5rem">Mahadev Prangan is a fully delivered residential development in Kondhwa — 1 &amp; 2 BHK premium apartments, 180 units, 100% homeowner satisfaction. Community garden, children's park, 24×7 security and covered parking.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem">
+        <div style="padding:1rem;border:1px solid rgba(201,169,110,.14);background:#1a1a1a;text-align:center"><div style="font-size:.6rem;color:#c9a96e;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.3rem">Status</div><div style="font-size:.9rem;color:#4ade80;font-weight:500">✓ Delivered</div></div>
+        <div style="padding:1rem;border:1px solid rgba(201,169,110,.14);background:#1a1a1a;text-align:center"><div style="font-size:.6rem;color:#c9a96e;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.3rem">Units</div><div style="font-size:.9rem;color:#f5f0e8">180</div></div>
+        <div style="padding:1rem;border:1px solid rgba(201,169,110,.14);background:#1a1a1a;text-align:center"><div style="font-size:.6rem;color:#c9a96e;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.3rem">Types</div><div style="font-size:.9rem;color:#f5f0e8">1 &amp; 2 BHK</div></div>
+      </div>`
+  },
+  icon: {
+    tag: 'Upcoming · Commercial · Pre-Launch',
+    name: 'Aspire Icon',
+    loc: 'Katraj Bypass, Pune — 411 046',
+    img: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=85&auto=format',
+    content: `
+      <p style="font-size:.88rem;color:#888480;line-height:1.9;margin-bottom:1.5rem">Aspire Icon — Grade-A commercial landmark on the Katraj Bypass. Premium office spaces, ground-floor retail, 18th-floor sky lounge, multi-level parking. Pre-launch registrations now open.</p>
+      <div style="padding:1rem;border:1px solid rgba(201,169,110,.3);background:rgba(201,169,110,.06);margin-bottom:1rem"><div style="font-size:.75rem;color:#c9a96e;font-weight:500;margin-bottom:.3rem">🔔 Register Now for Pre-Launch Pricing</div><div style="font-size:.8rem;color:#888480">Priority unit selection for early registrations.</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div style="padding:1rem;border:1px solid rgba(201,169,110,.14);background:#1a1a1a;text-align:center"><div style="font-size:.6rem;color:#c9a96e;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.3rem">Launch</div><div style="font-size:.9rem;color:#f5f0e8">Q3 2026</div></div>
+        <div style="padding:1rem;border:1px solid rgba(201,169,110,.14);background:#1a1a1a;text-align:center"><div style="font-size:.6rem;color:#c9a96e;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.3rem">Area</div><div style="font-size:.9rem;color:#f5f0e8">2,20,000 Sq.Ft.</div></div>
+      </div>`
+  }
+};
+
+function openModal(key) {
+  const d = MODAL_DATA[key]; if (!d) return;
+  document.getElementById('m-tag').textContent = d.tag;
+  document.getElementById('m-name').textContent = d.name;
+  document.getElementById('m-loc').textContent = d.loc;
+  document.getElementById('m-img').src = d.img;
+  document.getElementById('m-content').innerHTML = d.content;
+  document.getElementById('projModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('projModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('projModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── CONTACT FORM
+async function submitForm(btn) {
+  const section = btn.closest('section');
+  const inputs = section.querySelectorAll('input,select,textarea');
+  const data = { access_key: 'YOUR_WEB3FORMS_KEY', subject: 'New Enquiry — Aspire Group', from_name: 'Aspire Group Website' };
+  inputs.forEach(el => { if (el.name) data[el.name] = el.value; });
+  btn.textContent = 'Sending…'; btn.style.opacity = '.7'; btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data) });
+    const json = await res.json();
+    if (json.success) {
+      btn.textContent = "✓ Sent — We'll Call You Within 2 Hours";
+      btn.style.background = '#2d5a2d'; btn.style.opacity = '1';
+    } else {
+      btn.textContent = 'Send Enquiry'; btn.style.opacity = '1'; btn.disabled = false;
+    }
+  } catch(err) {
+    btn.textContent = 'Send Enquiry'; btn.style.opacity = '1'; btn.disabled = false;
+    alert('Please call +91 98902 73861');
+  }
+}
+</script>
+</body>
+</html>

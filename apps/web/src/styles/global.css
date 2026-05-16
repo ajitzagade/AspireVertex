@@ -330,9 +330,71 @@ button { font-family: 'Jost', sans-serif; cursor: pointer; background: none; bor
   .pg-large { grid-column: span 2; height: 300px; }
   .pg-small { height: 180px; }
 }
+
+@media (max-width: 900px) {
+  /* Home hero */
+  .hero-body { padding: 0 2rem 3.5rem !important; }
+  /* Home about */
+  #about { grid-template-columns: 1fr !important; padding: 5rem 2rem !important; gap: 3rem !important; }
+  #about img { height: 320px !important; }
+  /* Home contact */
+  #contact > div:last-child { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  /* Home projects */
+  #projects { padding: 5rem 2rem !important; }
+  /* Home testimonials */
+  #testimonials { padding: 5rem 2rem !important; }
+  #testimonials > div:last-child { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  /* Journey */
+  #process { padding: 5rem 2rem !important; }
+  /* CTA band */
+  .cta-section { padding: 5rem 2rem !important; }
+  /* Project grid in home — 2 col on tablet */
+  .home-proj-grid { grid-template-columns: repeat(2,1fr) !important; }
+}
+
 @media (max-width: 768px) {
   .nav, .nav.scrolled { padding: 0.9rem 1.5rem; }
   .stats-strip { grid-template-columns: 1fr 1fr; }
   .gallery-masonry { columns: 2; }
   .preview-gallery { grid-template-columns: 1fr 1fr; }
+  /* Hero font */
+  .hero-body h1 { font-size: 2.8rem !important; }
+  /* Sections padding */
+  #about, #projects, #process, #testimonials, #contact { padding: 4rem 1.5rem !important; }
+  /* Stats left side in testimonials - hide on mobile */
+  #testimonials > div:last-child > div:first-child { display: none !important; }
+  /* Journey grid */
+  .journey-card, .journey-card-last { padding: 1.25rem !important; }
+  /* Project card 1 col on mobile */
+  .home-proj-grid { grid-template-columns: 1fr !important; }
+  /* Project page */
+  .pp-plans-grid { grid-template-columns: 1fr !important; }
+  .pp-video-grid { grid-template-columns: 1fr !important; }
+  /* All projects page filters */
+  .ap-filters { flex-wrap: wrap !important; }
+}
+
+@media (max-width: 600px) {
+  .stats-strip { grid-template-columns: 1fr 1fr !important; }
+  .gallery-masonry { columns: 2; }
+  /* Contact grid in project page */
+  .pp-contact > div:last-child { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  /* Banks grid */
+  .pp-banks-grid { grid-template-columns: repeat(3,1fr) !important; }
+  /* Hero */
+  .pp-hero { min-height: 440px !important; }
+  .pp-hero-body { padding: 0 1.25rem 2.5rem !important; }
+  /* Section padding reduction */
+  .pp-overview, .pp-plans, .pp-amen, .pp-video, .pp-gallery,
+  .pp-progress, .pp-banks, .pp-faq, .pp-contact { padding: 3.5rem 1.25rem !important; }
+  /* Spec strip 2 col */
+  .pp-specs-strip { grid-template-columns: 1fr 1fr !important; }
+  /* Variant tabs wrap */
+  .pp-type-tabs button { font-size: .62rem !important; padding: .45rem 1rem !important; }
+  /* Floor plan SVG full width */
+  .pp-plans-grid svg { max-width: 100% !important; }
+  /* All projects page card height */
+  .all-proj-card { min-height: 280px !important; }
+  /* EMI calculator width */
+  .emi-popup { width: 290px !important; right: -1rem !important; }
 }

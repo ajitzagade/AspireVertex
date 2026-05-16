@@ -203,48 +203,90 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
               <h2 className="sec-h">Landmark <em>Developments</em></h2>
             </div>
             <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
-              {['', 'ongoing', 'completed', 'upcoming'].map(f => (
-                <button key={f} className={`pf${projFilter === f ? ' active' : ''}`} onClick={() => setProjFilter(f)}
+              {['', 'ongoing', 'completed', 'upcoming', 'commercial'].map(f => (
+                <button key={f} onClick={() => setProjFilter(f)}
                   style={{ padding: '.45rem 1.25rem', fontSize: '.68rem', letterSpacing: '.12em', textTransform: 'uppercase', border: '1px solid', borderColor: projFilter === f ? 'var(--gold)' : 'var(--bdr)', color: projFilter === f ? 'var(--gold)' : 'var(--txt2)', cursor: 'pointer', transition: 'all .3s', background: projFilter === f ? 'rgba(201,169,110,.05)' : 'transparent' }}>
-                  {f === '' ? 'All' : f.charAt(0).toUpperCase() + f.slice(1)}
+                  {f === '' ? 'All' : f === 'commercial' ? 'Commercial' : f.charAt(0).toUpperCase() + f.slice(1)}
                 </button>
               ))}
             </div>
           </div>
         </Reveal>
 
-        {/* Bento grid */}
-        <Reveal delay={0.1}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.55fr 1fr 1fr', gridTemplateRows: '340px 280px', gap: '3px' }}>
-            {projects.slice(0, 5).map((p, i) => {
-              const show = !projFilter || p.status === projFilter
-              return (
-                <div key={p.slug} className="proj-card"
-                  style={{ gridRow: i === 0 ? '1/3' : 'auto', opacity: show ? 1 : 0.25, pointerEvents: show ? 'all' : 'none', transition: 'opacity .4s' }}
-                  onClick={() => p.slug === 'siddhi-aspire' || p.slug === 'optima-aspire' ? window.open(`/projects/${p.slug}`) : setModalKey(p.slug)}>
-                  <Image src={p.cardImage || p.heroImage} alt={p.name} fill style={{ objectFit: 'cover' }} />
-                  <div className="proj-overlay" />
-                  {(p.slug === 'siddhi-aspire' || p.slug === 'optima-aspire') && (
-                    <a href={`/projects/${p.slug}`} className="proj-ext" onClick={e => e.stopPropagation()}>
+        {/* Featured project — full width hero card */}
+        {(() => {
+          const featured = projects.find(p => p.isFeatured && (!projFilter || p.status === projFilter || (projFilter === 'commercial' && p.type === 'commercial')))
+          const grid = projects.filter(p => {
+            const matchFilter = !projFilter || p.status === projFilter || (projFilter === 'commercial' && p.type === 'commercial')
+            return matchFilter && !p.isFeatured
+          })
+          const allVisible = projects.filter(p => !projFilter || p.status === projFilter || (projFilter === 'commercial' && p.type === 'commercial'))
+
+          return (
+            <>
+              {featured && (
+                <Reveal delay={0.05}>
+                  <div className="proj-card" style={{ position: 'relative', height: '480px', marginBottom: '3px', cursor: 'pointer' }}
+                    onClick={() => window.open(`/projects/${featured.slug}`, '_blank')}>
+                    <Image src={featured.cardImage || featured.heroImage} alt={featured.name} fill style={{ objectFit: 'cover' }} />
+                    <div className="proj-overlay" />
+                    <a href={`/projects/${featured.slug}`} className="proj-ext" onClick={e => e.stopPropagation()}>
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
                     </a>
-                  )}
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.75rem' }}>
-                    <span style={{ display: 'inline-block', padding: '.25rem .75rem', border: '1px solid var(--gold)', fontSize: '.57rem', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '.6rem' }}>{p.tag}</span>
-                    <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: i === 0 ? '2.3rem' : '1.65rem', fontWeight: 300, color: 'var(--warm)', lineHeight: 1.2, marginBottom: '.3rem' }}>{p.name}</h3>
-                    <p style={{ fontSize: '.7rem', color: 'var(--txt2)', display: 'flex', alignItems: 'center', gap: '.4rem' }}>
-                      <span style={{ fontSize: '.35rem', color: 'var(--gold)' }}>●</span>{p.location}
-                    </p>
-                    <div className="proj-details" style={{ marginTop: '.75rem', display: 'flex', gap: '1.5rem' }}>
-                      <div><strong style={{ display: 'block', fontSize: '.82rem', color: 'var(--warm)', fontWeight: 400 }}>{p.unitTypes}</strong><span style={{ fontSize: '.66rem', color: 'var(--txt2)' }}>Unit Types</span></div>
-                      <div><strong style={{ display: 'block', fontSize: '.82rem', color: 'var(--warm)', fontWeight: 400 }}>{p.startingPrice}</strong><span style={{ fontSize: '.66rem', color: 'var(--txt2)' }}>Starting</span></div>
+                    <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '2.5rem 3rem', zIndex: 2 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '.75rem', marginBottom: '1rem' }}>
+                        <span style={{ padding: '.28rem .75rem', border: '1px solid var(--gold)', fontSize: '.57rem', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)' }}>{featured.tag}</span>
+                        <span style={{ padding: '.28rem .75rem', background: 'var(--gold)', fontSize: '.57rem', letterSpacing: '.2em', textTransform: 'uppercase', color: '#080808', fontWeight: 600 }}>Featured</span>
+                      </div>
+                      <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,4vw,3.2rem)', fontWeight: 300, color: 'var(--warm)', lineHeight: 1.1, marginBottom: '.5rem' }}>{featured.name}</h3>
+                      <p style={{ fontSize: '.78rem', color: 'var(--txt2)', marginBottom: '1.25rem', maxWidth: '540px' }}>{featured.tagline}</p>
+                      <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
+                        <div><span style={{ fontSize: '.6rem', letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--gold)', display: 'block', marginBottom: '.15rem' }}>Starting</span><span style={{ fontSize: '.92rem', color: 'var(--warm)' }}>{featured.startingPrice}</span></div>
+                        <div><span style={{ fontSize: '.6rem', letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--gold)', display: 'block', marginBottom: '.15rem' }}>Units</span><span style={{ fontSize: '.92rem', color: 'var(--warm)' }}>{featured.unitTypes}</span></div>
+                        <div><span style={{ fontSize: '.6rem', letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--gold)', display: 'block', marginBottom: '.15rem' }}>Possession</span><span style={{ fontSize: '.92rem', color: 'var(--warm)' }}>{featured.possession}</span></div>
+                        <div><span style={{ fontSize: '.6rem', letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--gold)', display: 'block', marginBottom: '.15rem' }}>Location</span><span style={{ fontSize: '.92rem', color: 'var(--warm)' }}>{featured.location}</span></div>
+                      </div>
                     </div>
                   </div>
+                </Reveal>
+              )}
+
+              {/* 3-column grid for all other projects */}
+              {grid.length > 0 && (
+                <Reveal delay={0.1}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '3px', marginTop: featured ? '3px' : 0 }}>
+                    {grid.map(p => (
+                      <div key={p.slug} className="proj-card" style={{ position: 'relative', height: '320px', cursor: 'pointer' }}
+                        onClick={() => window.open(`/projects/${p.slug}`, '_blank')}>
+                        <Image src={p.cardImage || p.heroImage} alt={p.name} fill style={{ objectFit: 'cover' }} />
+                        <div className="proj-overlay" />
+                        <a href={`/projects/${p.slug}`} className="proj-ext" onClick={e => e.stopPropagation()}>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
+                        </a>
+                        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.5rem' }}>
+                          <span style={{ display: 'inline-block', padding: '.22rem .65rem', border: '1px solid var(--gold)', fontSize: '.54rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '.5rem' }}>{p.tag}</span>
+                          <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', fontWeight: 300, color: 'var(--warm)', lineHeight: 1.15, marginBottom: '.3rem' }}>{p.name}</h3>
+                          <p style={{ fontSize: '.68rem', color: 'var(--txt2)' }}>{p.location} · from {p.startingPrice}</p>
+                          <div style={{ marginTop: '.6rem', display: 'flex', gap: '1.25rem' }}>
+                            <div><strong style={{ display: 'block', fontSize: '.78rem', color: 'var(--warm)', fontWeight: 400 }}>{p.unitTypes}</strong><span style={{ fontSize: '.62rem', color: 'var(--txt2)' }}>Units</span></div>
+                            <div><strong style={{ display: 'block', fontSize: '.78rem', color: 'var(--warm)', fontWeight: 400 }}>{p.possession}</strong><span style={{ fontSize: '.62rem', color: 'var(--txt2)' }}>Possession</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Reveal>
+              )}
+
+              {/* No results */}
+              {allVisible.length === 0 && (
+                <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--txt2)', fontSize: '.88rem' }}>
+                  No projects in this category yet.
                 </div>
-              )
-            })}
-          </div>
-        </Reveal>
+              )}
+            </>
+          )
+        })()}
 
         <Reveal delay={0.2}>
           <div style={{ textAlign: 'center', marginTop: '3.5rem', paddingTop: '3rem', borderTop: '1px solid var(--bdr)' }}>
