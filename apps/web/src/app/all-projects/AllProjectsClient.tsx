@@ -9,6 +9,11 @@ import Footer from '@/components/ui/Footer'
 
 type FilterType = 'all' | 'ongoing' | 'completed' | 'commercial' | 'upcoming' | 'featured'
 
+interface Props {
+  projects: Project[]
+  waNumber?: string
+}
+
 const FILTER_TABS: { key: FilterType; label: string }[] = [
   { key: 'all', label: 'All Projects' },
   { key: 'ongoing', label: 'Ongoing' },
@@ -138,7 +143,7 @@ function FeaturedCard({ project: p }: { project: Project }) {
             Explore {p.name} →
           </span>
           <a
-            href={`https://wa.me/919090274545?text=I%20am%20interested%20in%20${encodeURIComponent(p.name)}`}
+            href={`https://wa.me/${wa}?text=I%20am%20interested%20in%20${encodeURIComponent(p.name)}`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -307,7 +312,7 @@ function CompletedCard({ project: p }: { project: Project }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '.8rem', color: 'var(--txt2)' }}>{p.tagline}</span>
           <a
-            href={`https://wa.me/919090274545?text=Interested%20in%20${encodeURIComponent(p.name)}%20resale`}
+            href={`https://wa.me/${wa}?text=Interested%20in%20${encodeURIComponent(p.name)}%20resale`}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
@@ -400,7 +405,7 @@ function CommercialCard({ project: p }: { project: Project }) {
         </div>
         <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap' }}>
           <a
-            href={`https://wa.me/919090274545?text=I%20want%20to%20register%20for%20${encodeURIComponent(p.name)}%20pre-launch`}
+            href={`https://wa.me/${wa}?text=I%20want%20to%20register%20for%20${encodeURIComponent(p.name)}%20pre-launch`}
             target="_blank"
             rel="noreferrer"
             style={{
@@ -474,7 +479,8 @@ function RERABar({ projects }: { projects: Project[] }) {
 
 // ── Main Component ─────────────────────────────────────────────────────────────
 
-export default function AllProjectsClient({ projects }: { projects: Project[] }) {
+export default function AllProjectsClient({ projects, waNumber = '919090274545' }: Props) {
+  const wa = waNumber
   const [filter, setFilter] = useState<FilterType>('all')
 
   const featuredProjects = projects.filter((p) => p.isFeatured)
@@ -654,7 +660,7 @@ export default function AllProjectsClient({ projects }: { projects: Project[] })
             Talk to an Advisor →
           </Link>
           <a
-            href="https://wa.me/919090274545?text=I%20saw%20all%20Aspire%20projects%20and%20need%20help%20choosing%20the%20right%20one%20for%20my%20family"
+            href={`https://wa.me/${wa}?text=I%20saw%20all%20Aspire%20projects%20and%20need%20help%20choosing%20the%20right%20one%20for%20my%20family`}
             target="_blank"
             rel="noreferrer"
             style={{
@@ -667,14 +673,14 @@ export default function AllProjectsClient({ projects }: { projects: Project[] })
             WhatsApp for Guidance
           </a>
           <a
-            href="tel:+919090274545"
+            href={`tel:+${wa}`}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '.65rem',
               padding: '.8rem 1.75rem', border: '1px solid rgba(201,169,110,.42)',
               color: 'var(--warm)', fontSize: '.72rem', letterSpacing: '.14em', textTransform: 'uppercase',
             }}
           >
-            Call +91 90902 74545
+            Call +{wa}
           </a>
         </div>
       </div>

@@ -755,4 +755,53 @@ export const SITE_SETTINGS: SiteSettings = {
     description: "Aspire InfraTech — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
     ogImage: '/logo.png',
   },
+  whatsappNumber: '919090274545',
+  hero: {
+    tagline: "Pune's Premier Real Estate Developers",
+    headline: "Where Vision Becomes Architecture",
+    copy: "Aspire InfraTech crafts landmark residences across Katraj, Ambegaon & Kondhwa — built on trust, designed for generations.",
+    ctaPrimary: 'Explore Projects →',
+    ctaSecondary: 'Schedule Site Visit',
+    rightStats: [
+      { value: '825K', suffix: '+', label: 'Sq.Ft. Delivered' },
+      { value: '₹375', suffix: 'Cr', label: 'Turnover' },
+      { value: '10', suffix: '+', label: 'Years of Trust' },
+    ],
+  },
+  about: {
+    heading: "Building Pune's Future Skyline",
+    copy: "Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire InfraTech is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014.",
+    overlayStat: '₹375',
+    overlayLabel: 'Crore Turnover',
+    pillars: [
+      { icon: '⬛', title: 'Architectural Excellence', desc: 'Premium materials, modern design and meticulous planning at every scale.' },
+      { icon: '⏱', title: 'On-Time Delivery', desc: 'Every project delivered on schedule — no delays, no compromises.' },
+      { icon: '✓', title: 'RERA Registered', desc: 'Fully MahaRERA compliant — transparent, ethical and trusted.' },
+      { icon: '★', title: 'Customer First', desc: 'Dedicated relationship managers and lifetime post-possession support.' },
+    ],
+  },
+  trustBar: [
+    { value: '100%', label: 'On-Time Delivery Record' },
+    { value: '₹0', label: 'Hidden Charges. Ever.' },
+    { value: '500+', label: 'Families Who Trust Us' },
+    { value: '4.9★', label: 'Average Customer Rating' },
+  ],
+  cta: {
+    headline: "Ready to Find Your Dream Home?",
+    copy: "Speak with our expert advisors — no pressure, just genuine guidance for your family.",
+    featuredSlug: 'siddhi-aspire',
+  },
+  testimonialsSection: {
+    rating: '4.9',
+    reviewCount: '200+ Reviews',
+    projectList: ['Siddhi Aspire, Katraj', 'Optima – The Pavilion', 'Mansi Residency', 'Rajveer Heights', 'Aradhya Residency'],
+  },
+  footerProjects: [
+    { name: 'Siddhi Aspire', slug: 'siddhi-aspire' },
+    { name: 'Optima – Aspire', slug: 'optima-aspire' },
+    { name: 'All Projects', slug: '' },
+  ],
+  footerCopyright: '© 2025 Aspire InfraTech. All rights reserved. Katraj–Dhankawadi, Pune — 411 046.',
+  footerRera: 'RERA: P52100047821 | P52100047822',
+  contactMapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0!2d73.8553!3d18.4528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295617a30fce5%3A0x3f2f63c60caaef8a!2sKatraj%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000',
 }

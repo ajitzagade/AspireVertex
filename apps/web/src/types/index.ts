@@ -4,7 +4,7 @@ export interface Photo {
     caption: string
     category: 'exterior' | 'interior' | 'amenity' | 'construction' | 'location'
   }
-  
+
   export interface Video {
     youtubeId: string
     title: string
@@ -13,7 +13,7 @@ export interface Photo {
     thumbnail: string
     isFeatured?: boolean
   }
-  
+
   export interface FloorPlan {
     type: string          // "1 BHK", "2 BHK" etc
     variant?: string      // "Type A", "Type B — Corner Unit", etc
@@ -29,23 +29,23 @@ export interface Photo {
     planImageUrl?: string
     waMsg?: string
   }
-  
+
   export interface ProgressItem {
     label: string
     percentage: number
   }
-  
+
   export interface NearbyItem {
     name: string
     distance: string
   }
-  
+
   export interface NearbyCategory {
     icon: string
     title: string
     items: NearbyItem[]
   }
-  
+
   export interface Project {
     _id?: string
     slug: string
@@ -88,7 +88,7 @@ export interface Photo {
     createdAt?: string
     updatedAt?: string
   }
-  
+
   // ── Enquiry Types ──
   export interface Enquiry {
     _id?: string
@@ -103,7 +103,7 @@ export interface Photo {
     status: 'new' | 'contacted' | 'site_visit' | 'closed'
     createdAt?: string
   }
-  
+
   // ── Testimonial ──
   export interface Testimonial {
     _id?: string
@@ -115,7 +115,7 @@ export interface Photo {
     order?: number
     isActive?: boolean
   }
-  
+
   // ── Settings ──
   export interface SiteSettings {
     heroSlides?: { image: string; alt: string }[]
@@ -134,8 +134,40 @@ export interface Photo {
       description?: string
       ogImage?: string
     }
+    // Extended customizable fields
+    whatsappNumber?: string  // raw e.g. '919090274545' for wa.me links
+    hero?: {
+      tagline?: string
+      headline?: string
+      copy?: string
+      ctaPrimary?: string
+      ctaSecondary?: string
+      rightStats?: { value: string; suffix: string; label: string }[]
+    }
+    about?: {
+      heading?: string
+      copy?: string
+      overlayStat?: string
+      overlayLabel?: string
+      pillars?: { icon: string; title: string; desc: string }[]
+    }
+    trustBar?: { value: string; label: string }[]
+    cta?: {
+      headline?: string
+      copy?: string
+      featuredSlug?: string
+    }
+    testimonialsSection?: {
+      rating?: string
+      reviewCount?: string
+      projectList?: string[]
+    }
+    footerProjects?: { name: string; slug: string }[]
+    footerCopyright?: string
+    footerRera?: string
+    contactMapEmbed?: string
   }
-  
+
   // ── Admin User ──
   export interface AdminUser {
     _id?: string
@@ -143,7 +175,7 @@ export interface Photo {
     name: string
     role: 'superadmin' | 'editor'
   }
-  
+
   // ── API Response ──
   export interface ApiResponse<T = unknown> {
     success: boolean

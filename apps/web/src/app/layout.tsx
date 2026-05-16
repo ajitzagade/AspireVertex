@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import '@/styles/global.css'
 import WhatsAppFloat from '@/components/ui/WhatsAppFloat'
+import { connectDB } from '@/lib/mongodb'
+import { SettingsModel } from '@/lib/models'
+import { SITE_SETTINGS } from '@/data/seed'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:5173'),
@@ -15,7 +18,18 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+async function getWANumber(): Promise<string> {
+  try {
+    await connectDB()
+    const doc = await SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as { value?: string } | null
+    return doc?.value || SITE_SETTINGS.whatsappNumber || '919090274545'
+  } catch {
+    return SITE_SETTINGS.whatsappNumber || '919090274545'
+  }
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const waNumber = await getWANumber()
   return (
     <html lang="en">
       <head>
@@ -25,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
-        <WhatsAppFloat />
+        <WhatsAppFloat phone={waNumber} />
       </body>
     </html>
   )

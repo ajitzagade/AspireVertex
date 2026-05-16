@@ -1,7 +1,7 @@
 import { connectDB } from '@/lib/mongodb'
-import { ProjectModel } from '@/lib/models'
+import { ProjectModel, SettingsModel } from '@/lib/models'
 import type { Project } from '@/types'
-import { ALL_PROJECTS } from '@/data/seed'
+import { ALL_PROJECTS, SITE_SETTINGS } from '@/data/seed'
 import ProjectPageClient from '@/components/sections/ProjectPageClient'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -10,19 +10,28 @@ interface Props {
   params: Promise<{ slug: string }>
 }
 
-async function getProject(slug: string): Promise<Project | null> {
+async function getProject(slug: string): Promise<{ project: Project | null; waNumber: string }> {
   try {
     await connectDB()
-    const p = await ProjectModel.findOne({ slug }).lean()
-    return p ? JSON.parse(JSON.stringify(p)) : null
+    const [p, waDoc] = await Promise.all([
+      ProjectModel.findOne({ slug }).lean(),
+      SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as Promise<{ value?: string } | null>,
+    ])
+    return {
+      project: p ? JSON.parse(JSON.stringify(p)) : null,
+      waNumber: waDoc?.value || SITE_SETTINGS.whatsappNumber || '919090274545',
+    }
   } catch {
-    return (ALL_PROJECTS.find(p => p.slug === slug) as Project) || null
+    return {
+      project: (ALL_PROJECTS.find(p => p.slug === slug) as Project) || null,
+      waNumber: SITE_SETTINGS.whatsappNumber || '919090274545',
+    }
   }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const p = await getProject(slug)
+  const { project: p } = await getProject(slug)
   if (!p) return { title: 'Project Not Found' }
   return {
     title: `${p.name} — Aspire InfraTech | ${p.location}`,
@@ -35,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params
-  const project = await getProject(slug)
+  const { project, waNumber } = await getProject(slug)
   if (!project) notFound()
-  return <ProjectPageClient project={project} />
+  return <ProjectPageClient project={project} waNumber={waNumber} />
 }

@@ -15,7 +15,7 @@ const MODAL_DATA: Record<string, { tag: string; name: string; loc: string; img: 
   },
 }
 
-export default function ProjectModal({ projectKey, onClose }: { projectKey: string; onClose: () => void }) {
+export default function ProjectModal({ projectKey, onClose, phone = '919090274545' }: { projectKey: string; onClose: () => void; phone?: string }) {
   const d = MODAL_DATA[projectKey]
   useEffect(() => {
     const fn = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
@@ -53,7 +53,7 @@ export default function ProjectModal({ projectKey, onClose }: { projectKey: stri
           </div>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a href="/#contact" className="btn-gold" onClick={onClose}>Enquire Now →</a>
-            <a href="https://wa.me/919090274545" target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us</a>
+            <a href={`https://wa.me/${phone}`} target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us</a>
           </div>
         </div>
       </div>

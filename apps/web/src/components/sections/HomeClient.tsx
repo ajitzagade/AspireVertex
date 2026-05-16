@@ -63,10 +63,56 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
   const [slideIdx, setSlideIdx] = useState(0)
   const [projFilter, setProjFilter] = useState('')
   const [modalKey, setModalKey] = useState<string | null>(null)
+
   const slides = settings.heroSlides || []
   const marqueeItems = settings.marqueeItems || []
   const stats = settings.stats || []
   const journey = settings.journeySteps || []
+  const wa = settings.whatsappNumber || '919090274545'
+
+  // Content blocks with seed fallbacks
+  const hero = settings.hero || {}
+  const about = settings.about || {}
+  const trustBar = settings.trustBar || [
+    { value: '100%', label: 'On-Time Delivery Record' },
+    { value: '₹0', label: 'Hidden Charges. Ever.' },
+    { value: '500+', label: 'Families Who Trust Us' },
+    { value: '4.9★', label: 'Average Customer Rating' },
+  ]
+  const cta = settings.cta || {}
+  const testimonialsSec = settings.testimonialsSection || {}
+
+  const heroTagline = hero.tagline || "Pune's Premier Real Estate Developers"
+  const heroHeadline = hero.headline || "Where Vision Becomes Architecture"
+  const heroCopy = hero.copy || "Aspire InfraTech crafts landmark residences across Katraj, Ambegaon & Kondhwa — built on trust, designed for generations."
+  const heroCtaPrimary = hero.ctaPrimary || 'Explore Projects →'
+  const heroCtaSecondary = hero.ctaSecondary || 'Schedule Site Visit'
+  const heroRightStats = hero.rightStats || [
+    { value: '825K', suffix: '+', label: 'Sq.Ft. Delivered' },
+    { value: '₹375', suffix: 'Cr', label: 'Turnover' },
+    { value: '10', suffix: '+', label: 'Years of Trust' },
+  ]
+
+  const aboutHeading = about.heading || "Building Pune's Future Skyline"
+  const aboutCopy = about.copy || "Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire InfraTech is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014."
+  const aboutOverlayStat = about.overlayStat || '₹375'
+  const aboutOverlayLabel = about.overlayLabel || 'Crore Turnover'
+  const aboutPillars = about.pillars || [
+    { icon: '⬛', title: 'Architectural Excellence', desc: 'Premium materials, modern design and meticulous planning at every scale.' },
+    { icon: '⏱', title: 'On-Time Delivery', desc: 'Every project delivered on schedule — no delays, no compromises.' },
+    { icon: '✓', title: 'RERA Registered', desc: 'Fully MahaRERA compliant — transparent, ethical and trusted.' },
+    { icon: '★', title: 'Customer First', desc: 'Dedicated relationship managers and lifetime post-possession support.' },
+  ]
+
+  const ctaHeadline = cta.headline || "Ready to Find Your Dream Home?"
+  const ctaCopy = cta.copy || "Speak with our expert advisors — no pressure, just genuine guidance for your family."
+  const ctaFeaturedSlug = cta.featuredSlug || 'siddhi-aspire'
+
+  const testimonialRating = testimonialsSec.rating || '4.9'
+  const testimonialReviewCount = testimonialsSec.reviewCount || '200+ Reviews'
+  const testimonialProjectList = testimonialsSec.projectList || ['Siddhi Aspire, Katraj', 'Optima – The Pavilion', 'Mansi Residency', 'Rajveer Heights', 'Aradhya Residency']
+
+  const contactMapEmbed = settings.contactMapEmbed || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0!2d73.8553!3d18.4528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295617a30fce5%3A0x3f2f63c60caaef8a!2sKatraj%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000'
 
   // Hero auto-slide
   useEffect(() => {
@@ -82,7 +128,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
   return (
     <>
       <Navbar />
-      {modalKey && <ProjectModal projectKey={modalKey} onClose={() => setModalKey(null)} />}
+      {modalKey && <ProjectModal projectKey={modalKey} onClose={() => setModalKey(null)} phone={wa} />}
 
       {/* ①  HERO */}
       <section className="hero" id="home" style={{ height: '100vh', minHeight: '680px', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end' }}>
@@ -99,30 +145,30 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.8 }}
             style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.2rem' }}>
             <div style={{ width: '36px', height: '1px', background: 'var(--gold)' }} />
-            <span style={{ fontSize: '.64rem', letterSpacing: '.3em', textTransform: 'uppercase', color: 'var(--gold)' }}>Pune's Premier Real Estate Developers</span>
+            <span style={{ fontSize: '.64rem', letterSpacing: '.3em', textTransform: 'uppercase', color: 'var(--gold)' }}>{heroTagline}</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.9 }}
             style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(3.2rem,7vw,6.2rem)', fontWeight: 300, color: 'var(--warm)', lineHeight: 1.05, marginBottom: '1.1rem' }}>
-            Where Vision<br />Becomes <em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>Architecture</em>
+            {heroHeadline}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.8 }}
             style={{ fontSize: '.9rem', color: 'var(--txt2)', maxWidth: '440px', lineHeight: 1.9, marginBottom: '2.5rem' }}>
-            Aspire InfraTech crafts landmark residences across Katraj, Ambegaon &amp; Kondhwa — built on trust, designed for generations.
+            {heroCopy}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}
             style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <button className="btn-gold" onClick={() => scrollTo('projects')}>Explore Projects →</button>
-            <button className="btn-outline" onClick={() => scrollTo('contact')}>Schedule Site Visit</button>
+            <button className="btn-gold" onClick={() => scrollTo('projects')}>{heroCtaPrimary}</button>
+            <button className="btn-outline" onClick={() => scrollTo('contact')}>{heroCtaSecondary}</button>
           </motion.div>
         </div>
 
         {/* Right stats */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 1 }}
           style={{ position: 'absolute', right: '4rem', bottom: '5.5rem', zIndex: 2, display: 'flex', flexDirection: 'column', gap: '2rem', textAlign: 'right' }}>
-          {[['825K', '+', 'Sq.Ft. Delivered'], ['₹375', 'Cr', 'Turnover'], ['10', '+', 'Years of Trust']].map(([n, s, l]) => (
-            <div key={l}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.2rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{n}<small style={{ fontSize: '1rem' }}>{s}</small></div>
-              <div style={{ fontSize: '.6rem', letterSpacing: '.2em', textTransform: 'uppercase', color: 'rgba(80,76,72,.9)', marginTop: '.2rem' }}>{l}</div>
+          {heroRightStats.map(({ value, suffix, label }) => (
+            <div key={label}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.2rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{value}<small style={{ fontSize: '1rem' }}>{suffix}</small></div>
+              <div style={{ fontSize: '.6rem', letterSpacing: '.2em', textTransform: 'uppercase', color: 'rgba(80,76,72,.9)', marginTop: '.2rem' }}>{label}</div>
             </div>
           ))}
         </motion.div>
@@ -158,8 +204,8 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
             <Image src={settings.aboutImage || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85&auto=format'}
               alt="Aspire InfraTech Development" width={600} height={520} style={{ width: '100%', height: '520px', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', bottom: '2.5rem', right: '-1.5rem', width: '130px', height: '130px', border: '1px solid var(--bdr2)', background: 'rgba(8,8,8,.92)', backdropFilter: 'blur(12px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: '.3rem', zIndex: 2 }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>₹375</div>
-              <div style={{ fontSize: '.54rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--txt2)', padding: '0 .5rem' }}>Crore Turnover</div>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{aboutOverlayStat}</div>
+              <div style={{ fontSize: '.54rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--txt2)', padding: '0 .5rem' }}>{aboutOverlayLabel}</div>
             </div>
             <div style={{ position: 'absolute', top: '2.5rem', right: '-1.5rem', width: '56px', height: '56px', borderTop: '1px solid var(--bdr2)', borderRight: '1px solid var(--bdr2)' }} />
           </div>
@@ -167,21 +213,17 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
 
         <Reveal delay={0.15}>
           <div className="sec-eye"><span>About Aspire InfraTech</span></div>
-          <h2 className="sec-h">Building Pune's<br /><em>Future Skyline</em></h2>
+          <h2 className="sec-h">{aboutHeading}</h2>
           <div className="gold-line" />
           <p style={{ fontSize: '.9rem', color: 'var(--txt2)', lineHeight: 1.9, marginBottom: '2rem' }}>
-            Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire InfraTech is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014.
+            {aboutCopy}
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2.5rem' }}>
-            {[['⬛', 'Architectural Excellence', 'Premium materials, modern design and meticulous planning at every scale.'],
-              ['⏱', 'On-Time Delivery', 'Every project delivered on schedule — no delays, no compromises.'],
-              ['✓', 'RERA Registered', 'Fully MahaRERA compliant — transparent, ethical and trusted.'],
-              ['★', 'Customer First', 'Dedicated relationship managers and lifetime post-possession support.']
-            ].map(([ic, t, d]) => (
-              <div key={t} className="pillar">
-                <div style={{ fontSize: '1.25rem', marginBottom: '.5rem' }}>{ic}</div>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.05rem', color: 'var(--warm)', marginBottom: '.25rem' }}>{t}</div>
-                <p style={{ fontSize: '.77rem', color: 'var(--txt2)', lineHeight: 1.7 }}>{d}</p>
+            {aboutPillars.map(({ icon, title, desc }) => (
+              <div key={title} className="pillar">
+                <div style={{ fontSize: '1.25rem', marginBottom: '.5rem' }}>{icon}</div>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.05rem', color: 'var(--warm)', marginBottom: '.25rem' }}>{title}</div>
+                <p style={{ fontSize: '.77rem', color: 'var(--txt2)', lineHeight: 1.7 }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -335,11 +377,11 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         {/* Trust bar */}
         <Reveal delay={0.2}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '4rem', border: '1px solid var(--bdr)', background: 'var(--sl)', flexWrap: 'wrap' }}>
-            {[['100%', 'On-Time Delivery Record'], ['₹0', 'Hidden Charges. Ever.'], ['500+', 'Families Who Trust Us'], ['4.9★', 'Average Customer Rating']].map(([n, l], i, arr) => (
-              <React.Fragment key={l}>
+            {trustBar.map(({ value, label }, i, arr) => (
+              <React.Fragment key={label}>
                 <div style={{ padding: '2rem 3rem', textAlign: 'center', flex: 1, minWidth: '150px' }}>
-                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.4rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '.4rem' }}>{n}</div>
-                  <div style={{ fontSize: '.65rem', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--txt2)' }}>{l}</div>
+                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.4rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1, marginBottom: '.4rem' }}>{value}</div>
+                  <div style={{ fontSize: '.65rem', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--txt2)' }}>{label}</div>
                 </div>
                 {i < arr.length - 1 && <div style={{ width: '1px', height: '64px', background: 'var(--bdr)', flexShrink: 0 }} />}
               </React.Fragment>
@@ -356,11 +398,11 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         </Reveal>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem', marginTop: '4rem', alignItems: 'start' }}>
           <Reveal delay={0.1}>
-            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '5.5rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>4.9</div>
+            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '5.5rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{testimonialRating}</div>
             <div style={{ color: 'var(--gold)', fontSize: '1.1rem', letterSpacing: '4px', margin: '.4rem 0' }}>★★★★★</div>
-            <div style={{ fontSize: '.72rem', color: 'var(--txt2)' }}>Average Rating · 200+ Reviews</div>
+            <div style={{ fontSize: '.72rem', color: 'var(--txt2)' }}>Average Rating · {testimonialReviewCount}</div>
             <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '.85rem' }}>
-              {['Siddhi Aspire, Katraj', 'Optima – The Pavilion', 'Mansi Residency', 'Rajveer Heights', 'Aradhya Residency'].map(name => (
+              {testimonialProjectList.map(name => (
                 <div key={name} style={{ display: 'flex', alignItems: 'center', gap: '.9rem', padding: '.85rem 1rem', border: '1px solid var(--bdr)', transition: 'border-color .3s' }}>
                   <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--gold)', flexShrink: 0 }} />
                   <span style={{ fontSize: '.78rem', color: 'var(--txt2)' }}>{name}</span>
@@ -393,13 +435,13 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle,rgba(201,169,110,.055) 0%,transparent 70%)', pointerEvents: 'none' }} />
         <Reveal>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.5rem,5vw,4.4rem)', fontWeight: 300, color: 'var(--warm)', lineHeight: 1.1, marginBottom: '1.2rem', position: 'relative' }}>
-            Ready to Find Your<br /><em style={{ fontStyle: 'italic', color: 'var(--gold)' }}>Dream Home?</em>
+            {ctaHeadline}
           </h2>
-          <p style={{ fontSize: '.88rem', color: 'var(--txt2)', maxWidth: '440px', margin: '0 auto 2.75rem', position: 'relative', lineHeight: 1.9 }}>Speak with our expert advisors — no pressure, just genuine guidance for your family.</p>
+          <p style={{ fontSize: '.88rem', color: 'var(--txt2)', maxWidth: '440px', margin: '0 auto 2.75rem', position: 'relative', lineHeight: 1.9 }}>{ctaCopy}</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap', position: 'relative' }}>
             <button className="btn-gold" onClick={() => scrollTo('contact')}>Schedule a Site Visit →</button>
-            <a href="https://wa.me/919090274545" target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us Now</a>
-            <Link href="/projects/siddhi-aspire" className="btn-outline">View Siddhi Aspire ↗</Link>
+            <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us Now</a>
+            <Link href={`/projects/${ctaFeaturedSlug}`} className="btn-outline">View {projects.find(p => p.slug === ctaFeaturedSlug)?.name || 'Our Project'} ↗</Link>
           </div>
         </Reveal>
       </section>
@@ -423,7 +465,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
               </div>
             ))}
             <div style={{ border: '1px solid var(--bdr)', overflow: 'hidden' }}>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0!2d73.8553!3d18.4528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295617a30fce5%3A0x3f2f63c60caaef8a!2sKatraj%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000"
+              <iframe src={contactMapEmbed}
                 width="100%" height="220" style={{ border: 0, filter: 'grayscale(1) contrast(.85)', opacity: .7, display: 'block' }} allowFullScreen loading="lazy" title="Map" />
             </div>
           </Reveal>

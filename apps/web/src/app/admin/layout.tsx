@@ -40,6 +40,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <nav style={{ padding: '1rem 0', flex: 1 }}>
             <Link href="/admin/projects" className="admin-nav-link">Projects</Link>
             <Link href="/admin/enquiries" className="admin-nav-link">Enquiries</Link>
+            <Link href="/admin/testimonials" className="admin-nav-link">Testimonials</Link>
+            <Link href="/admin/settings" className="admin-nav-link">Site Settings</Link>
           </nav>
           <div style={{ padding: '1rem 1.25rem', borderTop: '1px solid #1e1e1e' }}>
             <form action={logoutAction}>

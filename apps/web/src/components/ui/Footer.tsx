@@ -9,7 +9,20 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   linkedin: <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" /><circle cx="4" cy="4" r="2" /></svg>,
 }
 
+const DEFAULT_PROJECTS = [
+  { name: 'Siddhi Aspire', slug: 'siddhi-aspire' },
+  { name: 'Optima – Aspire', slug: 'optima-aspire' },
+  { name: 'All Projects', slug: '' },
+]
+
 export default function Footer({ settings }: { settings?: SiteSettings }) {
+  const wa = settings?.whatsappNumber || '919090274545'
+  const phone = settings?.phone || '+91 90902 74545'
+  const email = settings?.email || 'info@aspiregroup.com'
+  const footerProjects = settings?.footerProjects || DEFAULT_PROJECTS
+  const copyright = settings?.footerCopyright || '© 2025 Aspire InfraTech. All rights reserved.'
+  const rera = settings?.footerRera || 'RERA: P52100047821 | P52100047822'
+
   return (
     <footer style={{ background: '#040404', borderTop: '1px solid var(--bdr)', padding: '5rem 4rem 2rem' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr', gap: '3.5rem', marginBottom: '3.5rem', paddingBottom: '3.5rem', borderBottom: '1px solid var(--bdr)' }}>
@@ -42,9 +55,14 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
         <div>
           <div style={{ fontSize: '.6rem', letterSpacing: '.28em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.4rem' }}>Our Projects</div>
           <ul style={{ listStyle: 'none' }}>
-            {[['Siddhi Aspire ↗', '/projects/siddhi-aspire'], ['Optima – Aspire ↗', '/projects/optima-aspire'], ['Optima – Plus ↗', '/projects/optima-aspire'], ['All Projects', '/all-projects']].map(([l, h]) => (
-              <li key={l} style={{ marginBottom: '.7rem' }}>
-                <Link href={h} style={{ fontSize: '.82rem', color: 'var(--txt2)', transition: 'color .3s' }}>{l}</Link>
+            {footerProjects.map(p => (
+              <li key={p.slug || 'all'} style={{ marginBottom: '.7rem' }}>
+                <Link
+                  href={p.slug ? `/projects/${p.slug}` : '/all-projects'}
+                  style={{ fontSize: '.82rem', color: 'var(--txt2)', transition: 'color .3s' }}
+                >
+                  {p.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -53,9 +71,9 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
           <div style={{ fontSize: '.6rem', letterSpacing: '.28em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.4rem' }}>Contact</div>
           <ul style={{ listStyle: 'none' }}>
             {[
-              [settings?.phone || '+91 90902 74545', `tel:${settings?.phone || '+919090274545'}`],
-              [settings?.email || 'info@aspiregroup.com', `mailto:${settings?.email || 'info@aspiregroup.com'}`],
-              ['WhatsApp Us', `https://wa.me/919090274545`],
+              [phone, `tel:${phone.replace(/\s/g, '')}`],
+              [email, `mailto:${email}`],
+              ['WhatsApp Us', `https://wa.me/${wa}`],
               ['Send Enquiry', '/#contact'],
             ].map(([l, h]) => (
               <li key={l} style={{ marginBottom: '.7rem' }}>
@@ -66,10 +84,10 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
         </div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-        <div style={{ fontSize: '.7rem', color: 'var(--txt3)' }}>© 2025 Aspire InfraTech. All rights reserved. Katraj–Dhankawadi, Pune — 411 046.</div>
+        <div style={{ fontSize: '.7rem', color: 'var(--txt3)' }}>{copyright}</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <span style={{ padding: '.2rem .7rem', border: '1px solid var(--bdr)', fontSize: '.58rem', letterSpacing: '.1em', color: 'var(--gold)' }}>MahaRERA Registered</span>
-          <span style={{ fontSize: '.7rem', color: 'var(--txt3)' }}>RERA: P52100047821 | P52100047822</span>
+          <span style={{ fontSize: '.7rem', color: 'var(--txt3)' }}>{rera}</span>
         </div>
       </div>
     </footer>
