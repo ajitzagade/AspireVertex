@@ -1,5 +1,7 @@
 'use client'
 
+const projectUrl = (slug: string) => `https://${slug}.aspirebuildcons.in`
+
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -56,7 +58,9 @@ function FeaturedCard({ project: p, wa }: { project: Project; wa: string }) {
   const [hovered, setHovered] = useState(false)
   return (
     <Link
-      href={`/projects/${p.slug}`}
+      href={projectUrl(p.slug)}
+      target="_blank"
+      rel="noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -252,7 +256,7 @@ function ProjectCard({ project: p }: { project: Project }) {
   )
 
   if (hasSlug && !isUpcoming) {
-    return <Link href={`/projects/${p.slug}`} style={{ display: 'block' }}>{inner}</Link>
+    return <a href={projectUrl(p.slug)} target="_blank" rel="noreferrer" style={{ display: 'block' }}>{inner}</a>
   }
   return inner
 }

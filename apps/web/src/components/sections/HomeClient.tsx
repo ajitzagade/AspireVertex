@@ -1,5 +1,8 @@
 'use client'
 
+const PROJECT_DOMAIN = 'aspirebuildcons.in'
+const projectUrl = (slug: string) => `https://${slug}.${PROJECT_DOMAIN}`
+
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
@@ -269,10 +272,10 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
               {featured && (
                 <Reveal delay={0.05}>
                   <div className="proj-card" style={{ position: 'relative', height: '480px', marginBottom: '3px', cursor: 'pointer' }}
-                    onClick={() => window.open(`/projects/${featured.slug}`, '_blank')}>
+                    onClick={() => window.open(projectUrl(featured.slug), '_blank')}>
                     <Image src={featured.cardImage || featured.heroImage} alt={featured.name} fill style={{ objectFit: 'cover' }} />
                     <div className="proj-overlay" />
-                    <a href={`/projects/${featured.slug}`} className="proj-ext" onClick={e => e.stopPropagation()}>
+                    <a href={projectUrl(featured.slug)} target="_blank" rel="noreferrer" className="proj-ext" onClick={e => e.stopPropagation()}>
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
                     </a>
                     <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '2.5rem 3rem', zIndex: 2 }}>
@@ -299,10 +302,10 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '3px', marginTop: featured ? '3px' : 0 }}>
                     {grid.map(p => (
                       <div key={p.slug} className="proj-card" style={{ position: 'relative', height: '320px', cursor: 'pointer' }}
-                        onClick={() => window.open(`/projects/${p.slug}`, '_blank')}>
+                        onClick={() => window.open(projectUrl(p.slug), '_blank')}>
                         <Image src={p.cardImage || p.heroImage} alt={p.name} fill style={{ objectFit: 'cover' }} />
                         <div className="proj-overlay" />
-                        <a href={`/projects/${p.slug}`} className="proj-ext" onClick={e => e.stopPropagation()}>
+                        <a href={projectUrl(p.slug)} target="_blank" rel="noreferrer" className="proj-ext" onClick={e => e.stopPropagation()}>
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" /></svg>
                         </a>
                         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.5rem' }}>
@@ -441,7 +444,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap', position: 'relative' }}>
             <button className="btn-gold" onClick={() => scrollTo('contact')}>Schedule a Site Visit →</button>
             <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="btn-wa">WhatsApp Us Now</a>
-            <Link href={`/projects/${ctaFeaturedSlug}`} className="btn-outline">View {projects.find(p => p.slug === ctaFeaturedSlug)?.name || 'Our Project'} ↗</Link>
+            <a href={projectUrl(ctaFeaturedSlug)} target="_blank" rel="noreferrer" className="btn-outline">View {projects.find(p => p.slug === ctaFeaturedSlug)?.name || 'Our Project'} ↗</a>
           </div>
         </Reveal>
       </section>
