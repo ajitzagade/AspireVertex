@@ -20,7 +20,7 @@ export default function Footer({ settings }: { settings?: SiteSettings }) {
   const phone = settings?.phone || '+91 90902 74545'
   const email = settings?.email || 'info@aspiregroup.com'
   const footerProjects = settings?.footerProjects || DEFAULT_PROJECTS
-  const copyright = settings?.footerCopyright || '© 2025 Aspire InfraTech. All rights reserved.'
+  const copyright = settings?.footerCopyright || '© 2025 Aspire Buildcon. All rights reserved.'
   const rera = settings?.footerRera || 'RERA: P52100047821 | P52100047822'
 
   return (

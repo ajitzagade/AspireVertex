@@ -84,7 +84,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
 
   const heroTagline = hero.tagline || "Pune's Premier Real Estate Developers"
   const heroHeadline = hero.headline || "Where Vision Becomes Architecture"
-  const heroCopy = hero.copy || "Aspire InfraTech crafts landmark residences across Katraj, Ambegaon & Kondhwa — built on trust, designed for generations."
+  const heroCopy = hero.copy || "Aspire Buildcon crafts landmark residences across Katraj, Ambegaon & Kondhwa — built on trust, designed for generations."
   const heroCtaPrimary = hero.ctaPrimary || 'Explore Projects →'
   const heroCtaSecondary = hero.ctaSecondary || 'Schedule Site Visit'
   const heroRightStats = hero.rightStats || [
@@ -94,7 +94,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
   ]
 
   const aboutHeading = about.heading || "Building Pune's Future Skyline"
-  const aboutCopy = about.copy || "Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire InfraTech is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014."
+  const aboutCopy = about.copy || "Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire Buildcon is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014."
   const aboutOverlayStat = about.overlayStat || '₹375'
   const aboutOverlayLabel = about.overlayLabel || 'Crore Turnover'
   const aboutPillars = about.pillars || [
@@ -202,7 +202,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         <Reveal>
           <div style={{ position: 'relative' }}>
             <Image src={settings.aboutImage || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85&auto=format'}
-              alt="Aspire InfraTech Development" width={600} height={520} style={{ width: '100%', height: '520px', objectFit: 'cover' }} />
+              alt="Aspire Buildcon Development" width={600} height={520} style={{ width: '100%', height: '520px', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', bottom: '2.5rem', right: '-1.5rem', width: '130px', height: '130px', border: '1px solid var(--bdr2)', background: 'rgba(8,8,8,.92)', backdropFilter: 'blur(12px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: '.3rem', zIndex: 2 }}>
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.6rem', fontWeight: 300, color: 'var(--gold)', lineHeight: 1 }}>{aboutOverlayStat}</div>
               <div style={{ fontSize: '.54rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--txt2)', padding: '0 .5rem' }}>{aboutOverlayLabel}</div>
@@ -212,7 +212,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="sec-eye"><span>About Aspire InfraTech</span></div>
+          <div className="sec-eye"><span>About Aspire Buildcon</span></div>
           <h2 className="sec-h">{aboutHeading}</h2>
           <div className="gold-line" />
           <p style={{ fontSize: '.9rem', color: 'var(--txt2)', lineHeight: 1.9, marginBottom: '2rem' }}>

@@ -10,7 +10,7 @@ export default function LoginPage() {
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0a0a0a' }}>
       <div style={{ width: '340px' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '.6rem', letterSpacing: '.25em', textTransform: 'uppercase', color: '#c9a96e', marginBottom: '.5rem' }}>Aspire InfraTech</div>
+          <div style={{ fontSize: '.6rem', letterSpacing: '.25em', textTransform: 'uppercase', color: '#c9a96e', marginBottom: '.5rem' }}>Aspire Buildcon</div>
           <div style={{ fontSize: '1.4rem', fontFamily: 'Georgia, serif', color: '#e0d6c8', fontWeight: 300 }}>Admin Login</div>
         </div>
 

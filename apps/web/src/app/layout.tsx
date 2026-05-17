@@ -7,13 +7,13 @@ import { SITE_SETTINGS } from '@/data/seed'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:5173'),
-  title: 'Aspire InfraTech — Premium Real Estate Developers, Pune',
-  description: "Aspire InfraTech — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
-  keywords: 'real estate Pune, flats Katraj, 2 BHK Ambegaon, Aspire InfraTech, premium apartments Pune',
+  title: 'Aspire Buildcon — Premium Real Estate Developers, Pune',
+  description: "Aspire Buildcon — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
+  keywords: 'real estate Pune, flats Katraj, 2 BHK Ambegaon, Aspire Buildcon, premium apartments Pune',
   openGraph: {
-    title: 'Aspire InfraTech — Premium Real Estate Developers, Pune',
+    title: 'Aspire Buildcon — Premium Real Estate Developers, Pune',
     description: "Pune's most trusted builders delivering landmark residences.",
-    images: [{ url: '/logo.png', width: 204, height: 212, alt: 'Aspire InfraTech' }],
+    images: [{ url: '/logo.png', width: 204, height: 212, alt: 'Aspire Buildcon' }],
     type: 'website',
   },
 }

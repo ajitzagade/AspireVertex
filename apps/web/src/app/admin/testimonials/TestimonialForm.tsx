@@ -51,7 +51,7 @@ export default function TestimonialForm({ testimonial }: { testimonial?: Testimo
         </div>
         <div style={{ marginBottom: '1rem' }}>
           <label className="admin-label">Testimonial Text *</label>
-          <textarea className="admin-input" rows={4} value={data.text || ''} onChange={e => set('text', e.target.value)} required placeholder="Aspire InfraTech has completely redefined…" style={{ resize: 'vertical' }} />
+          <textarea className="admin-input" rows={4} value={data.text || ''} onChange={e => set('text', e.target.value)} required placeholder="Aspire Buildcon has completely redefined…" style={{ resize: 'vertical' }} />
         </div>
         <div className="admin-grid-3">
           <div>

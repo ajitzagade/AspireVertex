@@ -7,7 +7,7 @@ export const SIDDHI_PROJECT: Omit<Project, '_id'> = {
   tagline: 'Premium 1, 2, 3 & 4 BHK Residences in Katraj',
   location: 'Katraj, Pune',
   fullAddress: 'Survey No. 28/1, Katraj–Ambegaon Road, Pune — 411 046',
-  description: "Siddhi Aspire is Aspire InfraTech's flagship residential development in Katraj — a vibrant, rapidly growing neighbourhood with excellent connectivity to Pune's major IT corridors, educational institutions and healthcare facilities. The project offers 1 to 4 BHK residences across 7 towers with premium amenities and vastu-compliant layouts.",
+  description: "Siddhi Aspire is Aspire Buildcon's flagship residential development in Katraj — a vibrant, rapidly growing neighbourhood with excellent connectivity to Pune's major IT corridors, educational institutions and healthcare facilities. The project offers 1 to 4 BHK residences across 7 towers with premium amenities and vastu-compliant layouts.",
   status: 'ongoing',
   type: 'residential',
   tag: 'Ongoing · Residential',
@@ -113,7 +113,7 @@ export const SIDDHI_PROJECT: Omit<Project, '_id'> = {
   faqs: [
     { question: 'Is Siddhi Aspire MahaRERA registered?', answer: 'Yes. Siddhi Aspire is fully registered under MahaRERA with Registration No. P52100047821. All statutory approvals including Building Plan Approval, Environmental Clearance and Fire NOC are in place.' },
     { question: 'What are the payment plan options?', answer: 'We offer Construction-Linked Plan, Down-Payment Advantage Plan (15% upfront for discount), and Possession-Linked Plan. Home loan assistance available from SBI, HDFC, ICICI and Axis Bank.' },
-    { question: 'When is the expected possession date?', answer: 'The expected possession date is Q4 2026 (October–December 2026). Aspire InfraTech has a 100% on-time delivery record across all past projects.' },
+    { question: 'When is the expected possession date?', answer: 'The expected possession date is Q4 2026 (October–December 2026). Aspire Buildcon has a 100% on-time delivery record across all past projects.' },
     { question: 'What is included in the base price?', answer: 'Base price includes apartment cost, one covered parking slot (2/3/4 BHK), development charges and club membership. Additional: GST @ 5%, stamp duty, registration and maintenance deposit.' },
     { question: 'Is home loan assistance available?', answer: 'Yes. Pre-approved tie-ups with SBI, HDFC Ltd., ICICI Bank, Axis Bank, Bank of Baroda and Kotak Mahindra Bank. EMI from ₹38,000/month for 2 BHK with 80% LTV over 20 years.' },
     { question: 'How far is Siddhi Aspire from IT parks?', answer: 'Hadapsar IT Park ~18 min; Magarpatta Cybercity ~22 min; EON IT Park ~20 min; Hinjewadi Phase 1 ~35 min via bypass.' },
@@ -284,7 +284,7 @@ export const ARADHYA_PROJECT: Omit<Project, '_id'> = {
   tagline: 'Completed 1 & 2 BHK Homes on Sinhagad Road',
   location: 'Sinhagad Rd, Pune',
   fullAddress: 'Sinhagad Road, Near Anandnagar, Pune — 411 051',
-  description: 'Aradhya Residency was Aspire InfraTech\'s early landmark on Sinhagad Road — a thoughtfully designed residential project offering affordable 1 & 2 BHK homes. Fully delivered and occupied, Aradhya embodies Aspire\'s commitment to quality and timely possession.',
+  description: 'Aradhya Residency was Aspire Buildcon\'s early landmark on Sinhagad Road — a thoughtfully designed residential project offering affordable 1 & 2 BHK homes. Fully delivered and occupied, Aradhya embodies Aspire\'s commitment to quality and timely possession.',
   status: 'completed',
   type: 'residential',
   tag: 'Completed · Residential',
@@ -339,7 +339,7 @@ export const MANSI_PROJECT: Omit<Project, '_id'> = {
   tagline: 'Completed 2 BHK Homes in Bibwewadi',
   location: 'Bibwewadi, Pune',
   fullAddress: 'Bibwewadi, Pune — 411 037',
-  description: 'Mansi Residency is a boutique 2 BHK residential community in central Bibwewadi — fully delivered and settled. A testament to Aspire InfraTech\'s quality-first approach, Mansi Residency remains one of the most sought-after addresses in the locality.',
+  description: 'Mansi Residency is a boutique 2 BHK residential community in central Bibwewadi — fully delivered and settled. A testament to Aspire Buildcon\'s quality-first approach, Mansi Residency remains one of the most sought-after addresses in the locality.',
   status: 'completed',
   type: 'residential',
   tag: 'Completed · Residential',
@@ -392,7 +392,7 @@ export const RAJVEER_PROJECT: Omit<Project, '_id'> = {
   tagline: 'Completed 2 & 3 BHK Residences in Wadgaon Sheri',
   location: 'Wadgaon Sheri, Pune',
   fullAddress: 'Wadgaon Sheri, Near Viman Nagar, Pune — 411 014',
-  description: 'Rajveer Heights is a premium completed development near Viman Nagar and the airport corridor. Offering 2 & 3 BHK residences with modern amenities, Rajveer Heights was delivered in 2023 and is one of the most valued Aspire InfraTech addresses in east Pune.',
+  description: 'Rajveer Heights is a premium completed development near Viman Nagar and the airport corridor. Offering 2 & 3 BHK residences with modern amenities, Rajveer Heights was delivered in 2023 and is one of the most valued Aspire Buildcon addresses in east Pune.',
   status: 'completed',
   type: 'residential',
   tag: 'Completed · Residential',
@@ -711,7 +711,7 @@ export const ALL_PROJECTS: Omit<Project, '_id'>[] = [
 
 // ── TESTIMONIALS ──
 export const TESTIMONIALS: Omit<Testimonial, '_id'>[] = [
-  { initials: 'RK', name: 'Mr. Rohan Kulkarni', projectName: 'Siddhi Aspire, Katraj · 3 BHK Owner', text: "Aspire InfraTech has completely redefined what a dream home should feel like. Every detail at Siddhi Aspire — the finishes, the layout, the amenities — reflects their uncompromising commitment to quality.", rating: 5, order: 1, isActive: true },
+  { initials: 'RK', name: 'Mr. Rohan Kulkarni', projectName: 'Siddhi Aspire, Katraj · 3 BHK Owner', text: "Aspire Buildcon has completely redefined what a dream home should feel like. Every detail at Siddhi Aspire — the finishes, the layout, the amenities — reflects their uncompromising commitment to quality.", rating: 5, order: 1, isActive: true },
   { initials: 'SP', name: 'Mrs. Sneha Patil', projectName: "Optima – The Pavilion · 2 BHK Owner", text: "Transparency, ethical practices and on-time delivery at Optima Pavilion won us over completely. Proud Aspire homeowners — would recommend without hesitation.", rating: 5, order: 2, isActive: true },
   { initials: 'PJ', name: 'Ms. Priya Joshi', projectName: "Aradhya Residency · 2 BHK Owner", text: "As a first-time homebuyer I was anxious, but the Aspire team made the entire journey effortless. The construction quality is outstanding and after-possession support excellent.", rating: 5, order: 3, isActive: true },
 ]
@@ -719,7 +719,7 @@ export const TESTIMONIALS: Omit<Testimonial, '_id'>[] = [
 // ── SITE SETTINGS (from index.html) ──
 export const SITE_SETTINGS: SiteSettings = {
   heroSlides: [
-    { image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85&auto=format', alt: 'Aspire InfraTech Residences' },
+    { image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85&auto=format', alt: 'Aspire Buildcon Residences' },
     { image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85&auto=format', alt: 'Premium Interiors' },
     { image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=85&auto=format', alt: 'Luxury Living' },
   ],
@@ -751,15 +751,15 @@ export const SITE_SETTINGS: SiteSettings = {
   ],
   footerTagline: 'Building landmark residential and commercial spaces across Pune since 2014. Trust, quality and integrity — in every brick we lay.',
   seo: {
-    title: 'Aspire InfraTech — Premium Real Estate Developers, Pune',
-    description: "Aspire InfraTech — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
+    title: 'Aspire Buildcon — Premium Real Estate Developers, Pune',
+    description: "Aspire Buildcon — Pune's most trusted real estate developers. Premium residences across Katraj, Ambegaon & Kondhwa. 825,000+ sq.ft. delivered.",
     ogImage: '/logo.png',
   },
   whatsappNumber: '919090274545',
   hero: {
     tagline: "Pune's Premier Real Estate Developers",
     headline: "Where Vision Becomes Architecture",
-    copy: "Aspire InfraTech crafts landmark residences across Katraj, Ambegaon & Kondhwa — built on trust, designed for generations.",
+    copy: "Aspire Buildcon crafts landmark residences across Katraj, Ambegaon & Kondhwa — built on trust, designed for generations.",
     ctaPrimary: 'Explore Projects →',
     ctaSecondary: 'Schedule Site Visit',
     rightStats: [
@@ -770,7 +770,7 @@ export const SITE_SETTINGS: SiteSettings = {
   },
   about: {
     heading: "Building Pune's Future Skyline",
-    copy: "Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire InfraTech is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014.",
+    copy: "Founded by Architect Mahesh S. Zagade and Engineer Abhijit S. Shilimkar, Aspire Buildcon is Pune's most trusted real estate consortium — delivering landmark residential and commercial developments with unwavering integrity since 2014.",
     overlayStat: '₹375',
     overlayLabel: 'Crore Turnover',
     pillars: [
@@ -801,7 +801,7 @@ export const SITE_SETTINGS: SiteSettings = {
     { name: 'Optima – Aspire', slug: 'optima-aspire' },
     { name: 'All Projects', slug: '' },
   ],
-  footerCopyright: '© 2025 Aspire InfraTech. All rights reserved. Katraj–Dhankawadi, Pune — 411 046.',
+  footerCopyright: '© 2025 Aspire Buildcon. All rights reserved. Katraj–Dhankawadi, Pune — 411 046.',
   footerRera: 'RERA: P52100047821 | P52100047822',
   contactMapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0!2d73.8553!3d18.4528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295617a30fce5%3A0x3f2f63c60caaef8a!2sKatraj%2C%20Pune!5e0!3m2!1sen!2sin!4v1700000000000',
 }

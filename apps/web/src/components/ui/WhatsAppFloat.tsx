@@ -1,6 +1,6 @@
 export default function WhatsAppFloat({
   phone = '919090274545',
-  message = "Hello Aspire InfraTech, I'm interested in your properties.",
+  message = "Hello Aspire Buildcon, I'm interested in your properties.",
 }: {
   phone?: string
   message?: string

@@ -24,7 +24,9 @@
       "Bash(git -C /Users/priyanka/Desktop/Development/AspireGroup diff HEAD -- apps/web/src/lib/models.ts 2>&1 | head -20)",
       "Bash(git -C /Users/priyanka/Desktop/Development/AspireGroup show HEAD:apps/web/src/components/admin/FileUpload.tsx 2>&1 | head -5)",
       "Bash(git -C /Users/priyanka/Desktop/Development/AspireGroup diff HEAD --stat 2>&1)",
-      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web/src && rm -f App.tsx main.tsx vite-env.d.ts components/Hero.tsx components/Header.tsx components/Services.tsx components/Footer.tsx components/ui/VideoModel.tsx components/ui/ProjectModel.tsx && echo \"Deleted\")"
+      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web/src && rm -f App.tsx main.tsx vite-env.d.ts components/Hero.tsx components/Header.tsx components/Services.tsx components/Footer.tsx components/ui/VideoModel.tsx components/ui/ProjectModel.tsx && echo \"Deleted\")",
+      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web && LC_ALL=C find src -name \"*.ts\" -o -name \"*.tsx\" | xargs grep -l \"Aspire InfraTech\" | sort)",
+      "Bash(find src:*)"
     ]
   }
 }

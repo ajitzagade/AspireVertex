@@ -136,7 +136,7 @@ export default function SettingsForm({ initialSettings }: { initialSettings?: S 
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <Field label="Sub-copy">
-              <textarea className="admin-input" rows={3} value={data.hero?.copy || ''} onChange={e => setNested('hero', 'copy', e.target.value)} placeholder="Aspire InfraTech crafts landmark residences…" style={{ resize: 'vertical' }} />
+              <textarea className="admin-input" rows={3} value={data.hero?.copy || ''} onChange={e => setNested('hero', 'copy', e.target.value)} placeholder="Aspire Buildcon crafts landmark residences…" style={{ resize: 'vertical' }} />
             </Field>
           </div>
           <div className="admin-grid-2" style={{ marginBottom: '1rem' }}>
@@ -366,7 +366,7 @@ export default function SettingsForm({ initialSettings }: { initialSettings?: S 
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <Field label="Copyright Text">
-              <input className="admin-input" value={data.footerCopyright || ''} onChange={e => set('footerCopyright', e.target.value)} placeholder="© 2025 Aspire InfraTech. All rights reserved." />
+              <input className="admin-input" value={data.footerCopyright || ''} onChange={e => set('footerCopyright', e.target.value)} placeholder="© 2025 Aspire Buildcon. All rights reserved." />
             </Field>
           </div>
           <div style={{ marginBottom: '1rem' }}>

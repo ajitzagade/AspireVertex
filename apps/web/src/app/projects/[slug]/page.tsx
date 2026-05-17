@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { project: p } = await getProject(slug)
   if (!p) return { title: 'Project Not Found' }
   return {
-    title: `${p.name} — Aspire InfraTech | ${p.location}`,
+    title: `${p.name} — Aspire Buildcon | ${p.location}`,
     description:
       p.description ||
       `${p.unitTypes} residences in ${p.location}. Starting ${p.startingPrice}. ${p.rera ? `MahaRERA: ${p.rera}` : ''}`,

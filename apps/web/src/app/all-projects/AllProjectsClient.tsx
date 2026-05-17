@@ -447,7 +447,7 @@ function RERABar({ projects }: { projects: Project[] }) {
           MahaRERA Registered &amp; Compliant
         </h3>
         <p style={{ fontSize: '.82rem', color: 'var(--txt2)', maxWidth: '500px', lineHeight: 1.85 }}>
-          All Aspire InfraTech ongoing projects are registered under MahaRERA. You can verify registration details, approvals and construction updates on the official MahaRERA portal at maharerait.mahaonline.gov.in. We believe in complete transparency — always.
+          All Aspire Buildcon ongoing projects are registered under MahaRERA. You can verify registration details, approvals and construction updates on the official MahaRERA portal at maharerait.mahaonline.gov.in. We believe in complete transparency — always.
         </p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '.65rem', alignItems: 'flex-end' }}>
@@ -504,7 +504,7 @@ export default function AllProjectsClient({ projects, waNumber = '919090274545' 
         <div style={{ position: 'absolute', inset: 0 }}>
           <Image
             src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=85&auto=format"
-            alt="Aspire InfraTech Portfolio"
+            alt="Aspire Buildcon Portfolio"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center' }}
             priority

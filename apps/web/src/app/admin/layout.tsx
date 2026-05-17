@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { logoutAction } from './actions'
 
-export const metadata = { title: 'Admin — Aspire InfraTech' }
+export const metadata = { title: 'Admin — Aspire Buildcon' }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,7 +34,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         {/* Sidebar */}
         <aside style={{ width: '210px', background: '#111', borderRight: '1px solid #1e1e1e', display: 'flex', flexDirection: 'column', flexShrink: 0, position: 'fixed', top: 0, bottom: 0, left: 0, zIndex: 10 }}>
           <div style={{ padding: '1.5rem 1.25rem', borderBottom: '1px solid #1e1e1e' }}>
-            <div style={{ fontSize: '.55rem', letterSpacing: '.2em', textTransform: 'uppercase', color: '#c9a96e', marginBottom: '.25rem' }}>Aspire InfraTech</div>
+            <div style={{ fontSize: '.55rem', letterSpacing: '.2em', textTransform: 'uppercase', color: '#c9a96e', marginBottom: '.25rem' }}>Aspire Buildcon</div>
             <div style={{ fontSize: '.78rem', color: '#555' }}>Admin Panel</div>
           </div>
           <nav style={{ padding: '1rem 0', flex: 1 }}>
