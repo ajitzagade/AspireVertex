@@ -3,7 +3,8 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "env": ["MONGODB_URI", "ADMIN_PASSWORD", "BLOB_READ_WRITE_TOKEN", "NEXT_PUBLIC_SITE_URL"]
     },
     "dev": {
       "dependsOn": ["^build"],
