@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 async function getWANumber(): Promise<string> {
   try {
     await connectDB()
-    const doc = await SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as { value?: string } | null
+    const doc = await SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as unknown as { value?: string } | null
     return doc?.value || SITE_SETTINGS.whatsappNumber || '919090274545'
   } catch {
     return SITE_SETTINGS.whatsappNumber || '919090274545'

@@ -194,7 +194,7 @@ function FloorPlanSVG({ bhkType, variant = '' }: { bhkType: string; variant?: st
 }
 
 // ── EMI Calculator ──
-function EMICalculator({ onClose, inline = false }: { onClose: () => void; inline?: boolean }) {
+function EMICalculator({ onClose, inline = false, wa = '919090274545' }: { onClose: () => void; inline?: boolean; wa?: string }) {
   const [amount, setAmount] = useState(7500000)
   const [rate, setRate] = useState(8.5)
   const [tenure, setTenure] = useState(20)
@@ -578,7 +578,7 @@ export default function ProjectPageClient({ project, waNumber }: { project: Proj
                 {/* Inline EMI for this plan */}
                 <div style={{ margin: '1.25rem 0', padding: '1rem 1.25rem', background: 'rgba(201,169,110,.04)', border: '1px solid rgba(201,169,110,.2)' }}>
                   <div style={{ fontSize: '.6rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '.75rem' }}>Quick EMI Estimate</div>
-                  <EMICalculator onClose={() => {}} inline />
+                  <EMICalculator onClose={() => {}} inline wa={wa} />
                 </div>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem' }}>
@@ -632,7 +632,7 @@ export default function ProjectPageClient({ project, waNumber }: { project: Proj
         {/* Inline EMI Calculator */}
         <div style={{ padding: '1.5rem', background: 'rgba(201,169,110,.04)', border: '1px solid rgba(201,169,110,.2)' }}>
           <div style={{ fontSize: '.6rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>Calculate Your Home Loan EMI</div>
-          <EMICalculator onClose={() => {}} inline />
+          <EMICalculator onClose={() => {}} inline wa={wa} />
         </div>
       </section>
 
@@ -849,7 +849,7 @@ export default function ProjectPageClient({ project, waNumber }: { project: Proj
 
       {/* ── EMI CALCULATOR FLOAT ── */}
       <div style={{ position: 'fixed', bottom: '6rem', right: '2rem', zIndex: 1001 }}>
-        {showEmi && <EMICalculator onClose={() => setShowEmi(false)} />}
+        {showEmi && <EMICalculator onClose={() => setShowEmi(false)} wa={wa} />}
         <button
           onClick={() => setShowEmi(v => !v)}
           title="Calculate EMI"

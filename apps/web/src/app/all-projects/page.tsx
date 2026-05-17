@@ -9,7 +9,7 @@ async function getData(): Promise<{ projects: Project[]; waNumber: string }> {
     await connectDB()
     const [projectDocs, waDoc] = await Promise.all([
       ProjectModel.find({}).sort({ order: 1 }).lean(),
-      SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as Promise<{ value?: string } | null>,
+      SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as unknown as Promise<{ value?: string } | null>,
     ])
     return {
       projects: JSON.parse(JSON.stringify(projectDocs)) as Project[],

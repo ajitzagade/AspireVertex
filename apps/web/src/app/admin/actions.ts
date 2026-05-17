@@ -116,7 +116,7 @@ export async function seedProjects() {
 export async function getSettings(): Promise<SiteSettings> {
   try {
     await connectDB()
-    const docs = await SettingsModel.find({}).lean() as { key: string; value: unknown }[]
+    const docs = await SettingsModel.find({}).lean() as unknown as { key: string; value: unknown }[]
     const settings: Record<string, unknown> = {}
     for (const d of docs) settings[d.key] = d.value
     return settings as unknown as SiteSettings

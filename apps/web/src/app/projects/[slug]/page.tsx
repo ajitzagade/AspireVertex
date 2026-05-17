@@ -15,7 +15,7 @@ async function getProject(slug: string): Promise<{ project: Project | null; waNu
     await connectDB()
     const [p, waDoc] = await Promise.all([
       ProjectModel.findOne({ slug }).lean(),
-      SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as Promise<{ value?: string } | null>,
+      SettingsModel.findOne({ key: 'whatsappNumber' }).lean() as unknown as Promise<{ value?: string } | null>,
     ])
     return {
       project: p ? JSON.parse(JSON.stringify(p)) : null,

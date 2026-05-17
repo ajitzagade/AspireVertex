@@ -52,7 +52,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
-function FeaturedCard({ project: p }: { project: Project }) {
+function FeaturedCard({ project: p, wa }: { project: Project; wa: string }) {
   const [hovered, setHovered] = useState(false)
   return (
     <Link
@@ -257,7 +257,7 @@ function ProjectCard({ project: p }: { project: Project }) {
   return inner
 }
 
-function CompletedCard({ project: p }: { project: Project }) {
+function CompletedCard({ project: p, wa }: { project: Project; wa: string }) {
   const [hovered, setHovered] = useState(false)
   return (
     <div
@@ -331,7 +331,7 @@ function CompletedCard({ project: p }: { project: Project }) {
   )
 }
 
-function CommercialCard({ project: p }: { project: Project }) {
+function CommercialCard({ project: p, wa }: { project: Project; wa: string }) {
   const [hovered, setHovered] = useState(false)
   return (
     <div
@@ -582,7 +582,7 @@ export default function AllProjectsClient({ projects, waNumber = '919090274545' 
         {showFeatured && featuredProjects.length > 0 && (
           <>
             <SectionLabel>Featured · Flagship Project</SectionLabel>
-            {featuredProjects.map((p) => <FeaturedCard key={p.slug} project={p} />)}
+            {featuredProjects.map((p) => <FeaturedCard key={p.slug} project={p} wa={wa} />)}
           </>
         )}
 
@@ -601,7 +601,7 @@ export default function AllProjectsClient({ projects, waNumber = '919090274545' 
           <>
             <SectionLabel>Completed &amp; Delivered</SectionLabel>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-              {completedProjects.map((p) => <CompletedCard key={p.slug} project={p} />)}
+              {completedProjects.map((p) => <CompletedCard key={p.slug} project={p} wa={wa} />)}
             </div>
           </>
         )}
@@ -610,7 +610,7 @@ export default function AllProjectsClient({ projects, waNumber = '919090274545' 
         {showCommercialSection && commercialProjects.length > 0 && (
           <>
             <SectionLabel>Commercial &amp; Upcoming</SectionLabel>
-            {commercialProjects.map((p) => <CommercialCard key={p.slug} project={p} />)}
+            {commercialProjects.map((p) => <CommercialCard key={p.slug} project={p} wa={wa} />)}
           </>
         )}
 

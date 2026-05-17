@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { getTestimonials, seedTestimonials } from '../actions'
 import DeleteTestimonialButton from './DeleteButton'
 import TestimonialForm from './TestimonialForm'
