@@ -67,10 +67,19 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
   const [projFilter, setProjFilter] = useState('')
   const [modalKey, setModalKey] = useState<string | null>(null)
 
-  const slides = settings.heroSlides || []
-  const marqueeItems = settings.marqueeItems || []
-  const stats = settings.stats || []
-  const journey = settings.journeySteps || []
+  const slides = settings.heroSlides?.length ? settings.heroSlides : [
+    { image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&q=85&auto=format', alt: 'Aspire Buildcon Residences' },
+    { image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=85&auto=format', alt: 'Premium Interiors' },
+    { image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=85&auto=format', alt: 'Luxury Living' },
+  ]
+  const marqueeItems = settings.marqueeItems?.length ? settings.marqueeItems : ['Siddhi Aspire · Katraj', 'Optima Aspire · Ambegaon', '825,000+ Sq Ft Delivered', '₹375 Crore Turnover', '10+ Years of Excellence', 'MahaRERA Registered', '500+ Happy Families']
+  const stats = settings.stats?.length ? settings.stats : [
+    { target: 825, suffix: 'K+', label: 'Sq. Ft. Delivered' },
+    { prefix: '₹', target: 375, suffix: 'Cr', label: 'Turnover' },
+    { target: 8, suffix: '+', label: 'Ongoing Projects' },
+    { target: 500, suffix: '+', label: 'Happy Families' },
+  ]
+  const journey = settings.journeySteps?.length ? settings.journeySteps : []
   const wa = settings.whatsappNumber || '919090274545'
 
   // Content blocks with seed fallbacks
