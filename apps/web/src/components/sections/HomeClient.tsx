@@ -64,6 +64,24 @@ function Reveal({ children, delay = 0, className = '' }: { children: React.React
   )
 }
 
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+  return (
+    <button onClick={handleCopy} title="Copy" style={{ background: 'none', border: 'none', cursor: 'pointer', color: copied ? 'var(--gold)' : 'var(--txt3)', padding: '2px', display: 'flex', alignItems: 'center', transition: 'color .2s' }}>
+      {copied
+        ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+        : <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      }
+    </button>
+  )
+}
+
 export default function HomeClient({ projects, testimonials, settings }: Props) {
   const [slideIdx, setSlideIdx] = useState(0)
   const [projFilter, setProjFilter] = useState('')
@@ -472,12 +490,17 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         </Reveal>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '6rem', marginTop: '4rem' }}>
           <Reveal delay={0.1}>
-            {[['📍', 'Office Address', settings.address || ''], ['📞', 'Phone', settings.phone || ''], ['✉', 'Email', settings.email || ''], ['⏰', 'Office Hours', settings.officeHours || '']].map(([ic, lbl, val]) => (
-              <div key={lbl} style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.75rem', paddingBottom: '1.75rem', borderBottom: '1px solid var(--bdr)' }}>
+            {[['📍', 'Office Address', settings.address || SITE_SETTINGS.address || '', false], ['📞', 'Phone', settings.phone || SITE_SETTINGS.phone || '', true], ['✉', 'Email', settings.email || SITE_SETTINGS.email || '', true], ['⏰', 'Office Hours', settings.officeHours || SITE_SETTINGS.officeHours || '', false]].map(([ic, lbl, val, copyable]) => (
+              <div key={lbl as string} style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.75rem', paddingBottom: '1.75rem', borderBottom: '1px solid var(--bdr)' }}>
                 <div style={{ width: '46px', height: '46px', border: '1px solid var(--bdr)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', fontSize: '1.1rem', flexShrink: 0 }}>{ic}</div>
-                <div>
+                <div style={{ flex: 1 }}>
                   <div style={{ fontSize: '.6rem', letterSpacing: '.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '.25rem' }}>{lbl}</div>
-                  <div style={{ fontSize: '.9rem', color: 'var(--txt)' }}>{val}</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '.6rem' }}>
+                    <div style={{ fontSize: '.9rem', color: 'var(--txt)' }}>{val}</div>
+                    {copyable && val && (
+                      <CopyButton text={val as string} />
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
