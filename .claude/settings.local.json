@@ -26,7 +26,20 @@
       "Bash(git -C /Users/priyanka/Desktop/Development/AspireGroup diff HEAD --stat 2>&1)",
       "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web/src && rm -f App.tsx main.tsx vite-env.d.ts components/Hero.tsx components/Header.tsx components/Services.tsx components/Footer.tsx components/ui/VideoModel.tsx components/ui/ProjectModel.tsx && echo \"Deleted\")",
       "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web && LC_ALL=C find src -name \"*.ts\" -o -name \"*.tsx\" | xargs grep -l \"Aspire InfraTech\" | sort)",
-      "Bash(find src:*)"
+      "Bash(find src:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(npm run:*)",
+      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web && \\\\\nsed -i '' 's/\\\\.lean\\(\\) as Promise<{ value?: string } | null>/\\\\.lean\\(\\) as unknown as Promise<{ value?: string } | null>/g' src/app/all-projects/page.tsx src/app/projects/[slug]/page.tsx && \\\\\nsed -i '' 's/\\\\.lean\\(\\) as { value?: string } | null/\\\\.lean\\(\\) as unknown as { value?: string } | null/g' src/app/layout.tsx && \\\\\nsed -i '' 's/\\\\.lean\\(\\) as { key: string; value: unknown }[]/\\\\.lean\\(\\) as unknown as { key: string; value: unknown }[]/g' src/app/admin/actions.ts && \\\\\necho \"Done\")",
+      "Bash(cd /Users/priyanka/Desktop/Development/AspireGroup/apps/web && \\\\\nsed -i '' 's/\\\\.lean\\(\\) as Promise<{ value?: string } | null>/\\\\.lean\\(\\) as unknown as Promise<{ value?: string } | null>/g' \"src/app/all-projects/page.tsx\" \"src/app/projects/[slug]/page.tsx\" && \\\\\nsed -i '' 's/\\\\.lean\\(\\) as { value?: string } | null/\\\\.lean\\(\\) as unknown as { value?: string } | null/g' src/app/layout.tsx && \\\\\nsed -i '' 's/\\\\.lean\\(\\) as { key: string; value: unknown }\\\\[\\\\]/\\\\.lean\\(\\) as unknown as { key: string; value: unknown }[]/g' src/app/admin/actions.ts && \\\\\necho \"Done\")",
+      "Bash(grep -n \"label\\\\|placeholder\\\\|field\\\\|input\\\\|textarea\\\\|select\" /Users/priyanka/Desktop/Development/AspireGroup/apps/web/src/app/admin/projects/\\\\[slug\\\\]/page.tsx 2>/dev/null | head -60)",
+      "Bash(which pandoc:*)",
+      "Bash(npx md-to-pdf:*)",
+      "Bash(ls /Users/priyanka/Downloads/*.png 2>/dev/null | head -20)",
+      "Bash(ls -lt /Users/priyanka/Downloads/*.png | head -10)",
+      "Bash(ls -lt /Users/priyanka/Downloads/*.ico /Users/priyanka/Downloads/favicon* 2>/dev/null | head -10)",
+      "Bash(file /Users/priyanka/Desktop/Development/AspireGroup/apps/web/public/logo.png && python3 -c \"from PIL import Image; img = Image.open\\('/Users/priyanka/Desktop/Development/AspireGroup/apps/web/public/logo.png'\\); print\\(img.size\\)\")",
+      "Bash(npm list:*)"
     ]
   }
 }

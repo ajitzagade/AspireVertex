@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const LOGO_SRC = '/logo.png'
-const LOGO_ASPECT = 204 / 212
+const LOGO_ASPECT = 1080 / 997
 
 interface LogoProps {
   href?: string

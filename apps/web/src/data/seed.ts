@@ -740,9 +740,9 @@ export const SITE_SETTINGS: SiteSettings = {
     { icon: '🎉', head: 'Griha Pravesh — A Moment We Celebrate Together', body: "Possession day is not just a handover for us — it is your family's Griha Pravesh, a milestone we celebrate with you. We ensure every room is snagged and perfect before the keys reach your hands. And after you move in, our team remains just one call away — forever.", badges: ['✓ Full Snagging Inspection', '✓ Lifetime Customer Support', '✓ Facility Management'], isLast: true },
   ],
   phone: '+91 90902 74545',
-  email: 'info@aspiregroup.com',
+  email: 'hello@aspirebuildcons.in',
   address: 'Katraj–Dhankawadi, Pune — 411 046',
-  officeHours: 'Mon – Sat: 10:00 AM – 7:00 PM',
+  officeHours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   socialLinks: [
     { platform: 'facebook', url: 'https://www.facebook.com/profile.php?id=61577758784546' },
     { platform: 'instagram', url: 'https://www.instagram.com/_aspire_group_' },

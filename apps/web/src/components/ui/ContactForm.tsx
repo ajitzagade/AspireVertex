@@ -9,7 +9,7 @@ interface FormData {
 
 export default function ContactForm({ projectName }: { projectName?: string; subject?: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle')
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>()
 
   const onSubmit = async (data: FormData) => {
     setStatus('sending')
@@ -20,7 +20,13 @@ export default function ContactForm({ projectName }: { projectName?: string; sub
         body: JSON.stringify({ ...data, project: projectName || data.project, source: 'website' }),
       })
       const json = await res.json()
-      setStatus(json.success ? 'done' : 'error')
+      if (json.success) {
+        setStatus('done')
+        reset()
+        setTimeout(() => setStatus('idle'), 4000)
+      } else {
+        setStatus('error')
+      }
     } catch { setStatus('error') }
   }
 

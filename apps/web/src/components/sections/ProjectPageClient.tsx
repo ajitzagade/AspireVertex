@@ -629,11 +629,6 @@ export default function ProjectPageClient({ project, waNumber }: { project: Proj
           * Home loan eligibility subject to individual bank criteria. Contact us for assisted loan processing at no extra charge.
         </p>
 
-        {/* Inline EMI Calculator */}
-        <div style={{ padding: '1.5rem', background: 'rgba(201,169,110,.04)', border: '1px solid rgba(201,169,110,.2)' }}>
-          <div style={{ fontSize: '.6rem', letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1rem' }}>Calculate Your Home Loan EMI</div>
-          <EMICalculator onClose={() => {}} inline wa={wa} />
-        </div>
       </section>
 
       {/* ── AMENITIES ── */}

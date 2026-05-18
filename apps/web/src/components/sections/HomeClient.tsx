@@ -12,6 +12,8 @@ import Navbar from '@/components/ui/NavBar'
 import Footer from '@/components/ui/Footer'
 import ContactForm from '@/components/ui/ContactForm'
 import ProjectModal from '@/components/ui/ProjectModal'
+import TeamOrbit from '@/components/sections/TeamOrbit'
+import { SITE_SETTINGS } from '@/data/seed'
 
 interface Props {
   projects: Project[]
@@ -79,7 +81,7 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
     { target: 8, suffix: '+', label: 'Ongoing Projects' },
     { target: 500, suffix: '+', label: 'Happy Families' },
   ]
-  const journey = settings.journeySteps?.length ? settings.journeySteps : []
+  const journey = settings.journeySteps?.length ? settings.journeySteps : (SITE_SETTINGS.journeySteps ?? [])
   const wa = settings.whatsappNumber || '919090274545'
 
   // Content blocks with seed fallbacks
@@ -458,7 +460,10 @@ export default function HomeClient({ projects, testimonials, settings }: Props) 
         </Reveal>
       </section>
 
-      {/* ⑨ CONTACT */}
+      {/* ⑨ TEAM */}
+      <TeamOrbit />
+
+      {/* ⑩ CONTACT */}
       <section id="contact" style={{ padding: '8rem 4rem', background: 'var(--bg)' }}>
         <Reveal>
           <div className="sec-eye"><span>Get In Touch</span></div>
